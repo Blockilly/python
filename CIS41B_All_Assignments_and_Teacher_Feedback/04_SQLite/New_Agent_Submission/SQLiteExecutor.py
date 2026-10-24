@@ -139,14 +139,18 @@ class QueryBuilder:
         placeholders = ", ".join(["?"] * len(columns))
         return f"INSERT INTO {table} ({', '.join(columns)}) VALUES ({placeholders})"
 
-    def build_select(self, table):
-        return f"SELECT * FROM {table}"
+    # where_col is optional so update/delete can select the one row after
+    def build_select(self, table, where_col=None):
+        if where_col is None:
+            return f"SELECT * FROM {table}"
+        return f"SELECT * FROM {table} WHERE {where_col} = ?"
 
     # Notebook Section: DynamicSQL - Building an UPDATE Statement Dynamically
     # Changes:
-    # update_row() always uses WHERE name = ?. Only Dwarfs and Elements have
-    # something like a name, and CO2 has 12 rows per year so year doesn't
-    # work either. where_col is a parameter now and the GUI sends "id".
+    # update_row() always uses WHERE name = ?. Dwarfs, Elements and Presidents
+    # each call their name column something different (Dwarf, Element,
+    # President), and CO2 has 12 rows per year so year doesn't work either.
+    # where_col is a parameter now and the GUI sends "id".
     def build_update(self, table, new_values, where_col):
         assignments = ", ".join([f"{key} = ?" for key in new_values])
         return f"UPDATE {table} SET {assignments} WHERE {where_col} = ?"
@@ -359,8 +363,15 @@ class SQLiteGUI(ttk.Frame):
                            types=self.current.get_types())
             self.show_results(self.executor.get_last_status())
 
+    # the db is a file so after restarting the program the old rows are still
+    # there. Insert twice = every row twice, so check the count first
     def insertData(self):
         if self.check_table():
+            count = self.run_query("COUNT", table=self.current.get_name())
+            if count and list(count[0].values())[0] > 0:
+                self.show_results(f"{self.current.get_name()} already has rows, "
+                                  "Drop Table and Create Table first")
+                return
             columns = self.current.get_columns()
             rows = [tuple(row[c] for c in columns) for row in self.current]
             self.run_query("INSERT", rows, table=self.current.get_name(), columns=columns)
@@ -369,7 +380,8 @@ class SQLiteGUI(ttk.Frame):
     def selectAll(self):
         if self.check_table():
             self.run_query("SELECT", table=self.current.get_name())
-            lines = [self.executor.get_last_status()]
+            lines = [self.executor.get_last_status() +
+                     f" (csv had {len(self.current)})"]
             for row in self.executor:
                 lines.append(str(row))
             self.show_results("\n".join(lines))
@@ -387,7 +399,7 @@ class SQLiteGUI(ttk.Frame):
         params = tuple(new_values.values()) + (row_id,)
         self.run_query("UPDATE", params, table=self.current.get_name(),
                        new_values=new_values, where_col="id")
-        self.show_results(self.executor.get_last_status())
+        self.show_row(row_id)
 
     def deleteRow(self):
         if not self.check_table():
@@ -397,7 +409,20 @@ class SQLiteGUI(ttk.Frame):
             messagebox.showwarning("Missing", "Need a row id to delete")
             return
         self.run_query("DELETE", (row_id,), table=self.current.get_name(), where_col="id")
-        self.show_results(self.executor.get_last_status())
+        self.show_row(row_id)
+
+    # selects the row again so you can see if the update really changed it /
+    # the delete really removed it. keeps the UPDATE/DELETE sql on top
+    def show_row(self, row_id):
+        status = self.executor.get_last_status()
+        first_sql = self.sql_box.get("1.0", tk.END)
+        rows = self.run_query("SELECT", (row_id,), table=self.current.get_name(),
+                              where_col="id")
+        self.sql_box.insert("1.0", first_sql + "\n")
+        if rows:
+            self.show_results(f"{status}\nrow {row_id} now: {rows[0]}")
+        else:
+            self.show_results(f"{status}\nrow {row_id}: not in table")
 
     def dropTable(self):
         if self.check_table():
@@ -438,8 +463,8 @@ if __name__ == "__main__":
         data = TableData(file)
         tables[data.get_name()] = data
 
-    # saved to a file so I could look at it in DB Browser.
-    # running it twice -> Drop Table first or the rows get inserted again
+    # saved to a file so I could check it in the SQLite browser from the
+    # Dynamic SQL lecture
     executor = CommandExecutor("cis41b.db")
     root = tk.Tk()
     app = SQLiteGUI(root, QueryBuilder(), executor, tables)
