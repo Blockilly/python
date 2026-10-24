@@ -1,0 +1,213 @@
+Country,Percent,Emissions,Change
+World,100,39,023.94,25,725.44
+China,34.0,13,259.64,3,666.95
+United States,12.0,4,682.04,5,928.97
+India,7.6,2,955.18,995.65
+European Union,6.4,2,512.07,3,563.26
+Russia,5.3,2,069.50,1,681.14
+Japan,2.4,944.76,1,248.81
+Iran,2.0,778.80,353.93
+International Shipping,1.8,706.32,503.29
+Indonesia,1.7,674.54,299.09
+Saudi Arabia,1.6,622.91,265.24
+Germany,1.5,582.95,871.74
+Canada,1.5,575.01,543.04
+South Korea,1.5,573.54,474.16
+International Aviation,1.3,491.63,355.32
+Mexico,1.2,487.09,396.71
+Brazil,1.2,479.50,349.40
+Turkey,1.1,438.32,227.05
+South Africa,1.0,397.37,347.30
+Australia,1.0,373.62,353.87
+Vietnam,1.0,372.95,56.52
+Italy,  San Marino and  Vatican City,0.8,305.49,454.72
+United Kingdom,0.8,302.10,551.68
+Poland,0.7,286.91,313.02
+Malaysia,0.7,283.32,130.78
+France and  Monaco,0.7,282.43,401.21
+Taiwan,0.7,279.85,238.02
+Thailand,0.7,274.16,174.82
+Egypt,0.6,249.33,127.91
+Kazakhstan,0.6,239.87,132.22
+Spain and  Andorra,0.6,217.26,313.24
+United Arab Emirates,0.5,205.99,88.46
+Pakistan,0.5,200.51,111.87
+Iraq,0.5,192.91,88.81
+Argentina,0.5,183.78,136.76
+Algeria,0.5,180.36,87.94
+Philippines,0.4,161.29,74.25
+Uzbekistan,0.4,137.90,130.67
+Ukraine,0.3,136.20,360.02
+Nigeria,0.3,127.94,100.30
+Qatar,0.3,127.91,31.75
+Bangladesh,0.3,124.79,26.97
+Netherlands,0.3,122.87,176.91
+Kuwait,0.3,111.63,54.48
+Colombia,0.3,100.86,62.57
+Oman,0.2,93.09,26.32
+Czech Republic,0.2,90.51,132.31
+Venezuela,0.2,84.60,137.75
+Belgium,0.2,84.31,124.97
+Chile,0.2,84.00,53.85
+Romania,0.2,70.77,97.42
+Morocco,0.2,69.86,33.56
+Turkmenistan,0.2,65.99,39.34
+North Korea,0.2,64.27,73.81
+Libya,0.2,61.26,49.28
+Israel and  Palestine,0.2,61.25,59.30
+Austria,0.2,58.82,66.69
+Peru,0.1,58.40,28.98
+Singapore,0.1,57.07,45.52
+Serbia and  Montenegro,0.1,56.12,50.64
+Belarus,0.1,54.18,56.26
+Greece,0.1,51.67,96.05
+Ecuador,0.1,45.33,22.04
+Norway,0.1,44.07,41.77
+Hungary,0.1,43.83,59.48
+Azerbaijan,0.1,42.77,28.79
+Bulgaria,0.1,39.79,48.17
+Bahrain,0.1,37.43,17.77
+Portugal,0.09,36.17,64.41
+New Zealand,0.09,35.80,32.89
+Sweden,0.09,35.39,57.98
+Slovakia,0.09,34.86,41.68
+Hong Kong,0.09,34.67,41.90
+Switzerland and  Liechtenstein,0.09,34.22,44.80
+Myanmar,0.09,33.37,10.04
+Ireland,0.08,32.48,43.82
+Finland,0.08,32.27,57.53
+Tunisia,0.08,31.50,21.13
+Dominican Republic,0.08,31.35,19.01
+Angola,0.07,28.23,16.51
+Mongolia,0.07,28.12,9.04
+Trinidad and Tobago,0.07,27.22,19.13
+Denmark,0.07,26.77,53.16
+Laos,0.07,26.02,0.93
+Syria,0.07,25.59,45.90
+Ghana,0.06,24.16,6.09
+Bolivia,0.06,23.81,8.20
+Jordan,0.06,23.58,16.47
+Cuba,0.06,22.07,28.99
+Bosnia and Herzegovina,0.06,22.00,14.28
+Kenya,0.06,21.73,8.91
+Guatemala,0.05,21.35,9.69
+Sudan and  South Sudan,0.05,21.27,6.00
+Sri Lanka,0.05,20.52,11.46
+Tanzania,0.05,19.37,3.11
+Cambodia,0.05,17.97,2.00
+Nepal,0.05,17.93,3.42
+Croatia,0.04,17.46,19.37
+Lebanon,0.04,17.33,15.31
+Ethiopia,0.04,16.71,3.88
+Panama,0.04,14.72,5.19
+Ivory Coast,0.04,14.41,6.97
+Puerto Rico,0.04,13.82,25.18
+Lithuania,0.03,13.11,11.66
+Georgia,0.03,12.86,5.21
+Slovenia,0.03,12.08,15.04
+Senegal,0.03,12.02,3.99
+Zimbabwe,0.03,11.74,14.60
+Estonia,0.03,11.44,17.38
+Honduras,0.03,10.95,5.00
+Yemen,0.03,10.90,15.74
+Cameroon,0.03,10.76,5.73
+Kyrgyzstan,0.03,10.46,4.80
+Moldova,0.03,9.93,6.89
+Mozambique,0.02,9.74,1.57
+Brunei,0.02,9.72,6.07
+Tajikistan,0.02,9.31,2.78
+Uruguay,0.02,8.82,5.57
+North Macedonia,0.02,8.76,9.04
+Afghanistan,0.02,8.71,1.02
+Costa Rica,0.02,8.57,5.12
+El Salvador,0.02,8.38,5.80
+Paraguay,0.02,8.25,3.64
+Zambia,0.02,8.06,1.95
+Armenia,0.02,7.73,3.57
+Botswana,0.02,7.42,4.10
+Congo,0.02,7.25,4.51
+Uganda,0.02,7.22,1.41
+Cyprus,0.02,7.18,7.13
+Luxembourg,0.02,7.01,8.80
+Jamaica,0.02,6.86,10.21
+Mali,0.02,6.66,0.80
+Latvia,0.02,6.55,7.23
+Malawi,0.02,6.45,3.10
+Benin,0.02,6.44,1.54
+New Caledonia,0.02,6.21,2.18
+Burkina Faso,0.02,6.00,0.88
+Papua New Guinea,0.02,5.95,2.95
+Nicaragua,0.01,5.73,3.77
+Gabon,0.01,4.93,6.60
+Mauritania,0.01,4.65,1.07
+Albania,0.01,4.59,3.23
+Namibia,0.01,4.36,1.95
+Mauritius,0.01,4.21,2.44
+Madagascar,0.01,4.10,1.69
+Democratic Republic of the Congo,0.01,3.80,1.88
+Equatorial Guinea,0.01,3.78,2.74
+Guinea,0.01,3.72,1.47
+Haiti,0.009,3.54,1.69
+Guyana,0.008,3.30,1.66
+Iceland,0.008,3.09,2.85
+Macao,0.008,3.01,1.48
+Maldives,0.007,2.88,0.64
+Niger,0.007,2.82,0.70
+Suriname,0.007,2.63,1.48
+Chad,0.007,2.57,0.24
+Réunion,0.007,2.57,2.05
+Togo,0.006,2.49,1.25
+Curaçao,0.006,2.43,5.67
+Fiji,0.006,2.21,1.46
+Bhutan,0.005,1.99,0.41
+Malta,0.004,1.68,2.13
+Bahamas,0.004,1.68,1.00
+Rwanda,0.004,1.65,0.68
+Liberia,0.004,1.64,0.40
+Palau,0.004,1.44,2.12
+Eswatini,0.004,1.39,1.10
+French Polynesia,0.003,1.26,0.72
+Seychelles,0.003,1.24,0.76
+Guadeloupe,0.003,1.17,0.62
+Martinique,0.003,1.09,0.67
+Sierra Leone,0.003,1.07,0.43
+Cape Verde,0.003,1.01,0.28
+Lesotho,0.002,0.88,0.35
+Somalia,0.002,0.87,0.63
+Burundi,0.002,0.84,0.29
+Barbados,0.002,0.80,0.59
+Djibouti,0.002,0.75,0.74
+East Timor,0.002,0.70,0.23
+Gibraltar,0.002,0.69,0.34
+Eritrea,0.002,0.67,0.67
+Gambia,0.002,0.61,0.27
+Greenland,0.001,0.58,0.00
+Aruba,0.001,0.53,0.27
+Samoa,0.001,0.47,0.19
+Solomon Islands,0.001,0.42,0.24
+French Guiana,0.001,0.38,0.17
+Central African Republic,0.001,0.37,0.26
+Cayman Islands,0.001,0.36,0.13
+Bermuda,0.001,0.35,0.15
+Guinea-Bissau,0.001,0.35,0.20
+Antigua and Barbuda,0.001,0.32,0.14
+Comoros,0.001,0.32,0.09
+Saint Lucia,0.001,0.30,0.10
+Vanuatu,0.001,0.29,0.08
+Belize,0.001,0.28,0.14
+Western Sahara,0.001,0.26,0.26
+Tonga,0.001,0.22,0.10
+São Tomé and Príncipe,0.001,0.21,0.06
+Grenada,0.0004,0.14,0.06
+Cook Islands,0.0004,0.14,0.06
+Saint Kitts and Nevis,0.0003,0.12,0.05
+Turks and Caicos Islands,0.0003,0.10,0.02
+Kiribati,0.0002,0.10,0.03
+Saint Vincent and the Grenadines,0.0002,0.10,0.04
+Dominica,0.0002,0.08,0.06
+British Virgin Islands,0.0002,0.08,0.03
+Saint Pierre and Miquelon,0.0001,0.04,0.02
+Anguilla,0.0001,0.02,0.02
+Falkland Islands,0.0000,0.02,0.01
+Saint Helena Ascension and Tristan da Cunha,0.0000,0.02,0.01
+Faroe Islands,0.0000,0.00,0.00
