@@ -9,11 +9,7 @@ from tkinter import ttk, scrolledtext, messagebox
 CSV_FILES = ["CO2.csv", "Dwarfs.csv", "Elements.csv", "Presidents.csv", "Temperature.csv"]
 
 
-# Notebook Section: Inferring SQLite Types from Python Values (DynamicSQL)
-# Used in: TableData.get_types()
-# Changes:
-# Same dictionary lookup as the notebook. I kept it as a function and not
-# a method because QueryBuilder and TableData both need it.
+# sqlite_type() is copied from DynamicSQL (Inferring SQLite Types from Python Values)
 def sqlite_type(value):
     return {
         "str": "TEXT",
@@ -25,11 +21,8 @@ def sqlite_type(value):
 
 class TableData:
 
-    # Notebook Section: ClassDesign Example 3 - Encapsulated Version
-    # Used in: __init__()
-    # Changes:
-    # I used private variables like the Rotor class. The table name comes
-    # from the file name so I don't have to type "dwarfs" or "co2" anywhere.
+    # private variables like the Rotor class in ClassDesign Example 3.
+    # table name = file name so nothing like "dwarfs" is typed in the code
     def __init__(self, filename):
         self.__filename = filename
         self.__name = os.path.splitext(os.path.basename(filename))[0].lower()
@@ -37,12 +30,8 @@ class TableData:
         self.__rows = []
         self.load()
 
-    # Notebook Section: Parsing 1b - csv.DictReader
-    # Used in: load()
-    # Changes:
-    # DictReader already gives one dictionary per row which is what the
-    # assignment wants. Temperature.csv has 3 lines starting with # before
-    # the header so I skip those first or DictReader uses them as the header.
+    # DictReader from Parsing 1b. Had to skip the # lines first because
+    # Temperature.csv has 3 of them on top and they were becoming the header
     def load(self):
         with open(self.__filename, newline="", encoding="utf-8") as f:
             lines = [line for line in f if not line.startswith("#")]
@@ -54,17 +43,12 @@ class TableData:
             values = [self.convert(v) for v in row.values()]
             self.__rows.append(dict(zip(self.__columns, values)))
 
-    # Notebook Section: Regex notebook (re.sub)
-    # Used in: clean_name()
-    # Changes:
-    # Some headers can't be column names, like "Distance(AU)", "#days" and
-    # "Wikipedia Entry". Presidents also has spaces at the end of some headers.
-    # \W+ replaces anything that isn't a letter/number/underscore with _
+    # CREATE TABLE broke on "Distance(AU)" and "#days", and Presidents has
+    # spaces after some headers
     def clean_name(self, header):
         return re.sub(r"\W+", "_", header.strip()).strip("_")
 
-    # The csv module reads everything as strings, so sqlite_type() would
-    # say TEXT for every column. I try int first then float.
+    # csv gives back strings for everything
     def convert(self, value):
         value = value.strip()
         try:
@@ -76,12 +60,11 @@ class TableData:
         except ValueError:
             return value
 
-    # Notebook Section: Building a CREATE TABLE Statement Dynamically
-    # Used in: get_types()
+    # Notebook Section: DynamicSQL - Building a CREATE TABLE Statement Dynamically
     # Changes:
-    # The notebook only looks at one sample instance. That didn't work for
-    # Dwarfs because Ceres has period 980 (int) but Haumea is 283.84, so I
-    # check the whole column and use REAL if any of them is a float.
+    # The notebook gets the type from one sample instance. I did that first
+    # but Dwarfs came out Period_years INTEGER because Ceres is 980, and
+    # Haumea is 283.84. Now it checks every row in the column.
     def get_types(self):
         types = {}
         for col in self.__columns:
@@ -105,11 +88,7 @@ class TableData:
     def get_rows(self):
         return list(self.__rows)
 
-    # Notebook Section: Dunders - GradingSystem Class
-    # Used in: __len__, __iter__, __str__, __eq__
-    # Changes:
-    # GradingSystem loops over its students, this loops over the rows.
-    # __len__ is what I compare to the SQLite row count in the validate step.
+    # dunders based on GradingSystem (Dunders notebook), rows instead of students
     def __len__(self):
         return len(self.__rows)
 
@@ -127,12 +106,7 @@ class TableData:
 
 class QueryBuilder:
 
-    # Notebook Section: Exercise SQLite instructions (dispatch table)
-    # Used in: __init__() / build()
-    # Changes:
-    # In the DynamicSQL notebook every operation is its own function that also
-    # runs the SQL. Here the build methods only return text so the GUI can
-    # show it first. I added COUNT and INFO for the validation part.
+    # dispatch is from the assignment page. COUNT and INFO are extra, for Validate
     def __init__(self):
         self.dispatch = {
             "CREATE": self.build_create,
@@ -148,11 +122,10 @@ class QueryBuilder:
     def build(self, query_type, **kwargs):
         return self.dispatch[query_type](**kwargs)
 
-    # Notebook Section: Building a CREATE TABLE Statement Dynamically
-    # Changes:
-    # The notebook gets field names from namedtuple._fields. My data is a
-    # dictionary so the keys of types are the column names. I kept the id
-    # column because update and delete use it (see build_update).
+    # The build methods are the DynamicSQL helpers (create_table, insert_row,
+    # update_row ...) but without conn.execute, they just return the string.
+
+    # columns come from the dict keys instead of namedtuple._fields
     def build_create(self, table, types):
         column_defs = [f"{col} {types[col]}" for col in types]
         return (
@@ -162,53 +135,39 @@ class QueryBuilder:
             ");"
         )
 
-    # Notebook Section: Building an INSERT Statement Dynamically
-    # Changes:
-    # Same placeholders idea. I pass column names instead of a namedtuple.
     def build_insert(self, table, columns):
         placeholders = ", ".join(["?"] * len(columns))
         return f"INSERT INTO {table} ({', '.join(columns)}) VALUES ({placeholders})"
 
-    # Notebook Section: Building a SELECT Statement Dynamically
     def build_select(self, table):
         return f"SELECT * FROM {table}"
 
-    # Notebook Section: Building an UPDATE Statement Dynamically
+    # Notebook Section: DynamicSQL - Building an UPDATE Statement Dynamically
     # Changes:
-    # The notebook always does WHERE name = ? but most of these tables don't
-    # have a name column, and CO2 has 12 rows with the same year. So I made
-    # the where column a parameter and the GUI sends "id" which is unique.
+    # update_row() always uses WHERE name = ?. Only Dwarfs and Elements have
+    # something like a name, and CO2 has 12 rows per year so year doesn't
+    # work either. where_col is a parameter now and the GUI sends "id".
     def build_update(self, table, new_values, where_col):
         assignments = ", ".join([f"{key} = ?" for key in new_values])
         return f"UPDATE {table} SET {assignments} WHERE {where_col} = ?"
 
-    # Notebook Section: Building a DELETE Statement Dynamically
-    # Changes: same change as update, where_col instead of name
+    # same problem as update
     def build_delete(self, table, where_col):
         return f"DELETE FROM {table} WHERE {where_col} = ?"
 
-    # Notebook Section: SqliteDB.py delete_table()
-    # Changes: just took out the try/except and execute, the executor does that now
     def build_drop(self, table):
         return f"DROP TABLE IF EXISTS {table}"
 
-    # Notebook Section: SQL - Grouping and Counting
     def build_count(self, table):
         return f"SELECT COUNT(*) FROM {table}"
 
-    # Not from a notebook. I found PRAGMA table_info in the SQLite tutorial
-    # from the syllabus, it lists every column and its type.
+    # got this from the SQLite tutorial in the syllabus, not a notebook
     def build_info(self, table):
         return f"PRAGMA table_info({table})"
 
 
 class CommandExecutor:
 
-    # Notebook Section: SQL - Using SQLite from Python
-    # Used in: __init__()
-    # Changes:
-    # The notebook makes conn and cur at the top of the notebook. I keep the
-    # connection inside the class so the GUI never touches sqlite3 directly.
     def __init__(self, db_name=":memory:"):
         self.__db_name = db_name
         self.__conn = sqlite3.connect(db_name)
@@ -227,10 +186,10 @@ class CommandExecutor:
         }
 
     def execute(self, query_type, sql, params=()):
+        # print(query_type, sql, params)
         return self.exec_dispatch[query_type](sql, params)
 
-    # Results come back as a list of dictionaries so the GUI can print the
-    # column name next to each value. cursor.description has the column names.
+    # dicts so the GUI can show column names with the values
     def _execute_select(self, sql, params):
         try:
             cur = self.__conn.execute(sql, params)
@@ -242,12 +201,9 @@ class CommandExecutor:
             self.__last_status = f"Error: {e}"
         return self.__last_results
 
-    # Notebook Section: SQL - Transactions and SqliteDB.py insert_namedtuple_batch()
-    # Changes:
-    # Put the rollback from those examples in one method for insert, update and
-    # delete. For insert the GUI sends a list of tuples (all rows) so I use
-    # executemany like insert_namedtuple_batch, otherwise just execute.
-    # If one row fails the whole insert is rolled back.
+    # rollback like the Transactions cell in SQL.ipynb.
+    # INSERT gets a list of all the rows -> executemany (insert_namedtuple_batch
+    # in SqliteDB.py), so if one row is bad none of them go in
     def _execute_modify(self, sql, params):
         try:
             if isinstance(params, list):
@@ -296,12 +252,7 @@ class CommandExecutor:
 
 class SQLiteGUI(ttk.Frame):
 
-    # Notebook Section: Tkinter Showcase __init__
-    # Used in: __init__()
-    # Changes:
-    # I took out the notebook tabs. Everything is in one window: file list on
-    # the left, buttons, then the SQL box and the results box. The builder,
-    # executor and tables get passed in so this class only does the GUI part.
+    # started from TkinterShowcase but took out the tabs, one window is enough
     def __init__(self, master, builder, executor, tables):
         super().__init__(master)
         self.builder = builder
@@ -324,10 +275,7 @@ class SQLiteGUI(ttk.Frame):
 
         self.pack(expand=True, fill="both")
 
-    # Notebook Section: Tkinter Listbox tab (build_listbox_tab)
-    # Changes:
-    # Instead of "Item 1, Item 2" the list has the table names, and on select
-    # it changes which table the buttons work on instead of showing a messagebox.
+    # Listbox tab, but selecting picks the table instead of a messagebox
     def buildFileList(self, frame):
         ttk.Label(frame, text="Tables").pack(anchor="w")
         self.listbox = tk.Listbox(frame, height=6, exportselection=False)
@@ -336,10 +284,6 @@ class SQLiteGUI(ttk.Frame):
             self.listbox.insert(tk.END, name)
         self.listbox.bind("<<ListboxSelect>>", self.selectTable)
 
-    # Notebook Section: Tkinter Button tab (build_button_tab)
-    # Changes:
-    # One button per operation. Every button goes through run_query() so each
-    # one follows the same steps: build SQL -> show it -> execute -> show results
     def buildButtons(self, frame):
         buttons = [
             ("Create Table", self.createTable),
@@ -353,8 +297,6 @@ class SQLiteGUI(ttk.Frame):
         for text, command in buttons:
             ttk.Button(frame, text=text, command=command).pack(fill="x", pady=2)
 
-    # The update and delete need to know which row and what to change. I didn't
-    # want to hard code a row so the user types it in.
     def buildEntries(self, frame):
         ttk.Label(frame, text="Row id").pack(anchor="w", pady=(15, 0))
         self.id_entry = ttk.Entry(frame)
@@ -368,10 +310,7 @@ class SQLiteGUI(ttk.Frame):
         self.value_entry = ttk.Entry(frame)
         self.value_entry.pack(fill="x")
 
-    # Notebook Section: Tkinter Text Box tab (build_textbox_tab)
-    # Changes:
-    # Two ScrolledText boxes instead of one, top one for the generated SQL and
-    # bottom one for what the executor sends back.
+    # ScrolledText from the Text Box tab, one for SQL and one for results
     def buildTextBoxes(self, frame):
         ttk.Label(frame, text="SQL").pack(anchor="w")
         self.sql_box = scrolledtext.ScrolledText(frame, wrap="word", height=6)
@@ -391,7 +330,7 @@ class SQLiteGUI(ttk.Frame):
     def show_sql(self, sql, params=()):
         self.sql_box.delete("1.0", tk.END)
         self.sql_box.insert(tk.END, sql)
-        # for insert params is every row, so only show how many
+        # insert has 700+ rows for CO2, too much to print
         if isinstance(params, list):
             self.sql_box.insert(tk.END, f"\n\nparams: {len(params)} rows")
         elif params:
@@ -401,15 +340,13 @@ class SQLiteGUI(ttk.Frame):
         self.result_box.delete("1.0", tk.END)
         self.result_box.insert(tk.END, text)
 
-    # This is the pipeline from the assignment:
-    # Button -> QueryBuilder -> SQL string -> CommandExecutor -> Results -> GUI
+    # button -> builder -> SQL box -> executor
     def run_query(self, query_type, params=(), **kwargs):
         sql = self.builder.build(query_type, **kwargs)
         self.show_sql(sql, params)
         result = self.executor.execute(query_type, sql, params)
         return result
 
-    # every button needs a table picked first
     def check_table(self):
         if self.current is None:
             messagebox.showwarning("No table", "Pick a table from the list first")
@@ -422,8 +359,6 @@ class SQLiteGUI(ttk.Frame):
                            types=self.current.get_types())
             self.show_results(self.executor.get_last_status())
 
-    # the dictionaries are turned into tuples in column order so they line up
-    # with the ? placeholders
     def insertData(self):
         if self.check_table():
             columns = self.current.get_columns()
@@ -439,7 +374,6 @@ class SQLiteGUI(ttk.Frame):
                 lines.append(str(row))
             self.show_results("\n".join(lines))
 
-    # the new value goes through convert() so typing 3.5 saves a number not text
     def updateRow(self):
         if not self.check_table():
             return
@@ -448,6 +382,7 @@ class SQLiteGUI(ttk.Frame):
         if column == "" or row_id == "":
             messagebox.showwarning("Missing", "Need a row id and a column to update")
             return
+        # convert() so 3.5 goes in as a number
         new_values = {column: self.current.convert(self.value_entry.get())}
         params = tuple(new_values.values()) + (row_id,)
         self.run_query("UPDATE", params, table=self.current.get_name(),
@@ -469,9 +404,8 @@ class SQLiteGUI(ttk.Frame):
             self.run_query("DROP", table=self.current.get_name())
             self.show_results(self.executor.get_last_status())
 
-    # Validation part of the assignment. Compares what is in Python (TableData)
-    # to what is in SQLite. Should be run right after Insert Data, after an
-    # update or delete the counts won't match anymore which is expected.
+    # run this right after Insert Data. after update/delete the count is
+    # supposed to be different
     def validate(self):
         if not self.check_table():
             return
@@ -486,12 +420,10 @@ class SQLiteGUI(ttk.Frame):
         lines.append(f"Rows in Python: {len(self.current)}  Rows in SQLite: {db_count}")
         lines.append("  match" if db_count == len(self.current) else "  DO NOT MATCH")
 
-        # PRAGMA gives cid, name, type, ... for each column. skip id since
-        # I added that one myself
         info = self.run_query("INFO", table=table)
         python_types = self.current.get_types()
         for col in info:
-            if col["name"] == "id":
+            if col["name"] == "id":  # mine, not in the csv
                 continue
             expected = python_types.get(col["name"], "missing")
             status = "match" if expected == col["type"] else "DO NOT MATCH"
@@ -501,16 +433,13 @@ class SQLiteGUI(ttk.Frame):
 
 
 if __name__ == "__main__":
-    # load every CSV into a TableData first. The GUI only gets the dictionary
-    # of tables so adding a 6th CSV is just adding it to CSV_FILES
     tables = {}
     for file in CSV_FILES:
         data = TableData(file)
         tables[data.get_name()] = data
 
-    # I used a file so I can open it in the SQLite browser from the syllabus
-    # and check the tables. If you run it again click Drop Table first or
-    # Insert Data puts the rows in a second time.
+    # saved to a file so I could look at it in DB Browser.
+    # running it twice -> Drop Table first or the rows get inserted again
     executor = CommandExecutor("cis41b.db")
     root = tk.Tk()
     app = SQLiteGUI(root, QueryBuilder(), executor, tables)
