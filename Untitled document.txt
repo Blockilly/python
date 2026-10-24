@@ -1,0 +1,2503 @@
+﻿* Good evening.
+* Here's our agenda for the next week and a half.
+* Today, we'll be reviewing the stream… stream… a streaming evaluation And an example assignment.
+* These are notebooks that are posted on Canvas right now.
+* on Wednesday, There is open lab only.
+* No Lecture.
+* On Saturday, I'll be starting the midterm online at noon.
+* On Monday, we'll be open lab only, and you can ask questions about the midterm.
+* And on Wednesday, The midterm stops at midnight.
+* So the purpose of tonight is to…
+* review the streaming evaluation. I evaluated the streaming assignments Over the weekend.
+* And only one person did it correctly.
+* So we need to review how to do the assignments, and then there's a sample assignment on how to do the assignments correctly.
+* on Wednesday.
+* You'll have had a chance to go through the evaluations and the example assignment.
+* And then you can ask questions if you have any.
+* And I'll… and on, I'll be talking about the midterm, which is basically an assignment.
+* That starts on Saturday, and ends on Wednesday.
+* There will be a Zoom session tonight.
+* An open lab session on Wednesday.
+* No Zoom session on Saturday. The test will just start. I'll publish it at noon.
+* Then I'll be online again at 6 o'clock on Monday.
+* And… Again, at 6 o'clock on Wednesday.
+* And… You can ask questions then, or you can also ask questions by email.
+* Alright, so… Let's look at the two notebooks that I created.
+* The first one is… A streaming assignment evaluation.
+* So, as I mentioned, Only one person turned in the streaming assignment correctly.
+* And I picked… A random assignment, which is right here.
+* Most of the assignments looked the same, so I just picked one that I thought was a representative sample.
+* And then… I showed where the submission met the expectations.
+* Where the submission fails the specification.
+* And what the assignment actually requires.
+* And then, a correct architecture.
+* How the pieces fit together.
+* And then a summary.
+* So, when you're reading this assignment, you can compare your assignment to the assignment that I listed above here.
+* And it should match in a lot of places. So, the comments that I made about this assignment will probably apply to your assignment.
+* So now you have an idea of how you can resubmit your assignment. You get one resubmission per
+* assignment.
+* So this will give you an idea of how to resubmit.
+* And then I get… then I put together a sample assignment.
+* So, first of all, why the assignments use this format.
+* It's important to understand why I'm doing this this quarter.
+* And then, what this… Notebook is about, and it's basically about how to do the assignments correctly.
+* And then I put together an imaginary assignment.
+* Using one of the notebooks, the Caesar Cipher notebook, the first, very first notebook.
+* And also the bits and bytes notebook.
+* So this assign… this… Imaginary Assignment uses the…
+* Caesar Cipher notebook, the class notebook.
+* And the Bits and Bytes Notebook.
+* So… This tells you how to…
+* dissect the Caesar cipher and the Bits and Bytes notebooks.
+* So, dissect the Caesar Cipher notebook.
+* Connect to the bits and Byte notebook.
+* show how the Caesar logic is replaced by the Morse logic.
+* Prepare for the full Caesar Cipher Morse code encoder transformation.
+* Do a full working code replacement.
+* And it's telling you what the full replacement code is doing, so you need to…
+* Put that together, and then document the changes made in the transformation.
+* And then here's a trans… a part… a transformed… encoder.
+* set up correctly. So you can use this as an example for doing the SQLite.
+* example. Now, the SQLite example, or the assignment, has lots of parts and pieces from other notebooks. It's not just from these two.
+* It'll, of course, use the SQLite notebook.
+* But it'll also use the… Streaming notebook, and… and so on.
+* And then… Use this example to put together your SQLite exercise.
+* One person has submitted it already.
+* And they only got 22 out of 30, because they didn't… follow this format.
+* Alright, so that's all I have for tonight. Your job is to review
+* these two notebooks, and if you have any questions, we'll have open lab on Wednesday.
+* So, Open Lab is on Wednesday.
+* Saturday, I start the online midterm, and the midterm is just a… an assignment.
+* You can email me questions about the assignment any… or the midterm anytime.
+* And I'll be online Monday, so you can ask then if you want to wait and to ask questions in class.
+* And then I'll be online on Wednesday.
+* To stop the midterm.
+* at midnight, and I'll be online at 6 o'clock to 6.30.
+* Alright, so that's all I have for tonight. If you have questions, let me know.
+* Otherwise, I'll be here at 6 o'clock on Wednesday for Open Lab.
+* * 
+Gautam Rao10:59
+So, for the homework assignment review, you wanted us to…
+* Take the code that was already in the notebooks, and then…
+* tell you where we pulled it from, and then modified those… that code, and then used in the current assignment that we're using, correct?
+* * 
+Grant Larkin11:20
+Great.
+* * 
+Gautam Rao11:21
+Okay. Just wanted to clarify that.
+* * 
+Grant Larkin11:24
+Yeah, cause the problem was that…
+* That a lot of people just…
+* They pulled the code from the notebook.
+* But then they just made some comments, like, this is a for loop.
+* And you can see from the word for that it's a for loop, so you don't need to tell me that it's a for loop. What's the purpose of the for loop?
+* * 
+Gautam Rao11:49
+Right.
+* I mean, I did do something, like, similar to that on some of it, but then what I did is…
+* I explained,
+* * 
+Grant Larkin11:59
+I don't need to see anything like that.
+* * 
+Gautam Rao12:02
+Yeah, I know, you said it straight out to me earlier, but,
+* you're not there to tell us, okay, what, which is encapsulation, or what is, in our code is modularity. You can see that just by doing that, but then to explain what the code, why you used the code the way you did.
+* is the most important thing, and I tried my best to do that. Of course, I still lost points on that, and I'm reviewing the notes on that, on some of those errors, but some of the notes that I usually do…
+* in there is actually for me, because what I do is I use my previous class notes to use it in other applications in the future. So that's the small thing that I should put a note in my notes, because…
+* * 
+Grant Larkin12:53
+The thing… the thing that messed everybody up…
+* Is that they didn't follow the architecture.
+* * 
+Gautam Rao13:00
+Hmm.
+* Hmm.
+* * 
+Grant Larkin13:01
+I put together a bunch of scripts.
+* And that's not modular at all.
+* * 
+Gautam Rao13:09
+Okay.
+* * 
+Grant Larkin13:11
+So it wasn't the commentary, they didn't… they didn't put the architecture together right.
+* * 
+Gautam Rao13:20
+Oh, okay.
+* because I don't think about the… this last… the Tinkerta, assignment and the stream assignment, I did.
+* Do mistakes on both, but that's just on commentary.
+* For me.
+* * 
+Grant Larkin13:38
+Yeah, I'm sure that the commentary was okay.
+* But I was.
+* * 
+Gautam Rao13:43
+but…
+* * 
+Grant Larkin13:44
+I was more worried about the architecture.
+* * 
+Gautam Rao13:48
+Because how I write my code, and I've told you before, is I write the code first, make sure it works, I do, additional testing, because my job experience has, told me I should do it, plus I want to practice some old code, which is unit testing. And I unit test my code.
+* * 
+Grant Larkin14:13
+Well, that's fine, I mean… That's… that's important to get the correct output.
+* But… The correct output is secondary to having the correct architecture.
+* * 
+Gautam Rao14:28
+Alright.
+* I will go back, look through my code one more time, and
+* If I have questions, I'll send you an email, and I probably will before Wednesday.
+* * 
+Grant Larkin14:43
+Sure, that's fine.
+* * 
+Gautam Rao14:45
+Cuz… This weekend was busy for me. I had,
+* * 
+Grant Larkin14:50
+through those two notebooks that I just posted, so…
+* * 
+Gautam Rao14:54
+Sure. I'll definitely do that. I'll compare my notes, and then go over all that. And I'll…
+* frequently try and send you more of my code so you can point out feedback so I don't feel completely lost. But thank you for informing me.
+* * 
+Grant Larkin15:10
+Sure, no problem.
+* * 
+Gautam Rao15:12
+Alright, then.
+* I have nothing else to say unless you have a… Anything to point out?
+* * 
+Grant Larkin15:19
+Okay.
+* * 
+Gautam Rao15:20
+Alright, thank you. Have a nice day.
+* * 
+Grant Larkin15:22
+Alright, good night.
+* Oh.
+* Good evening.
+* Our topic for tonight is… Dynamic SQL.
+* We have an exercise, which I'll be presenting shortly.
+* Which is due on October.
+* 28.
+* It might be the 25th, actually.
+* I think the… The midterm is on the 28th.
+* But I'll correct this later, if necessary.
+* And I wanted to point out a document that you can use in using SQL.
+* And it's in the syllabus, and I just downloaded a copy of it to make sure that it was there.
+* SQLite tutorial.
+* So it goes into a lot more detail than I'll be going into.
+* And it's about 180 pages long.
+* Going into much more detail than any of our… any of the exercises that use SQL will be using.
+* But it goes into more detail that you might need during the…
+* Upcoming lab assignment, which we're going to go over first tonight.
+* So let's go over the… Assignment.
+* Okay, so we're… we're going to… to build an SQLite executor.
+* And we'll be using a GUI to control the executor.
+* So this assignment extends your dynamic SQL work into a full GUI-driven system.
+* Build a modular SQLite executor with 3… Coordinated compounds, SQLite Builder.
+* Generates SQL strings.
+* dynamically from Python data, Command Executor.
+* Executes SQL and returns results.
+* And a TK inter GUI displays the SQL, shows the results.
+* And acts as the driver for your program.
+* All the SQL must be generated.
+* Not hard-coded. So, last time.
+* The examples that I showed you were all hard-coded.
+* And tonight, I'll be showing you
+* the SQL commands that can be generated from variables.
+* Rather than from hard coding.
+* Your system must follow the same pattern used in The Dynamic SQL Notebook.
+* So basically, SQL is text.
+* Python assembles the text from the metadata in the data that we'll be using for this assignment.
+* So the GUI visually shows the pipeline.
+* A button… For the Query Builder, Creates the SQL string.
+* Sends it to the command executor.
+* It returns the results, and the GUI displays The re… the returned results.
+* So this is our SQL pipeline.
+* In our previous document, we talked about CRED, So…
+* C stands for Create Tables and Insert Rows.
+* R is for retrieve.
+* Select Queries.
+* update, means modifying existing rows and delete removed rows. I don't think we have any deletes to do.
+* Each operation must be generated dynamically from Python structures.
+* So, an object-oriented design, your classes…
+* Demonstrate standard operating op… object-oriented design principles.
+* So you have an init function.
+* An accessor method, an iterator, A string and an equality.
+* And use these where they're needed.
+* Then we have a query builder.
+* It generates SQL strings for creating a table, inserting, selecting, updating, deleting, and dropping.
+* A table.
+* The SQL must assemble from table names, column names, Python values, and metadata, meaning name tuple fields, or
+* data frame columns. We don't have… we're not… we don't have any data frames yet.
+* But we do have a name tuple, which we'll be looking at briefly.
+* So no hard-coded SQL is allowed.
+* So, we have a dictionary-based dispatch, so instead of an if statement for create, insert, select, update, delete, and drop.
+* We have a dictionary-based Dispatch.
+* So, you… the key to create a query is create
+* And then it calls the self build create function.
+* So you can put functions, into a dictionary.
+* You just have to identify them.
+* In this case, They are with the… Self or the class that
+* The create key was created in.
+* So then it returns the… Self-dispatch, that's the dictionary.
+* Query type, that's… The… either the create, insert, select.
+* And any arguments that are being passed to it.
+* We haven't gone over QARGs yet, but you should have gone through those in your previous coursework.
+* This mirrors the pattern from the notebook.
+* Query type… Calls a method.
+* And it generates the SQL string.
+* So… The query returns the SQL string to the GUI before execution.
+* The GUI displays the SQL exactly as generated.
+* So in your Tk, enter Interface, you'll be displaying the… Query.
+* Then we have a command executor.
+* The command executor manages the SQLite connection.
+* Executes query strings from the query builder.
+* Returns results as tuples, dictionaries, or data frames. We haven't covered data frames yet.
+* We'll be covering those after the midterm.
+* And applying rollback on failed insert and update and deletes.
+* And expose accessor methods for connections, settings, and last results.
+* And again, here's a model of the… Exec. Dispatch.
+* So, if the query says select.
+* Then it's going to execute the… jg: Execute select function.
+* Hmm.
+* This keeps execution logic clean and predictable.
+* So the command executor runs the results to the GUI. The GUI displays both the SQL string and the return rows or status message.
+* We haven't covered data frames yet.
+* So, I think… I will eliminate… Section 4…
+* Or I will modify it.
+* So that it doesn't need a data frame, because we haven't covered data frames yet.
+* So I will be modifying Section 4. I'll update it after class this evening.
+* And then the TK Inter GUI requirements.
+* Your GUI provides buttons for each operation, displays the SQL,
+* Generated by the Query Builder, displays results from the Command Executor.
+* Allows operations on any data frame.
+* backed table. So again, I'll be replacing DataFrame with another type of thing.
+* Another type of structure, most likely a default dictionary.
+* So the minimum GUI elements are creating a table, insert data, insert, select all, update row, delete row.
+* Drop table.
+* SQL display window, and results display window.
+* So the pipeline is button, query builder, SQL execute
+* Return results and display in the GUI.
+* And what you'll be doing is… Sending these… 5… CSV files.
+* Or processing these 3 CSV files, or these 5 CSV files.
+* The reason why we're doing 5 is…
+* That I want to avoid any hard-coded strings being put into the SQLite table.
+* Alright, so, again… I'm going to replace the data frame with a default dictionary.
+* So, this is an excerpt from a previous assignment.
+* That I accidentally forgot to update.
+* So I'll be updating it after class.
+* All right, so basically, this assignment.
+* uses these 5 CSV files, so you use a CSV file reader.
+* Which you're already familiar with.
+* And then displays the SQL pipeline.
+* Alright, so let's take a look at our… examples…
+* Alright, so last time we went over the SQLite basics.
+* And if you look at all of the SQL basics, all of them have literal strings in them.
+* So in each one of these samples, there's literal strings.
+* In the dynamic SQL,
+* So using data instead of hard-coded strings, that's what this whole.
+* notebook is about.
+* So, first of all, Use name tuples.
+* Here's how to use a name tuple.
+* So you you import name tuple.
+* Give the name tuple a name, in this case, Planet Tuple.
+* And then, in the parameters to the name tuple, you have to give it the name tuple name.
+* Which is the same as the assigned name.
+* And then you give it a list of the fields.
+* in the… in the CSV file.
+* In this case, these are hard-coded strings.
+* Okay.
+* Excuse me.
+* You get the hard-coded strings from the CSV file headers.
+* So in each CSV file header.
+* Or column, there's a header, and that becomes the field names.
+* For the table.
+* So, inferring the SQLite types from Python values, this function shows you How to…
+* You, first of all, you ask…
+* You pass the type function a value.
+* And it returns the name of the type.
+* And then…
+* If it's a string, it returns text. If it's an integer, it returns integer. If it's a float, it returns real.
+* If it's bytes, it returns a blob.
+* So, converting Python types to SQL types, that's what the purpose of this function is.
+* And then this Create Table.
+* Shows you how to take the tuple fields.
+* and turn them into SQLite fields.
+* And then, here's how to build an insert statement dynamically.
+* Each one of the CSV files has
+* Different types of data to insert.
+* So this shows you how to insert data dynamically.
+* Here's how to update data.
+* dynamically.
+* A delete statement, which you probably don't need.
+* A select statement.
+* Notice that it's not using any hard-coded
+* Table names, you just pass it the table name, and… Select everything from this table.
+* And then… Some more information about using dynamic SQL.
+* And then… There's an example which puts all of this together.
+* into one working Model that you can run.
+* So you can either run it in the dynamic SQL notebook.
+* Or the Python file.
+* Alright, so that's all I have for… SQ Lite.
+* We're just we've just been working with strings so far this quarter, and now we're specializing our strings into SQ Lite.
+* Queries and return values.
+* So if you have questions, let me know, otherwise… I will see you on… Monday.
+* Good evening.
+* Our topic today is SQ Lite.
+* We have two files to go over.
+* SQ Lite PDF and SQ Lite Notebook.
+* And of course, there's an SQLite
+* py file if you want to, use the… a Python version instead of a notebook version.
+* Alright, so SQLite is a database language, and in Python, it's SQLite 3.
+* So a database engine, also known as a database management system or abbreviated DBMS.
+* Is the core software component responsible for managing, storing, retrieving, and manipulating data?
+* It acts as an intermediary between the user and the database.
+* And SQLite is Python's module.
+* So the key functions of SQLite are data… Storage and retrieval.
+* query processing, Transaction management.
+* Concurrency control. Data integrity and security and backup and recovery.
+* Alright, so the SQLite has an API, and we'll be using a lot of them in an upcoming assignment, which I'll be
+* Passing out on Wednesday.
+* So there's an open and close. There's an execute SQL commands.
+* There's a fetch query results.
+* Handling transactions and managing memory resources.
+* So here's a example.
+* You need to import SQLite3.
+* And it's provided with Python, so you don't have to import, or you don't have to install it separately.
+* You connect to a database, like in this case, example.db.
+* If this database exists, it will be opened. If it doesn't exist, it will be created.
+* And then this is the interface.
+* object for the… SQLite database, in this case called Cursor.
+* So, to execute a query… First of all, you have to set up a string
+* To, in this case, select… Everything from users, this is a query to get all of the data.
+* from the user's database.
+* And then we execute the query.
+* And get the results.
+* And after that, we can close the connection.
+* So the cursor really just means an iterator.
+* to go through the database.
+* So, a query is a request for data.
+* Queries are used to perform operations.
+* And when creating a query, It's essential to understand what information is needed in the database.
+* So here's several different types of queries. There's a select.
+* This is retrieves data. Insert puts new data in. Update updates the data.
+* Delete deletes the query or deletes the data.
+* And then there's some other data, definition, language, data, control, language and transaction control language.
+* So, we won't be using the DDL or the DCL, but we will be using the TCL.
+* There's data types.
+* Integer is for whole numbers.
+* Real for floating point, text for strings, and blob for binary data.
+* Now, binary data is what we studied last week. Things like images.
+* Binary data files.
+* And things like that.
+* So here's an example of a query.
+* This is a class called Planet.
+* And it has… 3 data values.
+* The name of the planet, the distance, and the orbit.
+* So, to… Execute a query.
+* We're going to create a table.
+* If not exists, the name will be Planet.
+* And these will be the fields that we put into the name, the distance, And… the orbit.
+* Okay, so this creates a blank table.
+* And now we're going to use the insert query to insert into the planet table.
+* The name, the distance, and the orbit.
+* where these are real values rather than just imaginary names.
+* So we would have the real data of the planet here, like Earth, the distance, and then its orbit, and then the values
+* Are placeholders with question marks.
+* So after you've made your query, you execute.
+* So the execute method is used to send the SQL commands or queries to the database.
+* It allows you to perform database operations, like selecting, inserting, updating, and so on.
+* It allows you to execute SQL commands.
+* And here's… The format for executing a query.
+* So the the cursor The cursor iterator executes the query.
+* And then you have passed parameters to it. If… if…
+* But those were the question mark values.
+* Then the query is a command to be executed, and the parameters are an optional tuple, list, or dictionary.
+* So here's an example.
+* Of the update query.
+* Update our planet table.
+* And we're going to… Adjust the orbit.
+* and where the name of the orbit, where the name of the planet that we want to adjust the orbit is orbit is Pluto.
+* So we're going to set the orbit value to 39.5.
+* So that's the query, and then we…
+* Use the cursor iterator to execute the query, and then commit the changes.
+* Here's an example of a transaction.
+* So, with our cursor iterator, we execute the begin transaction.
+* And then, in a tri-block, We execute the query.
+* And here's the tuple with the value and the name that we'll be updating.
+* And then we commit.
+* the change or the transaction. So we're in a try block here.
+* And in our try block, if the cursor fails.
+* Then we execute a rollback of the data to what it previously was.
+* So databases are essential for managing large volumes of data.
+* And AI uses very large amounts of data for training, validation, and testing.
+* So SQL is very important.
+* And here is a link to an SQLite browser, so you can validate any of the data that you put into your database.
+* Here's an SQLite tutorial.
+* on Geeks for Geeks, and SQL and using AI at the same time.
+* In the syllabus, there's a link to an SQL document, too. It's about 50 pages long.
+* You'll get a lot more information about executing queries.
+* And we'll be going into more detail on executing queries on Wednesday.
+* So, take a look at the syllabus for the SQLite tutorial.
+* Alright, so the notebook for this session is… the… SQLite notebook.
+* It has some descriptions, Describes what this code is doing.
+* And then, more descriptions… some more code.
+* And then… Some specific, like, making a table.
+* Adding rows… Basic select.
+* Filtering rows with the where command.
+* Sorting and limiting results.
+* And joining tables. We won't have to necessarily be doing any joining of tables.
+* And we won't be doing any grouping and counting, but this is additional information.
+* Updating rows, deleting rows, creating views.
+* And then we'll be using transactions.
+* Alright, so this is to review…
+* For doing the next lab assignment.
+* I'll be introducing the next lab assignment on Wednesday.
+* And we'll be going over Dynamic SQL on Wednesday.
+* So, in these… all of these examples, we've been using string literals.
+* with dynamic SQL.
+* You'll be using variables rather than string literals.
+* Alright, so that's all I have for tonight.
+* If you have any questions, let me know. Otherwise, I will see you on Wednesday, and I do have office Half hour tomorrow from 6 to 6.30.
+* * 
+Louis Yang13:28
+Okay, so can I ask about two things?
+* * 
+Grant Larkin13:31
+Yes, this is the time.
+* * 
+Louis Yang13:32
+Okay, okay, okay, sorry about that. So… for the previous assignment that I got graded. I think I got points off, not for the code, but for the comments, so if I just add more comments, we'll…
+* My grade just be back to full or.
+* What will happen?
+* * 
+Grant Larkin13:48
+Yeah, let's see, in the, in the grading policy.
+* I have a section that deals with regrading.
+* So take a look at the grading policy and read about how regrading works, but basically.
+* I grade them and give you reasons why I'm taking the points off or giving you points.
+* And then you can respond in the comments.
+* That you deserve more points, or here's my corrections.
+* * 
+Louis Yang14:23
+Okay.
+* Because I think, yeah, the comments for the grading, it's mainly about, like.
+* what I put for, like, the comments regarding the code, and not the code itself.
+* So…
+* * 
+Grant Larkin14:36
+Right, so you can make your adjustments to the comments.
+* * 
+Louis Yang14:41
+Okay. Okay. Got it. And then regarding this assignment for the, what do you call it? The exercise streaming. Do you want me to put comments in there as well or Yes.
+* * 
+Grant Larkin14:51
+All of the assignments, I want you to put comments.
+* * 
+Louis Yang14:53
+Okay. I just wanted to check because I don't think it explicitly said to put comments in the assignment.
+* * 
+Grant Larkin14:57
+It doesn't.
+* * 
+Louis Yang14:58
+Okay, okay, I just want to double check. Thank you.
+* * 
+Grant Larkin15:02
+Yeah, in all of my assignments, I want you to put comments.
+* Because AI can generate the code automatically without any comments, and…
+* That won't tell me that you understand anything. So, by putting comments in there, as the example, initial example shows, it'll show that you are understanding the code that you're putting in there.
+* * 
+Louis Yang15:28
+Okay.
+* I think that's it then. Thank you. Have a good night.
+* * 
+Grant Larkin15:32
+Alright, you too.
+* * 
+Louis Yang15:34
+Thank you.
+* * 
+Gautam Rao15:38
+Well, technically, he answered all my questions on this part as well. Okay. Yeah, though I'm not…
+* not that I don't want to correct my assignments, I usually put those assignments when I get docked points as a memo to myself for future assignments to fix it, because my mindset's more of.
+* I made a mistake, okay, fine, I'll take it. Now, how can I correct myself and also keep that grade as is? Because, I'm incredibly strict with myself for stuff like this, even though you do give me… or possible ways of correcting my… my work and points as well.
+* * 
+Grant Larkin16:14
+Understood. You're welcome to go in and make changes to the… the…
+* To your comments and get more points back.
+* * 
+Gautam Rao16:24
+All right.
+* Let me review your syllabus, see what you mean by getting additional points.
+* * 
+Grant Larkin16:32
+Okay.
+* * 
+Gautam Rao16:32
+My understanding was, once you.
+* * 
+Grant Larkin16:34
+There's a there's is a regrading section.
+* * 
+Gautam Rao16:39
+So.
+* * 
+Grant Larkin16:40
+Take a look at that, and you can… you can submit your…
+* regrades by telling me what you changed in your code.
+* And resubmit, resubmit your code.
+* * 
+Gautam Rao16:53
+Well, that… because I also remembered that in there, you said that you can only have, like, reattempts only occur if
+* For the grade, if, it's a bigger, like, if something… when we submit an app, like, our application, it's supposed to make a whole new change, not simply copy-pasting and changing something tiny or something like that.
+* * 
+Grant Larkin17:18
+Yeah, well… You're welcome to make comments to the… to the… changes to the comments, too.
+* * 
+Gautam Rao17:29
+Well, thank you for the clarification. I appreciate it.
+* * 
+Grant Larkin17:33
+I will. I will see you on Wednesday, then.
+* * 
+Gautam Rao17:35
+One other question before I check out is, though you went over SQL and everything like that, Specific, well…
+* Because I've missed the class by 3 minutes, but still,
+* Or would you be going into asking us to use, like.
+* like a plugin or something like that, since I'm using Visual Studio Code, to use, SQL or, or SQLite.
+* For,
+* * 
+Grant Larkin18:07
+It's part of, it's a part of Python already, so.
+* * 
+Gautam Rao18:10
+Okay. I have not explored that far with Python, honestly. So to me, this class is a whole new world. Sorry.
+* * 
+Grant Larkin18:18
+Alright, so, you'd all you have to do is import SQLite 3, and You're ready to go.
+* * 
+Gautam Rao18:25
+Oh, okay. And that's a PIP, right?
+* * 
+Grant Larkin18:29
+Yes.
+* * 
+Gautam Rao18:29
+All right, thank you.
+* * 
+Grant Larkin18:31
+Oh?
+* * 
+Gautam Rao18:32
+See you Wednesday.
+* * 
+Grant Larkin
+ All right.
+* Good evening.
+* Our topics today are… Bit streams, byte streams, and we have a new exercise.
+* Which is due on… 10… 14.
+* All right.
+* We have 2 files. We'll be going over bitstreams. Pdf.
+* and then some examples in the binary pipes notebook.
+* jwbledsoe: Alright, so hopefully you had a chance to listen to the previous lecture, Dealing with Bits and Bytes.
+* So let's start streaming some of those bits and bytes.
+* Alright, so this is basically how computers interpret numbers.
+* There's lots of different ways.
+* One of the major ones are bits and bytes and streams.
+* So this is a review.
+* A bit is the smallest unit of measurement used.
+* To quantify computer data.
+* Okay, so… This is either a on or off.
+* position.
+* or signal.
+* A byte is a collection of 8 bits.
+* A bit stream, also known as a binary sequence, It's a sequence of bits.
+* And a byte stream is a sequence of bytes.
+* Alright, so there's different kinds of data. There's text data.
+* That is basically… readable characters.
+* And… They're usually written in ASCII or Unicode.
+* That includes numbers, punctuations, white space.
+* Then there's binary data.
+* Which is basically collections of bits.
+* And not necessarily human readable.
+* It's used for binary encoding, such as images, audio, video, and executable files.
+* All right, so the foundation… A bit is the smallest unit of data.
+* It has… Two possible states, either zero Or one.
+* Then a byte.
+* Is a standard unit of memory, and it has 256 possible values.
+* And then, two N combinations.
+* This allows for exponential growth.
+* So, 4 bits… gives you the number 16, 8 bits gives you 256, 16 bits gives you 65K,
+* And 32 bits gives you 4.3 billion combinations, and so on.
+* So there's a ways of arranging these bits.
+* There's Edie Endian.
+* Indian is a rule.
+* A computer uses to decide.
+* Whether the most significant or least significant byte of a multi-byte value comes first in memory.
+* or transmission.
+* Alright, so if we have the hexadecimal number, 1, 2, 3, 4, 5, 6, 7, 8.
+* and we use the big Edian.
+* Then… The 1, 2 is at byte 0.
+* 34 by 1, 56 by 2, 7, 8 by 3.
+* So that's in most significant to least significant.
+* But if you call our numbering system, is… the least significant is on the
+* On the right-hand side, and the most significant is on the left.
+* So our numbering system uses the big Edian.
+* Alright, then there's the Little Aedian.
+* With the same number.
+* 78 is byte 0.
+* Bite one.
+* 56… by 2, 34 by 3, 12.
+* So it's stored as 78563412.
+* whereas in Big Eadian it's 1, 2, 3, 4, 5, 6, 7, 8.
+* All right, then there's a way of representing different types of numbers. There's two basic types, integers.
+* and floats, So if we have a 32-bit integer, we have 32 bits, of course.
+* Starting at bit zero.
+* and going to bid 30.
+* And then at bit 31 is the sign bit.
+* So all of these numbers can represent a number.
+* In base 2.
+* And then with a floating point.
+* The 32 numbers, or the 32 bits, are arranged differently.
+* We've got the Mantissa.
+* Which is basically the 32-bit part, except that it's only in 23 bits.
+* So bits 0 through 22 are the mantissa, then the exponent.
+* Is 8 bits from 23 to 30, and then at bit 31 is the sign bit.
+* The sign that is… 0 for positive, 1 for negative.
+* Then we've got the ASCII.
+* Mapping of characters to numbers.
+* So, capital A, uppercase, Goes to decimal 65.
+* And this is the bit pattern for… The number 65.
+* Bit 64 is on, and bit 1 is on, adding up to 65.
+* Then lowercase A is 97.
+* So 64 bit is on 32 bit is on, and the one bit is on.
+* Then the number 0.
+* is decimal 48.
+* So the 32 and 16 are on.
+* The white space, or the space character.
+* is 32. So the 32 bit is turned on.
+* The exclamation point is 33.
+* So 32 and bit one is turned on.
+* And capital Z… Is decimal 90.
+* So, 64 plus… 16 plus 8 plus 1.
+* And this is what the entire ASCII table looks like, the lower ASCII table.
+* The ASCII table, or the ASCII characters consist of 8 bits.
+* And that means that you can have.
+* 256 combinations of the 8 bits, so this table is the lower ASCII table. It goes from 0
+* to 127.
+* So capital A is right here at
+* 65. There's a decimal representation of it.
+* There's an octal representation of it, and a hex, and a binary.
+* We often use Octal because Prior to hexadecimal-based computers, octal-based computers were in.
+* In force at that time.
+* Alright, so for each of these… characters.
+* We we can have a decimal representation, octal, hexadecimal, or binary. And we'll be working with binary data in the lab assignment which maps to
+* these symbols.
+* Alright, so in Python, you can represent a bit.
+* You make a bit object.
+* and you.
+* You tell it which integer, it doesn't have to be an integer, but here we're declaring it to be an integer 123.
+* and the length… Of the bits is going to be 8.
+* So if you were to print it out, it would print out 0B, that stands for binary.
+* And then… the 8 bits.
+* If we want to create a bit array.
+* We have to give it a number, like 123.
+* And then how big the array is.
+* So if we printed out the bit array, it would start out with 0 B.
+* And then each one of these numbers, the zeros or the ones.
+* Would be in its own array position.
+* Then a bit stream.
+* Here we're creating a bit stream.
+* Which… Is a bitstream for the string Hello World.
+* And if we print out the bits, the bit stream.
+* It would print out this hexadecimal value.
+* So the H.
+* maps to hexadecimal 48.
+* And this is the binary representation of 48.
+* And we can do that for each one of the characters.
+* So that's a bit stream.
+* Then… There's a byte stream.
+* A byte stream refers to a continuous sequence of bytes that represent data transferred or processed.
+* The data can be anything, text, images, audio, video.
+* Byte streams are essential for many computer tasks, such as file I/O, network communication, and data serialization.
+* Alright, so here's a byte stream.
+* Example.
+* From requests… We get this image, splash, or this this website, splash.com.
+* We open up the image, Photo JPEG.
+* for writing in binary.
+* And then we write the request content.
+* And this is the… Binary stream, or the byte stream.
+* of photo.jpg on this website.
+* The last dot means… these three dots at the end means the file is significantly longer than what you're seeing here.
+* But notice it's all written in binary.
+* I mean in hexadecimal.
+* Then there's the process of serialization.
+* Serialization is how Python turns objects into bytes.
+* And Pickle is the tool that does it with almost no effort.
+* Pickle makes saving and storing Python objects feel magical.
+* But you should only unpickle data that you trust.
+* It could contain a virus, for example.
+* If you need quick, persistence for complex Python objects, Pickle gives you a simple path.
+* From memory to bytes and back again.
+* And then Jason… Is a lightweight data format exchange, which is used Quite a bit in… HTML.
+* So, Jason… which stands for Java Object Notation, is a compact, language-independent format for exchanging data.
+* It's simple.
+* to. It's simpler to use than Xml.
+* or even HTML.
+* It's lightweight.
+* It's more compact than XML.
+* It's language independent, it works with Python and other languages.
+* It's built for data exchange between clients and servers.
+* And we'll be using it to communicate when we start programming clients and servers.
+* and intuitive structure makes parsing and authoring easy.
+* It's basically… a… A dictionary.
+* with some special formatting.
+* Alright, so this is a state diagram of how a JSON object works.
+* Start out with an open curly brace.
+* So this is one state.
+* You can have some white space and a closing curly bracket.
+* So that would be an open JSON object.
+* Then you can start out with a curly brace.
+* A white space or a string.
+* or a comma, We have white space and a string.
+* or a white space string.
+* and colon and value.
+* So you can put things in as strings, or you can put things in as values.
+* Followed by a closing.
+* Curly bracket.
+* So here's an example.
+* of a simple JSON object.
+* The objects are key-value pairs wrapped in curly brackets.
+* That's the complete Jason format.
+* Alright, so open curly bracket.
+* Key and value, planet Neptune, key and value, distance and a value, orbital period.
+* Key, and a value.
+* Followed by a closing curly bracket.
+* And each of the separate pairs.
+* Comes with a comma.
+* Alright, so it follows this.
+* state diagram.
+* So here's an example of what Jason looks like.
+* Notice it's a dictionary-type format.
+* Here's what it looks like in HTML.
+* And here's what it looks like.
+* in Xml.
+* So you can see that the JSON format is much simpler to read than HTML.
+* Or XML.
+* All right, now let's look at an example of streaming.
+* We've got the binary pipes notebook.
+* with a markdown that you can read, and then the actual code for the notebook.
+* You can run it here by clicking this arrow.
+* Or…
+* I have a python version of this file that you can run and debug at the same time. The notebook you can't debug.
+* The… This Python file you can debug, so let's
+* Let's just run the python version.
+* Give it a second to load.
+* Alrighty.
+* Okay, so we pick a file.
+* and that uses the file open dialog.
+* And I'll pick a file to read.
+* Let's open the…
+* Let's open up the CS… the… the…
+* CSV file, where did it go? There it is.
+* M code CSV.
+* Alright. So this is a list of the Morse code characters. We can stream it as text.
+* or binary.
+* 4… Bitstream.
+* or ByteStream.
+* Jason.
+* Or… Pickle.
+* Let's pick another file.
+* Let's pick the morris.bin file. This is one of the data files you'll be referencing in the assignment.
+* Alright, so we opened it with Pickle.
+* Now we open it with Jason.
+* Byte stream.
+* Bitstream.
+* Binary.
+* and text.
+* Alright, so this shows you how to use various types of streams.
+* Now let's like, look at the assignment and see which streams you want to be using.
+* Alright. So this is a Morse code bitstream assignment.
+* So you will decode a binary file called more.bin, which we were just looking at.
+* That contains text encoded using a simplified Morse code system.
+* The file is not in Ascii.
+* It is a bitstream packed into bytes.
+* So, bit streams means we have a collection of bits, And they're packed into 8-bit
+* or 8 bit units called a byte.
+* You decode it using bit-level iteration.
+* A custom iterator.
+* A generator, and mapping from Morse to characters.
+* So here's the encoding rules.
+* In Morse code, There's two symbols.
+* A dot.
+* And a dash.
+* A dot is written in the Morse bin file as 1 0.
+* And a dash is written as 01.
+* Then I've added some terminators, the end of a letter.
+* is 00.
+* And the end of a word is 1-1.
+* So, we have 2-bit words, basically.
+* So, each character is encoded as a dot dash sequence.
+* Followed by a 00, or end of letter.
+* So the the letter C, for example, is dash, dot, dash, dot.
+* And this is the sequence for the dash dot dash dot.
+* with a closing… and of word and of letter.
+* character.
+* And here's a complete Morse code table.
+* This is the complete table.
+* Not all of these characters are used in the encoded or the Morse code CSV file.
+* So, CAP A is… Hexadecimal 41. This is the Morse code for 41.
+* And this is the binary representation.
+* of the letter A.
+* and then the same for B, C, and so on.
+* It's all uppercase letters.
+* So we stop at capital Z.
+* Then the numbers 0 through 9.
+* And then, a complete set of punctuation. Not all of these punctuation characters are used in the encoded file.
+* Probably just the period and the comma.
+* Alright, so words are separated by 1-1.
+* Characters are separated by 00.
+* So if you'd look at any of these combinations like this one, for example.
+* There's zero… or, sorry, there's one zero, which is a dot.
+* A 01, which is a dash.
+* And 10100110.
+* So at the end of this letter, There would be 00.
+* And if it was at the end of the word after 00,
+* would come 1 1 for the end of word.
+* So, words are separated by one one.
+* So, the bitstream is packed into bytes 8 bits at a time.
+* The last byte is padded with zeros if necessary.
+* Alright, so here's the encoding scheme, dot, dash, end of letter, end of word.
+* Here's a… Here's a reference.
+* H. E. L. O. W.
+* RD.
+* Alright, so here's… the H is four dashes, the E is just a… or four dots. The E is just a single dot.
+* The L is dot, dash, dot, dot, etc.
+* So now this is what Hello looks like.
+* The four dashes, or the four dots, and then an end of… End of end of letter.
+* The E, end of letter, L, end of letter, L, end of letter.
+* Oh, end of letter.
+* 1-1, end of word.
+* Then we start World.
+* W. End of letter.
+* O end of letter R end of letter L end of letter.
+* D, end of letter.
+* 1-1, end of word.
+* So if we put that into a bitstream.
+* It looks like that.
+* If we convert that bitstream to a hexadecimal stream.
+* This is what it looks like.
+* So convert binary to hexadecimal.
+* And then if we can if we interpret this as 8-bit bytes packed as ASCII characters.
+* This is what it would print out as an ASCII set of characters.
+* Notice that there's a blank right here.
+* Oops.
+* That means that there was a non-printable character there.
+* There's about 32 non-printable characters.
+* Alright, so your task is to write a decoder that reads morse.bin. As a raw byte stream. Iterate over the bits.
+* Group bits into 2-bit symbols.
+* Convert them to DAW.
+* dash, or end of letter, or end of word, and reconstructs the original English text.
+* So we need a bit iterator.
+* So, create a class that accepts bytes, objects, and iterates them bit by bit, returning 0 or 1 as strings.
+* implement iter… And next… Then we need a decoder.
+* Create a generator function that accepts a bit iterator, accumulates bits into two-bit chunks.
+* Maps the chunks to dots and dashes, end of letter and end of word.
+* Builds more sequences, yields decoded characters, and yields a space character when encountering a one
+* When counting the end of the word.
+* And then… I'm giving you a Morse code Csv table.
+* So the hexadecimal code… for the letter A is hexadecimal 41.
+* And then it's… dot dash is the Morse code value of…
+* A, and then the next letter is B, which is… dash dot dot dot.
+* And so on.
+* So this… load this table and build a dictionary mapping Morse codes.
+* two characters for… the, for this example, letter A, so… Load this… into your dictionary.
+* and map it to capital A.
+* The hex value for A is 41, B 42, C 43, and you can refer to the ASCII table above.
+* for the full hexadecimal breakdown.
+* So, the main program… Loads the Morse table, reads Morse bin.
+* In binary mode, creates a bit iterator, passes it to the decode generator, joins the yield characters, and prints the final decoded texts.
+* So the constraints use an iterator for bit-level access, Use a generator for decoding.
+* Do not rely on built-in binary formatting of bytes for the core logic.
+* Do not treat the file as plain text.
+* Treat it as a bit stream.
+* Decode strictly using The 2-bit rules described above.
+* And this tells you what you already know how to do, which you can pull from the previous notebooks.
+* So, the Morse code decoder assignment is about combining these pieces, reading a binary file, iterating over bits, using a generator to decode the symbols, and mapping Morse code patterns.
+* Two characters.
+* Be sure you mark… you pull the code that you'll be using from the notebooks, and document any changes, like you've been doing for the previous two assignments.
+* So this is due on October 14th, and the data files are in the data module.
+* Alright, so that's all I have for tonight.
+* If you have any questions, let me know. Otherwise, I will see you either at office hour tomorrow.
+* or on Monday.
+* Good evening.
+* My dog has been a little bit active this evening, so maybe you'll hear him barking a little bit. Sorry about that.
+* Tonight, we'll be covering Bits and bytes.
+* You may have covered this in your previous coursework, maybe not.
+* But we will be using bits and bytes on the next assignment.
+* So this covers the basics.
+* We have two files to look at, the presentation, the PDF, and Jupyter Notebook.
+* And there's an accompanying… PY file, in case you want to run it independent of the notebook.
+* Alright, so let's take a look at the presentation.
+* Alright, so we'll be covering how the computer handles data.
+* And… It's all in bit form.
+* So, we'll be looking at… different bit forms, binary Decimal and hex and… some other factors.
+* Alright, so what is a number system?
+* A number system, has values that represents a fixed sets of digits. We have essentially.
+* Three basic forms that we use in computer science. Base two.
+* Base 10.
+* and base 16.
+* Base 2 is binary.
+* Base 10 is decimal.
+* And base 16 is hexadecimal.
+* Now, Base10 uses… 10 digits, 0 through 9.
+* Binary uses two digits, 0 and 1.
+* And base 16… Also uses 0 through 9. However, to cover the numbers above 10,
+* the letters A through F.
+* are used.
+* Alright, so let's look at the number.
+* 253 in base 10.
+* That's 2 times 10 to the second.
+* Plus 5 times 10 to the first.
+* Plus 3 times 10 to the 0.
+* So that adds up to $200.
+* Plus 50, plus 3, Which equals… 253.
+* Alright, so… in decimal, The 10 digits 0 through 9.
+* We… we count them by hand. The place
+* The place is the power of 10 growing from right to left.
+* The left is called the most significant digit, and the least is the least significant digit.
+* So, the number… 404,906.
+* 4,097.
+* So we have 4,000 digits.
+* Zero.
+* hundreds digit.
+* 9…
+* tens digit and 7 ones digit. So thousands is 10 to the 3, rd hundreds, 10 to the second.
+* 10s, 10 to the first, 1s, 10 to the zeroth.
+* If you add them all up, it's 4,000 plus 0 plus 90 plus 7.
+* Alright, so we're all used to the decimal system.
+* That's because we have 10 fingers.
+* If we had six fingers, we would probably be using a different system.
+* Alright, so in binary… We only have two digits.
+* A single digit is a bit.
+* 8 bits make up a byte.
+* Each place is a power of two.
+* So we started at the least significant digit.
+* 2 to the 0th.
+* And we go up to… 2 to the 7, th which is 1, 28.th
+* So to represent the number 181, We have… One… 1, 1, 4… 1 16.
+* 1 32.
+* And 128.
+* And that adds up to 181.
+* So… The 1 is 2 to the 0th, the 2 is 2 to the 1st.
+* The 4 is 2 to the second.
+* 8 is 2 to the 3rd, and so on, all the way up to 2 to the 7th.
+* Alright, hexadecimal is essentially a binary system, but it's compacted into a group of 4 bits.
+* So, hexadecimal has… 16 digits, 0 through 9.
+* And then, for the numbers above.
+* 9. We have A through F.
+* So A is 10, B is 11.
+* C is 12.
+* D is 13.
+* E is 14, and F is 15.
+* Alright, so here we have the…
+* We have the system.
+* or the hexadecimal numbers.
+* FF?
+* So this is… F… 16 to the 0.
+* And F… 16 to the first.
+* Alright, so this is what it looks like in binary.
+* This is what F looks like in binary.
+* So we compact these four bits into the HEF.
+* F digit.
+* And then we've packed the next forward by bits into the next F digit.
+* And if you add those up, That adds up to 255.
+* Alright, so… With… hexadecimal digits, You can group them.
+* and get color codes, some ANSI color codes. You might see this in some of my examples.
+* Using color codes.
+* You can use hexadecimal for memory addresses.
+* we can use hexadecimal for Byte data values…
+* And we can use them for bit masks, which we'll be using a lot.
+* Alright, so if we look at the numbers 0 through 15 at a glance.
+* In decimal, we've got 0 through 7 over here on the left.
+* The binary representation.
+* You can see the one slowly being introduced as we move.
+* up towards 7.
+* and the equivalent values in hexadecimal.
+* Then for decimal 8 through 15.
+* You can see the binary numbers filling in. Eventually, we get to FF.
+* or all ones.
+* and that's the the letter F.
+* Which is 15.
+* So, converting… between bases. So from decimal to binary.
+* We start out with.
+* A number?
+* Like, 13 divided by 2 equals 6 with a remainder of 1.
+* Then… We have 6 divided by 2.
+* which equals 3, with a remainder of 0.
+* So then we have 3 divided by 2, a remainder of one.
+* and one divided by 2 equals 0, because we're doing integer math.
+* and that equals one. So the decimal representation of the number 13 is 1101.
+* Alright, binary to decimal.
+* So that's 8.
+* plus 4 plus one equals 13.
+* And now we convert binary to hex.
+* If we take this pattern, which is a B,
+* And this pattern, which is a 5,
+* we get a hexadecimal value of B, 5.
+* So we're taking the four digits and… Grouping them together.
+* in… In bits of 4.
+* and that produces your hexadecimal digit.
+* Alright, then we have bitwise operators.
+* We'll first look at AND and OR.
+* Alright, so if we take… A and B, and we AND them together, so 0 AND 0 is 0.
+* 0 and 1 is 0.
+* 1 and 0 is 0.
+* and one and one is one.
+* So, if we end… this value.
+* Which is 8 plus 4, 12.
+* And then 8 plus 2 is 10.
+* We end them together, and we get… hate.
+* Alright, now we're going to do OR.
+* 0 or 0 is 0 0 or one is 1, 1 or 0 is 1, 1 or one equals one.
+* We wore this number.
+* 1 0… 1100, which is 12.
+* and 1 0 1 0, which is 10. We add them together, and we get 8 plus 2 plus 4 plus 2.
+* is… 8 plus 4 plus 2 is… 14.
+* Then there's exclusive OR.
+* And… the not operator.
+* Basically, with the NOT operator, if A and B are the same, it's 0. If A and B are different, then it's a 1.
+* So 0 or 0, they're the same, so it's 0.
+* 0 exclusive or one. They're different. So it's a 1.
+* One exclusive or zero is one, and one exclusive or one is zero.
+* Add those up exclusively, and you get… 4 plus 2.
+* which is… 6.
+* All right.
+* And My dog wants to get down.
+* Here we go.
+* And then we've got the not operator.
+* The not operator flips the bits.
+* But so 0 flipped is one.
+* And 1 flipped is 0.
+* So we take these and we flip them.
+* So all of these zeros become one.
+* These two ones become zero, and these two zeros become a one.
+* Then we've got shift operators.
+* We're going to take the number 3, which is right here.
+* So we've got 1 and 2, which adds up to 3, and we're going to shift it to the right.
+* by 2 space by 2 spaces.
+* So these 2, these ones have been shifted to the left.
+* By… twos.
+* And that would equal 12 then.
+* So now, if we take the number 20 and we shift it to the right.
+* Here's what the number 20 looks like.
+* And we shifted to the right, and now these… these two numbers.
+* have been shifted over by 2.
+* and that equals 5.
+* All right, so… If flag and flag These are masks and flags.
+* The and it.
+* And with a mass test for non-zero.
+* Okay? So if we and these together.
+* We'll find out which bits are turned on.
+* To set a bid.
+* We use the OR equal.
+* To clear a bit, We… Set the AND with the NOT flag.
+* To toggle a bit, we use the exclusive OR.
+* to get the… Low 4 bits, which is called a nibble.
+* We take 0F, and the F is in the lower part of the bike.
+* If we want the upper part, we would use F.
+* 0 instead of 0F.
+* Okay.
+* And if we want to multiply by 2, We can shift…
+* to the left to multiply or divide by 2 shift to the right.
+* Alright, so, in summary.
+* We have the same numbers, but they wear different clothes or different patterns.
+* Hex is a shorthand for binary.
+* There's bitwise logic for AND, OR, exclusive OR, or not.
+* They're shifting… And there's masks.
+* for… Finding out which bits are on and which bits are off and to clear bits, etc.
+* We'll be using all of these techniques in the next lab assignment.
+* So let's look at the example which illustrates using…
+* the bits. I've made an example called Bits Playground.
+* And it shows toggling bits, masking bits, shifting bits, and rotation.
+* And you can run it in the notebook.
+* or you can run it in the accompanying python file.
+* If you run it in the Python file, you can step through it and debug it. If you run it in the notebook, you can just run it only without stepping through it.
+* So let's just run it so I can show you how it works.
+* Alright. So let's see this up a little bit, and
+* Run…
+* Alright, so here we've got our bits, and then we have a mask.
+* To show how masks works.
+* And then we can toggle these bits at the top.
+* So… And so you can see the bit pattern. And the decimal number and the hexadecimal number.
+* All right.
+* The mask is fixed. You can't change the mask.
+* So this is the mask for the high order bits only.
+* Oh, but we can select a mask.
+* So we can select the high order.
+* The low order.
+* Or… a mix.
+* But let's just go with the high order bit.
+* Okay, so now we're going to rotate this number to the left. Let me turn off a few of these so you can see the movement a little easier.
+* So this is 180.
+* We're going to rotate these bits.
+* We're going to shift by one to the left.
+* Then shift them to the right.
+* Alright. So you can see all of the numbers as they shift.
+* Now, instead of rotating, we're going to shift them to the left.
+* That means they're going to drop off instead of rotate.
+* and now shift to the right.
+* And so let's turn some back on.
+* Now it's 38.
+* Now we're going to AND with the mask.
+* So now it's 32.
+* Now we're going to or with the mask.
+* Exclusive or…
+* And the exclusive order cleared it, so…
+* Let's put some bits back in, and now we're going to clear it, set everything to zero.
+* Alright, so you can look at this code and see how to manipulate the bits.
+* john decker: and especially pay attention to the mask. You'll need that
+* In the next assignment, which I'll be presenting on Wednesday.
+* All right, so that's all I have for this evening.
+* If you have some questions, let me know.
+* Otherwise I will see you on Wednesday.
+* * 
+Louis Yang22:03
+Thank you.
+* * 
+Grant Larkin22:05
+All right, good night.
+* * 
+Louis Yang
+ And that's…
+* Good evening.
+* Our topic tonight is… TK Enter.
+* TK Enter is… Pythons… GUI.
+* Program.
+* Or… model.
+* We have an exercise, which I'll be presenting at the… after the lecture.
+* Using TK Enter.
+* We have two files to look over.
+* the The presentation and the notebook.
+* All right, so let's get started with TKinter.
+* Alright, so if you've… been progressing through Python.
+* You've probably been outputting most everything in console applications.
+* We're going to be moving into GUI applications now, so for all of the output for all of our upcoming programs, we'll be using TKinter.
+* So… TK Enter is a GUI interface.
+* into Python.
+* It's for input and output using GUI instead of the console.
+* Alright, so TK Enter is the standard GUI library that ships with Python.
+* Why does it exist?
+* It gives developers easy way to create graphical applications.
+* So you no longer have to run everything from the command line.
+* It provides a full set of GUI widgets, including buttons, labels, text boxes, and menus.
+* Layout managers, event handling, For building interactive windows.
+* And that doesn't mean Microsoft Windows, it means… GUI interface.
+* Where it's used? It's used in classroom demos, of course.
+* Quick prototypes.
+* Build small desktop utilities.
+* And any Python project that needs simple and a portable interface.
+* So, TKEnter is the standard GUI library for Python.
+* It provides a simple way to create windows, dialogues, events, and other graphical elements.
+* It's simple to use, and it's portable.
+* and popular For creating quick… GUI prototypes.
+* Alright, so now let's look at some of the… components Here's a basic example.
+* First thing you need to do is import TK Enter.
+* And here, the next statement, the line that starts with DEF,
+* On button click. This is a… function.
+* That will be used when a button is clicked.
+* Alright, so the first thing to do is create the root or the TK main window.
+* Then put a title on the TK window.
+* Set up the size of the TK window.
+* put a label… Somewhere in the frame of the window.
+* So you can see Hello TK Enter in the image on the right.
+* And then you ask Python to pack.
+* The elements together in… automatically, it'll do it automatically. You can also manually do it.
+* But it's easier to use the pack.
+* Utility.
+* Alright, now we're going to put a button… onto the frame.
+* We put it on to the root.
+* window.
+* The text of the button will be, click me.
+* And… The command… when we… when you click the button.
+* It will call the on button click.
+* Function, which is defined right here.
+* And so it will print to the console, button clicked.
+* Then we pack the button onto the frame.
+* So Python will pack it there for you.
+* And then we run the TK inter main loop.
+* The main loop is responsible for checking the GUIs to see if anything happened, like if somebody clicked a button or some other element of the GUI commands.
+* Alright, so that's a basic setup, which is pretty much used everywhere.
+* So, here's the basic widgets. There's a label that displays text.
+* A button, Which is clickable and can trigger any action.
+* An entry is a single line.
+* A text is a multi-line.
+* A canvas is a widget for drawing shapes, lines, and images.
+* Frame, a container for organizing and grouping other widgets.
+* And top level creates a new independent window.
+* So you can have multiple windows open.
+* Then there's selection widgets, there's a check button.
+* I'm sure you've used check buttons before.
+* Those are buttons with a check mark in it. Then there's a radio button.
+* These are circular buttons, and when you click them.
+* There's a little black dot that usually gets put into the radio button, and any other button that was previously clicked, or has the little
+* Black dot in it will go away and go to the currently clicked radio button.
+* List box… Here's a list box displayed over here.
+* It has item 1, 2, 3, 4, 5.
+* Spin box… This is a widget that allows users to select from a range of values.
+* A menu.
+* And a menu button.
+* So, a menu is a drop-down menu, and a
+* Menu button is a button that does a drop-down.
+* Then there's advanced widgets, there's…
+* A scale, a widget that allows users to select a value by moving a slider along a scale.
+* We have some examples of that.
+* Scroll bar.
+* A widget that provides scrolling capability, like in a text Windows.
+* An option menu, a drop-down menu.
+* A combo box… As similar to a drop-down window.
+* Then there's layout widgets, there's a label frame.
+* It's a widget for containing labels.
+* To group related widgets.
+* A paned window.
+* A notebook window.
+* And a style window.
+* The widget that you're seeing over on the left-hand side here is a table window.
+* And it has tabs for the various.
+* options.
+* for the various pages. We'll be looking… our main example is an example of using a tabbed window.
+* Then there's some built-in dialogues, an open file dialogue, which is very useful, so you don't have to write an open file dialogue every time yourself, you can use the built-in one.
+* And then there's a message box.
+* You can pop up messages, and we'll see that in the demo application.
+* There's events… So this is where the… you get input events.
+* So there's… Events like Mouse, Keys…
+* So there's an event for the left mouse key, the middle mouse key, and the right mouse key.
+* And there's… A key pressing and key releasing button, also, on the keyboard.
+* So there's events to capture mouse events, and events to capture keyboard events.
+* And then on the mouse, You have 3 buttons to… that you can select.
+* Button 1 is the left, button 2 is the middle.
+* Button 3 is the right.
+* Most buttons… I mean, most mice have… All three buttons, but…
+* In a lot of cases, there may not be a button to…
+* In either case, it will just be a button 1 and button 3.
+* Then there's keyboards, event keyboard events.
+* So when you press a key, you can capture the key that was pressed.
+* And then there's a key release.
+* Which tells you which key was released.
+* There's Windows Focus, so if you have multiple windows open.
+* Or multiple GUIs on the same… frame open.
+* you can… Get the focus of which widget was in focus, or out of focus.
+* And then there's… you can resize windows also.
+* Alright, so then you can bind events to various windows. So here we have on a mouse move event.
+* The mouse move event captures the X and Y coordinates.
+* Of that mouse move.
+* So we make our… Window root.
+* Put a title on it.
+* And then we bind the motion.
+* event.
+* to the on mouse move. The on mouse move event is this function, and it prints the X and the Y location where the mouse was moved. And you can see some sample output.
+* And then there's the… Clicking event.
+* So, on button click… We make a on button click function.
+* Make a root.
+* Put a title onto the route.
+* Set up our button.
+* Click event.
+* So we put it on the root window, the text is clicks me, click me, and the command is on button click.
+* So when somebody clicks the button, it will print.
+* Button clicked using command option.
+* Then we ask… Python to pack the button onto the window, and then we run the GUI loop.
+* All right, so Tkinter is simple and easy and versatile to use.
+* You can learn to use it very quickly as a beginner, so some of you will be… haven't used TK Enter before, so I think you'll find it fairly easily… fairly easy to use.
+* And TKNT provides tools and features needed to build effective and efficient applications.
+* And if you want to dig into it further.
+* In more detail, There's Geeks for Geeks, Python guides…
+* and code rivers, which gives you some tutorials and examples of using TK Enter.
+* Alright, so let's take a look at some examples.
+* We have a notebook for TK Enter.
+* So the Tk. Inter notebook Shows you some sample code.
+* And it explains the sample code.
+* So you can run each one of these functions separately.
+* the problem with… Running the… running it from the notebook.
+* Is that you can't debug it, you can't step through it, so you just have to run the notebook.
+* If you want to, study what the… what's going on in these samples.
+* Then you read through the notebook, but there's not much to read in this.
+* Example.
+* So, it talks about the tab structure.
+* How to build the ti- build the tab.
+* Build an image.
+* A radio button tab.
+* Progress bar tab, so it talks about all the various tabs that are in the example code.
+* All of the example code is in the TKinter Python file.
+* And so I just copied the notebook into a Tk inter python file. So you can run the code
+* And step through it and debug it if you want to.
+* So I'll just run it right now.
+* Give it a second to load.
+* Alright, so let's move it down a little bit.
+* Okay, so this is the TK Enter Showcase. It's a tabbed window.
+* And it shows how to use various features.
+* of Tk. Enter on different tab pages.
+* So here's the text box tab page.
+* So it displays some text in the window.
+* Here's an image.
+* This is a picture of one of my dogs.
+* It's… Scalable.
+* Now, if you're going to be running this application, I did not provide the dog picture.
+* So, you'll have to put your own picture of whatever you want, if you want to see an image.
+* There's an exception for the image tab.
+* If you don't have an image to display, it'll display that the image is not found, or something like that.
+* Then there's using radio buttons.
+* So it tells you which option was picked.
+* A progress bar.
+* Here's the bar.
+* Click the start button to start the progress bar.
+* A menu.
+* So, select an option.
+* A mouse button.
+* Alright, so click over here… Clicking with the red… I mean, with the left button.
+* Now I'll click with the middle button.
+* Blue.
+* And now I'll click with the right button.
+* Green.
+* So it gives you the coordinates on the screen where the mouse… is clicking.
+* For the various buttons.
+* Then there's a list box.
+* So the list box pops up a message box with the item that was selected.
+* A mouse focus.
+* So click inside the canvas.
+* This only works for the… Left button.
+* A checkbox…
+* A calculator.
+* 5 times 30 equals… And there should be a clear button.
+* Andy.
+* Demo of how to use a button.
+* So it pops up a message box.
+* Alright, so each one of those… these tabs shows you how to use a various feature of… or a various widget of the GUI set.
+* So you'll be looking at the examples to figure out how to use the various features for the assignment.
+* So let's look at the assignment now.
+* So the goal is to take your existing web-scraped table.
+* and display it inside a TK inter GUI.
+* Use the TKInter class from your notebook, or the TKInter notebook.
+* Moved into a standalone Python file.
+* So step one is convert your notebook TK intercode into a class.
+* Copy your TK class into it.
+* For every structured change you make, add a short comment explaining why the The change was needed.
+* And here's an examples of what you should comment.
+* Removing old cells… Moving… Global variables to class.
+* attributes… jerremy newsome: Adding a if name equals main block.
+* Fixing imports… Replacing notebook-only behavior.
+* Adjusting image paths, if you have some images.
+* Anything you had to rewrite so that this class script runs normally.
+* Your behavior of your code should stay the same.
+* So your GUI class displays your scrape table.
+* So inside your TKinter class, create a scrollable text box.
+* The same as in the notebook. After scraping, format the table into readable text. Insert the text into a scrollable text box.
+* You don't need to use radio buttons, no mode switching, just display the table.
+* Your web scraper that you're currently working on, or have just turned in, stays the same.
+* Your web class should remain unchanged except for small fixes if needed.
+* It must fetch the page, extract the table, return the table in a usable format in terms of rows.
+* Lists of dictionaries, etc.
+* And the main script should create the scraper.
+* Run the scraper.
+* Pass the scrape table to the GUI class.
+* And start the TK enter main loop.
+* No GUI code should be outside of the TKEnter class.
+* This is worth 10 points, and it's due… Next Wednesday.
+* Alright, so… Now… It's your turn to start learning how to use Tkinter.
+* This is all that I have for this evening. If you have any questions, let me know.
+* If you, I'll be, you can… I'll be online tomorrow evening for office hours, and you can email me anytime, and I'll try to get back to you as soon as I can.
+* All right, so if you don't have any questions, I'll see you next time.
+* On Monday, So that's it for this evening. If you have questions, let me know.
+* Good evening.
+* Welcome to the second week of the quarter.
+* We're going to be reviewing two topics tonight. You should have covered these in your previous coursework.
+* Dunders and iterators and generators, and some associated values.
+* So, we're going to do a Dunder review, an iterator-generator review.
+* And then we'll be looking at Dunder's PDF,
+* Dunder's Notebook, Iterators Generators PDF, and Iterators Generators Notebook.
+* There are accompanying Dunders…
+* Python file and iterator generator files, which are basically copies of the notebook, which you can run in Python, in case you don't know how to run a notebook.
+* All right.
+* So let's start with Dunders.
+* Donders are basically… Magic methods that allow your objects, the ones that you create with your classes.
+* to behave like Python objects.
+* Alright, so the Dunder… means double underscore.
+* And… They're known in a lot of textbooks as magic methods, because they enable your classes
+* to behave like Python objects.
+* Here's an example.
+* of a dunder.
+* Adunder is actually operator overloading.
+* So, in this class vector.
+* We have an add dunder.
+* The double underscores indicate the dunder.
+* And this overloads the plus operator.
+* james veland: So when we make 2 vector objects, v. 1 and v. 2,
+* The plus operation will be used.
+* To add vector 1 and vector 2 together.
+* to create Vector 3.
+* And the way that it does it.
+* Is it makes a vector and adds.
+* the left… Values to the right values.
+* So this is the basic syntax for a dunder.
+* There are some dunders that are used for object initialization.
+* Like a knit.
+* Reaper and String.
+* So, when we try to output this person.
+* That's defined in the person class.
+* We output P, it will automatically call the string function to print out the person's name.
+* So it calls the string Dunder.
+* There's Access control.
+* So here we have a safe dictionary.
+* And… We update a dictionary with the arguments that are being passed to the initializer function.
+* or the initializer dunder.
+* We have a function to get the attribute.
+* Then we make a safe dictionary, initialize A and B,
+* And then print out A, which will print out 1.
+* If we tried to print out B, it would print out 2. If we tried to print out C, it would produce an error.
+* Now, with the default dictionary, you could set the error to a value Other than an exception.
+* So… SD.C outputs an exception.
+* Then there's context managers.
+* You've probably seen this with opening files.
+* So there's the entered under.
+* And the exit dunder.
+* So this will… This dunder will be used when we try to open a file.
+* And this dunder will be used when we exit this with statement.
+* So it will close the file automatically. So
+* It's a way of automating opening and closing files.
+* There's custom iterators, and we'll be talking in more detail about those next.
+* There's… so there's iter dunder and next dunder.
+* So the iter dunder returns the object itself for the starting point.
+* And then the next under does whatever you want to do to make it move to the next value.
+* This can be done by incrementing or moving to a position in a list.
+* So in this case, we're just incrementing the value.
+* So we make a counter object.
+* Use the next function.
+* And it will initialize the count, which was initialized to zero in the init dunder.
+* It increments it to 1, then we do the next of the counter, and it increments it to 2. And that would keep on going as long as you wanted to use next.
+* Here's a list of…
+* most of the Dunders. It might be all of them, but it's a list of all of the ones that
+* are useful.
+* So… Dunders are the stars of Python. They make user-defined objects behave like Python's built-in types, and
+* You should be using them in all of your objects and in your assignments as we move through this course.
+* And here's a tutorial on using Dunders?
+* So on Geeks for Geeks, it goes into much more detail than I just did right there. So this hopefully is a review for you.
+* The notebook will give you a a more in-depth look at… Dunders.
+* Alright, so… this Dunder's notebook I've made a Python file of it, too.
+* And it's just basically a copy of the… Dunder's notebook.
+* So you can read more information about Dunders, and This explains what the…
+* What the, Dunders are doing in more detail.
+* So here we define a student class.
+* and introduce a public API And then introduce… some dunders.
+* For the student to use.
+* Then we create another class, a grading system class.
+* Create some public methods.
+* And then create some dunder methods.
+* In each one of the Dunder methods, there's a print statement that prints in orange.
+* This will print…
+* This will let you know that the dunder is being used. So when you run this code.
+* It will print out the, the, Dunder headers in orange, so that will show you when they're being used.
+* And then down here is… the
+* demonstration of the… of the Dunders that we used.
+* So the main program sets up the dunders to be used.
+* So I recommend stepping through this program yourself when you When you can…
+* We'll be using them in the next assignment which I'll be presenting on Wednesday.
+* The next item that we're reviewing is… Iterators and generators.
+* and associated values.
+* So there's… iterables and iterators.
+* An iterable is anything you can loop over.
+* An iterator is the object doing the work. It uses the next
+* the next dunder. Sorry dunder, and the next iterator for the iterable.
+* Alright, so… Here we set up an iterable.
+* A list?
+* And now… We're using the iterator.
+* to go over… the list.
+* using the next Dunder.
+* So here's how an iterator works.
+* We need to initialize it with the an iter dunder.
+* And the next returns the next value in the sequence.
+* And then, when you reach the end of your list, or whatever, you stop the iteration.
+* So here's an example.
+* We have a count-up class.
+* Annette.
+* an iterator to initialize it, and a next function to move to the next one. And when we get greater than a certain condition, we stop the iteration. Otherwise, we keep incrementing.
+* So this is how a for loop really works. So here's a for loop with for item in data.
+* Process the item.
+* And this is what Python does. It makes an iterator.
+* While true, Item equals next item.
+* Eventually, we're going to reach a statement that… Next.
+* doesn't… reach. So let's say that the data had 3 items in it.
+* When we try to get to the fourth item, this try block will be entered.
+* I mean, the exception block will be entered, and we will stop the iteration.
+* When we reach the end of the loop, a stop iteration happens.
+* So the iterator gets the iterator, the next asks for a value.
+* The yield return returns the value, and the stop iteration exits the loop.
+* All right, iterators and generators.
+* The generator uses a yield instead of a return.
+* It call, it returns… Calling it returns a generator.
+* Yield pauses and saves the state.
+* The next resumes where it left off.
+* And the iterator next.
+* is the Python Python protocol for you.
+* So here we have a function.
+* Countdown.
+* While n is greater than 0, yield n.
+* So… J. checks the value of N, and then we subtract
+* one from N, and repeat the loop.
+* So, we make a countdown object.
+* Initializing it to 3.
+* Next G.
+* Outputs 3, then 2, then 1, and when we get to… 0. We stop the iteration.
+* The yield will stop.
+* So, yield, pauses, And remembers… Here's a Fibonacci function.
+* Sets up a tuple.
+* And yields A.
+* And then we do a recalculation of A and B.
+* We make a Fibonacci object. And then the isSlice function.
+* Goes over the sequence.
+* And the 7 indicates that this is when to terminate the sequence.
+* So, this was the results of…
+* calling it at yield 0 yield one.
+* Yield 2, or Call 1, Call 2, Call 3, Call 4, and Call 5.
+* It'll call up to 7 items, only printed 5 of them here.
+* A lazy evaluation.
+* This is when… You compute only what you need.
+* So there's only one value in memory at a time.
+* You can model infinite sequences and…
+* The upfront compute cost is zero.
+* So here we're creating an empty list.
+* This builds the whole list.
+* So from 10 to the 7th power.
+* We append X times X to this list.
+* And then call the sum function.
+* the lazy function, has a squares function, which yields X times X.
+* which is the same as what we did right here.
+* And then we call the sum function.
+* and call the squares function, which is part of Python.
+* And… it does all of the squares from 210 to the 7th power.
+* So it does it one at a time.
+* This is the difference between an iterator and a generator.
+* So, you can look at these…
+* When you're doing the next assignment.
+* when to use an iterator versus using a generator.
+* Where generators replace iterators.
+* So… Streaming big files.
+* or infinite sequences, pipelines, and paged API results.
+* So grabbing one page at a time, for example.
+* And then… The anatomy of exception handling.
+* There's the tri block.
+* So this is… Wraps the code that might fail. Exception. Catches a specific exception.
+* The else… Runs if there is no exception.
+* And the finally always runs.
+* So here's an example of a tri-block.
+* We start out… This code might fail.
+* We catch a value error exception.
+* We catch a… Key error, or an index error.
+* And we have an else if there's no errors, and we commit the value. And then finally, cleanup will always run, even if there's no errors.
+* Alright, so here's an example of…
+* Re-raising and defining your own exceptions.
+* So I recommend… looking over this… for…
+* details when you're when you're making your next assignment or doing your next assignment.
+* And exceptions are basically the drivers of an iteration, so it's always important to know when to Implement the stop iteration function.
+* So, stop iteration is a signal.
+* and not a bug in your program.
+* And clean up and control.
+* The try finally always cleans up.
+* Let the generator exit propagate itself, so don't catch and swallow it on close.
+* re-raise, or return.
+* Let the generator do it.
+* And here's best practices to do And to avoid…
+* And some key takeaways.
+* Iterator does not equal… iterable does not equal iterator. The protocol is small.
+* So… Iterator next and stop iteration, that's the whole contract.
+* Generators do it for free.
+* And… Generators are lazy by default.
+* So I recommend looking over this.
+* As you study the Notebook.
+* For the parsing Notebook.
+* Alright, so in this parsing notebook, we'll be processing a CSV file.
+* First, it creates a CSV file.
+* Then, after creating it, we read it.
+* And write it.
+* Then we do some string processing on it.
+* You should have… you probably know how to do string processing.
+* Use regex for validation.
+* You're using regex now in your current assignment.
+* Iterators, this is how to use an iterator on the note… on the CSV file.
+* And an example of using generators on the CSV file to do string processing.
+* All right, and then at the bottom is a… a set of functions.
+* to… Test out the… all of the functions that we just went over previously.
+* Alright, so hopefully this was a review for you.
+* I recommend reading over the documents that we just went over before you run the example so you can understand what's happening.
+* and then on Wednesday I'll be presenting a new assignment.
+* Which will be using all of these dunders and the iterators and generators.
+* Our topic for Wednesday is Tk. Inter.
+* And that's a… replacement for console input. Now we'll be using graphical output for all of our assignments.
+* So Tk, enter is the core of what we'll be studying next time.
+* And it will be using… all of these pieces which we just reviewed. So if you have some time.
+* try to review these before we go into the next topic, which is Tk, enter.
+* Alright, so that's all I have for this evening. If you have questions.
+* Hang out.
+* We're in what I call open lab time.
+* So if you don't have any questions, I'll see you on Wednesday. I'll be available on office hours tomorrow from 6 o'clock to 6.30.
+* And you can email me.
+* Anytime you want.
+* and I'll try to answer it as soon as I can.
+* So that's it for this evening.
+* If you have questions, let me know. Otherwise, I will see you on Wednesday
+* Good evening, and welcome to our second class.
+* Our agenda for tonight is… The assignment structure, hopefully you had a chance to review it.
+* We're going to be going over the first exercise, which deals with web scraping.
+* And it's due on September 30.
+* We'll be covering web scraping.
+* We'll briefly talk about regex.
+* Because it's part of the web scraping exercise.
+* But since you've already had it… have a web… web… Excuse me.
+* Since you've already had a regex
+* introduction in your previous coursework. We'll just briefly be going over it.
+* And then the assignment also calls for default dictionaries, and we'll be discussing that also.
+* The files that we'll be looking at are related to Beautiful Soup, which is a web scraping technique.
+* So there's a notebook on it and a PDF on it.
+* There's also a Python file that I didn't list here.
+* In case you don't want to run the notebook version.
+* There's the two regex files for… Dealing with regex.
+* We won't be going over them in any depth.
+* As you should have, you probably have been introduced it in the past.
+* And we'll be going over these two files, dealing with default dictionaries.
+* All of the notebook files do have equivalent Python files, which you can run independently of the notebook.
+* The advantage of the… Python files is that you can
+* Run them with your compiler, and you can debug them, where a notebook file, you can only run the code, so…
+* Those files are also available, and these are all published in the web scraping module, which I just published a few minutes ago.
+* Alright, so let's take a look at the assignment.
+* First, to see how we're going to be using these Python techniques.
+* So here's our web scraping assignment.
+* So you're going to be writing 2… Small web scraping classes.
+* So you should refer to the… class design…
+* Notebook that we went through last time to understand how to design classes.
+* One class uses regular expressions.
+* And the other uses beautiful soup.
+* Both classes follow the design.
+* Qualities discussed in the course notebooks.
+* Which is… Modularity, robustness, Scalability, completeness, And clear functionality.
+* Begin with the notebook examples.
+* And bring the selected code into your files.
+* The notebook code is then adjusted
+* So that the classes work with the MSDN planets table.
+* then annotate the Python file with comments describing which notebook snippets were used.
+* Where it appears in the class, What adjustments were made?
+* Make your comments clear, concise, and placed directly above the modified code.
+* Here's the target web page that you'll be scraping.
+* It's the MSDN planets table.
+* And I've moved it to our, data system.
+* If, for some reason, you can't scrape this table.
+* There is a copy of it in the data module, called Planets HTML.
+* You can copy it and use requests to open the HTML file. And when we review the
+* Beautiful soup code.
+* You'll be able to see how to open up a local HTML file.
+* Alright, so the first class is using regular expressions.
+* So, create a regex scraper Python file.
+* Use the regex notebook as a starting point.
+* Bring the notebook's examples for scraping HTML, applying regular expressions.
+* Trimming text, and storing it in a default dictionary.
+* See the default dictionary notebook?
+* for the default dictionary examples, you can also refer to the default dictionary Python file, which is also published in the web scraping module.
+* Adjust the notebook code so that the class extracts the table.
+* The rows, the headers, and the cells from the MSDN page.
+* Store the trim text in a consistent key format.
+* Because the key format is the default dictionary.
+* Handle irregular rows or missing cells.
+* In a reasonable way.
+* Keep the class design simple and focused on the design qualities listed above.
+* And these… These are, up here, modularity, robustness, scalability, completeness, and clear functionality.
+* Alright.
+* So… For the regex change line log, Convert them to inline comments.
+* Students write comment blocks inside the regex Scraper Python file. Each block should look like…
+* The notebook section where it came from.
+* used in the parse table example. Changes modified the pattern to look up the TD tags.
+* Added capture group for text set content.
+* Trimmed whitespace before storing the default dictionary.
+* This is just an example.
+* Place these comments directly above the code they describe.
+* Obviously, the regex patterns will need to change
+* From the notebook to fit the assignment.
+* Please document the regex pattern, as it should do exactly what the assignment specifies, and no more.
+* This is because AI-generated regex patterns often do more than required and try to match the general case.
+* To avoid the appearance of using AI-generated patterns, limit your pattern exactly to fit the assignment requirement, and explain in detail what the regex pattern is designed to do.
+* Alright, so that's the first class, a regular expression class.
+* And design it so you can reuse it in future assignments.
+* The regex code is available in the notebook.
+* And also in the Python file, which is the equivalent of the notebook.
+* The second class deals with… Beautiful soup.
+* A scraper class.
+* So it's more powerful than regular expressions.
+* So we'll create another class, BeautifulSoupScraper.py. Use…
+* The Beautiful Soup notebook as a starting point.
+* Bring in examples for creating a soup object, locating tags.
+* Iterating through elements.
+* Trimming text. Storing results in a default dictionary.
+* Adjust the notebook code so the class extracts the MSDN table, rows, headers, and cells. So this is the same table as we used
+* for the regex.
+* Use the same key format as the regex scraper.
+* In the, in the, default dictionary.
+* Handle irregular rows or missing cells in a reasonable way. Keep the class design aligned with modularity, robustness, scalability, completeness, and functionality.
+* And here's an example of the beautiful soup change log.
+* for inline comments.
+* So, note in… from the notebook where you… where you took the… the code.
+* And then… Document the changes that you made to the code.
+* Place these comments directly above the modified code.
+* So, for your final submission, submit the following files. A regular expression Python file, and a
+* Beautiful Soup for scraper Python file.
+* Inline notebook reference comments are required.
+* Submitted code without annotated comment blocks will receive only 50% credit.
+* All right, so I recommend starting… working on the assignment and… and get it… get the comments submitted.
+* Before you, submit the code, of course.
+* A lot of students wait until the last minute to put the assignments together.
+* And, omit putting the comments into the code, or into the… their code, so…
+* They'll… they'll receive 50% credit, so give yourself enough time to put The comments into the code.
+* Alright, so for further information… About how to put the assignment together.
+* We can look at the… at this module.
+* the… assignment structure.
+* And that goes into more detail of how to… Create the assignments, so…
+* If you have questions about this, we can talk about this after the lecture tonight.
+* Alright, so basically, read through the notebook examples, find the parts that you need.
+* Bring the notebook code into your own file.
+* Adjust the code so it fits your task.
+* Keep track of the notebook sections you used.
+* Run your program and check the results.
+* And then here is a… A demo assignment.
+* which shows how to take the class design Python file, Or the notebook file.
+* And create a planet class.
+* Alright, so if you haven't read through this, this document.
+* the assignment structure, I recommend understanding the assignment structure before you submit your assignment, just to make sure you can get full credit.
+* Alright, so now let's go through…
+* Let's go through the, the…
+* The example code that you'll be using to complete the assignment.
+* So let's start with Beautiful Soup 4.
+* Okay, so the first thing we'll be doing in this course is getting data.
+* And most of the data that we need will be stored on the internet.
+* So… The process is called web scraping.
+* And we'll be using Beautiful Soup to do that.
+* Some of you may be using different techniques.
+* But Beautiful Soup is probably one of the easier ones to use.
+* Okay, so Beautiful Soup is used for web scraping.
+* It can be used for HTML and XML files.
+* you may not have been exposed to HTML files before, and there's a tutorial at the end of this
+* presentation to show you how HTML works.
+* So, Beautiful Soup creates a parse tree, From your web page.
+* Making it easy to search and navigate.
+* It provides Pythonic idioms, meaning the way that Python works.
+* For searching a document.
+* So you can search for a Python… not a Python, but a HTML tag by its name, class, ID, or other specific tags.
+* You may or may not have installed Beautiful Soup already. If not, From the command line.
+* type Python minus M, pip, Install… BS4.
+* That stands for Beautiful Soup 4.
+* Now, this assumes that Python is in your environment path.
+* When you installed Python, It asks you whether you wanted to put it in your environment path.
+* or not.
+* If you didn't, ask Python to do that.
+* Then you won't be able to use this.
+* Command line version to install it.
+* In which case, you might want to reinstall Python.
+* And ask for the environment path to be… Active.
+* So why scrape the web?
+* the… the data… has no API, there's no standard interface for a web page.
+* The scale goes beyond… Cutting, copying, and pasting.
+* One script collects thousands of rows and minutes on a schedule.
+* You can build datasets, you can feed dashboards, research, Machine learning models and Fresh, real-world data.
+* Monitor change over time, track competitor pricing, job listings, Or, price updates automatically.
+* Alright, so, basically, here's… Scraping data that's being presented on the web.
+* In a consistent way.
+* Using tools like Beautiful Soup.
+* So here's an example of tag scraping.
+* The goal is to find all of the table tags, which is what the assignment is asking you to do.
+* So here is an HTML document.
+* which has a table in it. There's a table tag right there.
+* A table row… Starting a table detail, And of a table detail.
+* Table detail, end of a table detail, end of a table row.
+* Then the next row… Start of the row, table detail 1, end of detail 1.
+* Table Detail, Row 2, End of Table Detail.
+* and of Rome.
+* This is the end of the table, and then this is the end of the HTML text.
+* This obviously is just a table.
+* Usually, HTML documents have much more data in them than just tables.
+* But we'll be starting simple, just using the planets table.
+* Okay, so the first thing to do is open… open up the HTML document.
+* So, use Beautiful Soup.
+* Give it the document name.
+* And it requires an HTML parser to be installed.
+* Which should be installed when you install.
+* Python.
+* Then… You have a soup object.
+* Find all of the rows.
+* And then for each row in the list of rows.
+* Find all of the table detail tags.
+* And then for each of the cells in the table details, so this row has two table details.
+* For each cell in the… in the cells, print.
+* the cell text.
+* Alright, so you can see from beautiful soup, it's really easy to use.
+* So, web scraping extracts the data.
+* From the webpages for data analysis, machine learning, and other applications.
+* You can clean the data to make it… to strip it of the…
+* Formatting that's in the pages, like, new lines and spaces.
+* And you can also get, put it into formats like CSV files, or Excel spreadsheets.
+* You can automate it, you can collect data where no API exists.
+* Check Root's text and the site's terms first, identify your bot.
+* And use a agent, and… rate limit. So…
+* You can put together some tools, To scrape your data using thing, tools like Beautiful Soup.
+* The limits? Beautiful Soup4 only parses HTML that you already have.
+* It does not run the JavaScript in HTML.
+* Alright, so the goal of parsing HTML or XML files Here's, how to open… the HTML document.
+* So this is built in.
+* No install.
+* Forgiving enough for most web pages.
+* Here's another way to open up beautiful soup.
+* HTML, and use the LXML model, which needs to be installed separately.
+* This runs faster on large web pages.
+* But for our purposes, you can use this one.
+* Then you can do the same thing with XML.
+* And, finally, For badly broken web pages, you can download and install this.
+* module.
+* But for our purposes, this one should be sufficient.
+* Using the HTML parser.
+* Because this comes with Python.
+* to get a page from HTML, You use the request… Git.
+* And you have to pass it these parameters.
+* Then you can ask for the status of fetching the web page.
+* Check the… Terms… that refer to the API, if one exists, these don't always exist.
+* And sleep for approximately 1 second between CAT requests and cache pages, so no reruns hit the re-hit server.
+* Retry… on 4-29 or 5.03 with a longer wait. So if you get these replies back, you can…
+* Set the timeout to longer.
+* But for our cases, you probably won't need to set a timeout at all.
+* So, navigating the soup tree… So, there's the soup tag, First match only.
+* So the fir- the soup title.
+* gets the title of the web page, the Soup A gets the attribute.
+* And here's, to get the first header.
+* And so on.
+* So these are just some of the soup tags that you can get the title.
+* the attribute… And Header 1.
+* Here's… you can use soup to use the Find All.
+* So find all of the attributes, and it returns a list.
+* Find the… all the divisions.
+* And it returns all the divisions in a list.
+* These are just some ways to parse the… HTML tree.
+* then searching, the parse tree.
+* Find all the attributes, And then you give it the attributes that it's… that you're supposed to look for.
+* Find all the images.
+* And… You can select… Find all the CSS selectors.
+* The table data, and so on.
+* We'll be looking at some examples of doing that in our notebook.
+* Modifying the parse tree, we don't have to modify the parse tree. We just need to extract the data.
+* But if you need to modify the parse tree, here's some
+* Information you can use to modify it.
+* Outputting the HTML or XML.
+* Usually, Pritify uses… is the best method for outputting HTML in a nicely formatted
+* text. Otherwise, it just looks like one big, long text page.
+* So I recommend using Printify if you want to print the entire web page.
+* And here's some more information on how to open the files… And so on.
+* So, to navigate the… the tree…
+* You can use the tag contents and tag children To navigate the tree.
+* The tag parent walks… up one level.
+* And you can find, for example, the parent table.
+* And you can use Next Sibling.
+* To find the next sibling in the table detail.
+* So these are just some ways to navigate the tree.
+* We'll be looking at some examples of doing that.
+* Alright, so why does beautiful soup beat regular expressions?
+* Beautiful Soup parses HTML into a tree and understands tags.
+* Regex only sees a flat string.
+* So, for browsers and BS4, repair unclosed or missing tags, a regex silently matches the wrong thing.
+* So browsers understand… tags so they can repair them if need be, where regex silently misses them.
+* You don't have to worry about that in our assignment.
+* The, the table that you'll be scraping.
+* Oh, it doesn't have any errors in it.
+* The… it has readable content… content.
+* Using the SELECT So this shows you how to… Read.
+* the HTML table.
+* It's more robust, attribute order, whitespace, and extra classes break regex, whereas Beautiful Soup 4 keeps working.
+* So you'll see that when you're putting together the two classes, the one for regular expressions and the other for Beautiful Soup.
+* Beautiful Soup finds the tags. Regex filters the values.
+* For example, Soup, find all the attributes, and…
+* Then, you can use regular expressions to get the PDFs.
+* So here's an example of regular expressions that uses BS4. So here's our… Document.
+* We open the body of the document.
+* Here's our example HT… HTTP page.
+* So, this href… has this example page. Another href has this example page.
+* And this is the end of our document.
+* So we open up our beautiful soup object, find all the hrefs.
+* And then we want to compile out all of the HTML.
+* from the tags.
+* So it's going to strip off the HTTP, etc.
+* And then for all of the links in our HTML, get the href.
+* So it's going to find two hrefs.
+* And it's going to put them into this linked list, and this is it.
+* One of the two links.
+* And we print each one of the links here.
+* So this is an example of data extraction.
+* You fetch and parse using requests.
+* Use beautiful soup.
+* 2… Parse the text that we got.
+* So, request turns an R, And then…
+* R has all of the text of the HTML, which we'll use the HTML parser on.
+* Then you extract the rows, find all of the table details, And then…
+* Strip off any new line and carriage return.
+* Characters that may be in the cell.
+* And then you can paginate Using the URL join.
+* And save the results.
+* to a CSV or save it to a local list or dictionary.
+* Which is what we'll be doing, saving it to a dictionary.
+* For data cleaning, Use text strip.
+* for typecasts… You can use… Float.
+* To change data prices, in this case.
+* If they started out as integers, you can cast them to float.
+* Duplicate and validate You can drop duplicates, Or… Drop the not available text.
+* So there's lots of things that you can do, and the data… the default dictionary will help you drop the data.
+* And common pitfalls…
+* The none type has no attribute text, so after you use a find, it doesn't find anything and returns none.
+* Empty results…
+* the content rendered by JavaScript.
+* Beautiful Soup only sees the initial HTML. It doesn't see anything about the JavaScript.
+* 403 blocked, missing, user agent, too fast, or login required.
+* And brittle selectors.
+* Anchor or ID data attributes not generated.
+* Class names.
+* Alright, so… Some badly formed web pages have missing HTML… Tags.
+* But in our first assignment, there's no… missing data.
+* So you don't have to worry about that.
+* Alright, if you've never… studied HTML before. This W3 Schools Is a good starting point.
+* If you want more details on using Beautiful Soup.
+* You can go to realpython.com and Get their tutorial.
+* Here's the official… Beautiful Soup for documents.
+* And… some safe practices.
+* Alright, so let's briefly look at our beautiful soup notebook.
+* That's the wrong notebook.
+* Alright, so… Here's the beautiful notebook that you'll be using to Put together your assignment.
+* Each of the drop-downs gives you a description
+* of what Beautiful Soup is, and how to use it.
+* So, why use beautiful soup?
+* What the notebook covers… The beautiful soup module.
+* And then we start examining some of the code that is… that's in the module. This code is also in the Python code, so you can run this independently of the notebook.
+* So the… A lot of the text in the…
+* And the code outputs things in color, so that's why these definitions are listed here.
+* Alright, so here is… Another utility function that prints information about the tags that are found.
+* Then, here's an example of extracting the HTML data.
+* So here's the code to fetch the data.
+* Here's how to clean the soup.
+* Here's some basic HTML parsing.
+* And if you're familiar with notebooks, you can run each one of these sections and see how they work.
+* But the actual Python file, you can actually run it and debug it also.
+* Here's how to scrape a web page.
+* Here's how to parse an HTML file.
+* How to find a single tag, How to find multiple tags, Extract the attribute safely.
+* Navigate the tree.
+* Using CSS selectors, CSS selectors like class name, ID name, division, paragraph.
+* Modifying HTML content, you don't need to worry about that.
+* And then, the main demonstration.
+* The main demonstration puts all of these different…
+* techniques together in one demo, so you can run this demo code from from the… from this
+* This arrow right here, this… Goal point.
+* It will run the… all of the modules.
+* The problem is it'll just run them, you can't debug them. If you want to debug them, there is a Python version of this notebook available.
+* And it's listed in the, today's web scraping module, so you can get it from there.
+* Alright, so study this notebook to figure out how to use the notebook in your assignment.
+* The next part of the assignment requires using regular expressions.
+* So this document goes over regular expressions. We're not going to go over it in any great detail, because
+* This is more of a review, because you should have covered this in your previous coursework.
+* So this gives you an overview of regular expressions.
+* special sequences… pattern matching… Groups and ranges.
+* Quantifiers…
+* Basic, difference between two different quantifiers, lazy and non-lazy.
+* Look-aheads.
+* And a summary.
+* So we're not going to go over this in any great detail, because you've probably gone over it before.
+* In your previous coursework, so this is just a review.
+* In case it's been a while since you've used regular expressions.
+* There's also a notebook that accompanies it.
+* So it talks about regular expressions.
+* It's going to be coloring some of the code for you.
+* Then, shows you how to match a phone number.
+* How to match a zip code.
+* How to match an email address.
+* street address… HTML tag recognition you'll be interested in.
+* Looking at that part, at least.
+* And some other techniques to grab
+* Small amounts of data or large amounts of data.
+* And these… these are some practice exercises, but they're not required that you do them. If you want to do them for practice, here's some suggestions.
+* Alright, so we're not going to go over these in any great detail. If you have questions about them, you can ask them during Open Lab.
+* The last topic is… default dictionaries.
+* You've studied dictionaries before.
+* But default dictionaries are a way of making Dictionary safer to use.
+* So a default dictionary is a specialized subclass of Python's built-in dictionary class.
+* Default dictionaries come from the collections module.
+* And it provides all the standard dictionary functionality with an extra feature.
+* The default dictionaries allow you to find a default value which will be returned when you try to access or modify a key that isn't in the dictionary.
+* So here's usage of a standard dictionary.
+* This example produces a key error for coordinate Z.
+* So first, we set up this coordinate dictionary right here.
+* Notice it has X set to 100, Y set to 200.
+* Then we print the X coordinate, the Y coordinate, and the Z coordinate. Well, the Z coordinate doesn't exist.
+* So when you try to print the Z coordinate.
+* It's going to throw a key error.
+* And it's going to print key error… Z.
+* So the default dictionary is designed to fix that.
+* Alright, so the default dictionary prints a 0 for coordinate Z.
+* So, first of all, you need to import the default dictionary.
+* Then create a default dictionary object.
+* The default is an integer.
+* integers are initialized by Python to automatically be initialized to zero, unless you initialize it otherwise.
+* So that's why using an int will print a zero In this case.
+* So now we define the X and the Y coordinate.
+* We print the X and the Y coordinates, and try to print the Z coordinate, And it will print.
+* A 0 for the Z coordinate.
+* Okay, so you can have flexible default values.
+* You can provide any callable as a default factory.
+* So, default values can be anything from simple integers, To more complex objects.
+* So you could put a function in here, for example, instead of just an int.
+* The int in this case defaults to 0.
+* A zero will be substituted when a key error would normally be produced.
+* So overall, default dictionaries make handling missing data keys easier and prevents your program from crashing when there's missing data.
+* The… the planets table that you'll be scraping.
+* Doesn't have any missing data in it, but it will be useful in future exercises, so I recommend getting used to using it now.
+* Alright, so that's all the information I have for this evening.
+* If you have any questions about the assignment.
+* or how to do the assignment. We're in open lab time now, and you can ask the questions, you can…
+* Either raise your hand, or…
+* type something in the chat window, and I'll be happy to answer your questions. If you don't have any questions, then…
+* I will see you next time, and I'm also available during Open Lab tomorrow from 6 o'clock to 6.30.
+* So, if you have no questions and don't want to… you don't want to come to office… office hours tomorrow, I will see you next Monday.
+* You can email me anytime over the weekend, and I'll be happy to answer.
+* Good evening, and welcome to Fall Quarter.
+* My name's Grant Larkin, and I've been teaching at Deanna since 1991.
+* This is the agenda that we have for this evening. First, we'll do a Canvas walkthrough.
+* Then go over the syllabus.
+* Look through the grading policies.
+* Examine an assignment structure.
+* And then, if you haven't used Jupyter Notebook.
+* Just to show you, basically, how it works.
+* Alright, so let's get started.
+* Oh, but first… My dog attends every lecture.
+* And sometimes he barks during the lecture.
+* Here he is.
+* So, if he interrupts the lecture by barking, we'll…
+* Have to make a brief pause.
+* Okay, so let's start with a canvas walkthrough.
+* Alright, so in Canvas… We have these sections to look at. You've already been through the Zoom…
+* part, I'm sure.
+* The modules part is now, being displayed, and it… the first part is the course overview.
+* It has the Welcome to Python Programming.
+* Guides to the course syllabus, grading policies, assignment structures, and Jupyter Notebook information, which we'll be going over.
+* The next module is the lectures.
+* There's nothing in there right now.
+* But after tonight's lecture, there will be a lecture… a link to a lecture.
+* To this lecture.
+* Then, the next module is the topic that we'll be going over for tonight, the Python review.
+* This module is only active for one night, but it'll be displayed all quarter, but… Oh.
+* It'll only be used this, this evening.
+* Then there's other modules, which I'll be introducing every week. Some modules will be one night only, and some of them will be several nights only.
+* So, the first module is our Python review.
+* The next module is a… A holder for the midterm and the final.
+* And we also have a folder or a module for the data files. We don't currently have any data files.
+* Alright, so let's start with the course syllabus.
+* Alright, so the first part is the course information, so…
+* You can, get all of the course information about the,
+* the… the course ID, the CRN number, the schedules… The withdrawal, and… and… Withdrawal dates, etc.
+* And approximate dates for the midterm, and approximate dates for the final.
+* And then the assignment schedule will be announced week by week.
+* My name is Grant Larkin, and I've been at Deanna since 1991.
+* Our office hours are online only, because I'm off campus… off campus.
+* Tuesday and Thursday for a half an hour from 6 o'clock to 6.30.
+* Here's the department phone, because I'm not on campus.
+* And I'll try to respond to your emails within 12 to 24 hours.
+* Usually it's less than that, but…
+* This is with a… this is a estimate.
+* Alright, now we're going to get into the class.
+* Hierarchy, or the class architecture.
+* The lecture is from 6 o'clock to 6.50.
+* Attendance is optional.
+* And… recordings, and it's recorded.
+* From $6.50 to $7.50, is what I call Open Lab.
+* This is for you to ask questions about the lecture or assignments, or help debugging.
+* Attendance is optional, so after the lecture is over, if you don't have any questions.
+* You don't have to attend the open lab.
+* And it's not recorded.
+* And then my office hours are Tuesday and Thursday from 6 o'clock to 6.30.
+* And you don't have to attend op… Office… Hours.
+* It's usually available for individual support.
+* Because open lab, anybody can attend it. However, for office hours, it's primarily for individuals to ask questions
+* Specific to the course.
+* Alright, so attendance policy.
+* There is no required live meetings, and no attendance tracking.
+* However, the main… To remain enrolled past the census deadline two weeks after the quarter begins.
+* Students must complete both of the following.
+* Log into Canvas.
+* And submit the first assignment.
+* So if you're online right now, listening to this lecture, you've completed part one.
+* Part 2… will be when you submit your first assignment. The first assignment will be presented next lecture.
+* Here's the prerequisites for the course.
+* CIS 41A, or Beginning Python.
+* And college algebra.
+* The student learning outcomes.
+* Are written by the division chairman.
+* The course description is taken from the course outline.
+* And these course objectives are also taken from the course outline.
+* the textbooks… And I had some links in here.
+* I'll put the links in a little bit later.
+* These are free PDFs.
+* Python data analysis?
+* an SQLite tutorial, And ThinkPython 3rd Edition.
+* Let's see, maybe I put the…
+* Okay, I put these in before class, I wonder what happened.
+* Anyway… the grades… Grades are based on weekly exercises and two exams.
+* Each… Submission is evaluated.
+* Using two equally weighted criteria, correctness.
+* That means the program must run successfully.
+* And a qualitative rating.
+* And we'll be going over that when we go over the grading policies.
+* The grading rubric is the standard Deanna rubric. It doesn't contain A+, and it doesn't contain C-.
+* Other than that, it's a normal…
+* Grading rubric that you're probably used to.
+* Grading policy, we'll be going over the grading policy in just a few minutes.
+* Academic integrity, there's a little bit about it in the grading policy, so we'll talk about it there.
+* And then here's some… Student resources.
+* I set these all up before class with links and everything, but there's some… for some reason, they're missing. I'll make sure that the correct version gets posted here.
+* Alright, so that is the… an overview of the syllabus.
+* Let's now take a look at the first module.
+* Alright, so we looked at the course syllabus.
+* Let's look at the grading policies.
+* Alright, so… Here's how I would like you to format.
+* you're… Assignments?
+* you can… I recommend reading this before you submit your first assignment.
+* So, basically, please submit your work as a single compilable file wherever possible.
+* If you need multiple files, place them into one zip archive.
+* And then, additional details.
+* Late days.
+* You have 3 late days for the entire quarter.
+* A late day is any 24-hour period after the deadline rounded up.
+* So 1 hour late counts as A one late day.
+* 26 hours late counts as 2 late days, and so on.
+* After your late days are used, you can still turn in work, but it won't be graded.
+* This structure is similar to policies used at Stanford and UC campuses, so…
+* I didn't invent this by myself.
+* Resubmissions.
+* Every programming assignment includes one opportunity to revise your work if the initial submission does not fully meet the specification.
+* A revision is not a second attempt. It is a chance to show that you understand what the assignment required and how your original submission
+* Diverged from those expectations.
+* Alright, so the way to resubmit…
+* If your design choices do not match the specification, your revision should identify the sections that missed the mark, explain why they fell short, and present corrected code that aligns with the intended design.
+* And I can let you read this more in… in detail.
+* When you want to do a resubmission.
+* Rewrading requests.
+* If you believe your work deserves a different score… You may request a regrade.
+* In the assignments comment section, so in each assignment, there is a section where you make comments.
+* Put your regrading requests in.
+* the comments section.
+* Canvas notices… notifies me when you have placed comments in that section.
+* So I can take a look at your regrading requests.
+* Your re-grading request must be submitted within 10 days of the initial grading.
+* Extension requests.
+* You may request an extension, but only before the assignment's due date.
+* Requesting it after the assignment due date doesn't work.
+* The request should describe a legitimate circumstance that affects your ability to complete the work.
+* Vague or trivial reasons are not considered.
+* Some students, for example, say I had a bad hamburger.
+* That just doesn't work.
+* And how your work is evaluated?
+* Your work… your grade comes from weekly exercises and two exams.
+* The weekly exercises make up 70% of the grade.
+* The exam makes up 30%.
+* Each programming submission is evaluated using two equally weighted components.
+* The first is correctness, the second is a qualitative rating.
+* Now, AI can produce code that appears correct.
+* But correctness alone does not demonstrate understanding.
+* The qualitative component is where your reasoning becomes visible.
+* Alright, so the… the qualitative component consists of modular.
+* Is your work modular? Is it correct?
+* Does it have clarity and style?
+* Is it robust?
+* And is it scalable?
+* We'll be looking at these tonight.
+* In detail.
+* And this is the grading rubric.
+* Alright, so the next…
+* is… Assignment structure.
+* Alright, so your assignments are… Based on the notebook, the Jupyter Notebook examples.
+* So basically, read this. I'd like you to read this in detail before the next class.
+* So basically, read through the notebook examples.
+* Then find the parts that relate to the task of the assignment.
+* Bring… Notebook code into your own file.
+* Adjust the code so that it fits your task.
+* Keep track of the notebook sections that you used.
+* Run your program and check the results.
+* And then add some closing notes.
+* Here's a demo assignment.
+* And it's using the… It's using the,
+* Class design notebook that we'll be looking at in just a minute or two.
+* So, step number one, identify the parts of the example code.
+* So here's an encapsulation example.
+* Show… show… this shows the encapsulation part.
+* and is private and is accessed through methods or properties. That's one way you can describe it.
+* Modularity example. Here's some code that shows the modularity.
+* Robustness example.
+* And scalability examples.
+* Alright, then build your own classes using these ideas.
+* Document the parts you used.
+* And then… Submit your assignment.
+* with… these submission components, the extracted code, Short explanation for each snippet.
+* your completed… class.
+* Document your solution with the Caesar Cipher ideas you used and where.
+* The grade for your solution will include solution plus comments on the code usage.
+* And then here's an example solution.
+* I'll let you look through this.
+* Before the next class, when we talk about the first Assignment.
+* So I'd like you to look over this… this document.
+* And bring your questions about this document.
+* To the next class, so the assignment structure.
+* Alright, let's back… go back to the modules.
+* Jupyter Notebook information, in case you've never used Jupyter Notebook.
+* You can… I recommend watching this Jupyter Notebook tutorial.
+* It's listed right here.
+* Learning how to use the Jupyter Notebook, another tutorial.
+* And… How to set up Jupyter Notebook, another video tutorial.
+* Now, you don't have to use Jupyter Notebook.
+* But I'll be talking about that in just a minute.
+* Alright, so… Let's look at the first At the first module.
+* First module is… the Python review.
+* The Python review consists of the class architecture PDF, which we'll be looking at right now.
+* And then, here's the notebook.
+* And this is the notebook which has been…
+* collapsed into a single Python file.
+* If you don't want to run the notebook version.
+* The notebook version allows you to run the code.
+* But it doesn't allow you to debug the code.
+* If you want to be able to run and debug the code, then you can run the Python
+* File, instead of using the notebook.
+* the Python file and the notebook have almost the same Data and comments in it.
+* So, using the notebook is a traditional way of teaching Python.
+* However, this is a version if you don't want to use a notebook. The notebook is a little bit harder to use than a Python.
+* compiler.
+* Alright, so let's start with… our class review.
+* So probably the end of your previous course, you covered class… classes?
+* So this is a good place to pick up where you left off.
+* So we're going to be designing data objects.
+* Data objects are very important for Artificial intelligence.
+* In fact, all artificial intelligence uses data.
+* So, in this course, we'll be primarily figuring out… figuring out how to manipulate data.
+* So, what is data?
+* Data is raw facts.
+* Statistics, and so on.
+* It can take… Various forms, such as numbers, text, images, audio, and more.
+* It's the foundation for generating knowledge and insights when analyzed and interpreted.
+* So, in this course, we will be…
+* gathering data. First, we're going to be web scraping the data.
+* And then, as we proceed through the course, we'll be analyzing the data and interpreting it.
+* So there's two types of data.
+* There's structured data, And this often comes in the form of spreadsheets in rows and columns.
+* and CSV files.
+* And also in tables, Chrome, HTML… Code.
+* Alright, so to get the HTML code tables…
+* We'll be getting that with web scraping, which will be starting next lecture.
+* Then there's unstructured data.
+* This comes from text documents, images, audio files, and videos.
+* Analyzing unstructured data requires more… Advanced techniques.
+* like… ChatGPT.
+* Alright.
+* So we'll be primarily dealing with structured data.
+* To organize the data, we put the data into a class.
+* A class is a blueprint, Or a template for creating objects. Or organizing data.
+* Objects are instances of a class, and they encapsulate the data.
+* Encapsulation means that Essentially, you make the data invisible to the user of the class.
+* So, the user doesn't need to know anything about how the data is formatted to be able to use the class.
+* A class defines a data type.
+* So, a class becomes a data type, like an integer is a data type, or a float as a data type.
+* Or a character is a data type, or a string is a data type.
+* So a class becomes a user-defined data type.
+* A class also defines the properties of the data.
+* And the behaviors of the data.
+* So, the relationship between a data and a class is a class defines the structure.
+* And the behavior of the objects. And the data associated with these objects is encapsulated within the class.
+* Through attributes and properties.
+* So basically, a class… Organizes the data and provides accessibility to the data.
+* Objects created from the classes are called instances.
+* And have their own data stored in these attributes, and they can exhibit behavior through methods defined in the class.
+* Okay, so an object is called an instance.
+* and instances Use the class attributes to define the behavior.
+* Of the data within the class.
+* Alright, so there's several… General pop… General… Properties of a class.
+* a well-defined class. A class should be modular.
+* That means it should be encapsulated.
+* The internal details are hidden.
+* Only necessary interfaces are exposed.
+* So, for example, If you're implementing a complicated mathematical equation, the internal details…
+* Do not need to be known by the user.
+* All they need to do is learn how to use the class, not the internal mathematical equation.
+* The separation of concerns or behaviors, each method or class does one thing well.
+* So you, if you're designing, A class to do some sort of mathematical operations.
+* You wouldn't combine a class with sine and cosine in the same class.
+* You would divine a class with
+* One class with the sine, and another one with the cosine.
+* Reusability. Modules can be reused In different contexts.
+* So basically, you can use your mathematical functions in different foundations.
+* or applications.
+* Maintainability, Changes in one module doesn't ripple through the whole system.
+* So if you make a change to one… class. It shouldn't… Affect any other class?
+* And here's a sample.
+* Of a modular class.
+* Our class is called Student.
+* It knows how to initialize itself.
+* We add a grade.
+* So you can put things in… into the student, you can get things out of the student, like the grade, the name, and the ID.
+* This is just a short version, but it illustrates.
+* How to make a class modular.
+* Correctness, is another feature.
+* It fulfills its specification.
+* It does what it claims to do.
+* No more, and no less.
+* It handles input properly.
+* It produces accurate results for expected cases.
+* Alright, so the class should be able to validate its input.
+* It rejects invalid input.
+* And it avoids logical errors. No off-by-one mistakes, misused variables, or broken conditions.
+* Alright, so… for correctness.
+* Check it for logical types of errors.
+* And here's our student class.
+* Setting up for correctness.
+* So we check… If the name is not an instance of a string, Then raise an error.
+* If it's not an instance… if the student ID is not an instance of an integer, raise a value error.
+* for grade… If it's not an instance of an int or a float, Then it's a type error.
+* If it's
+* less than or equal to 0, and less than or equal to 100. If it's not less than or equal to 0, and less than equal to 100, raise a value error.
+* And then… To get the average…
+* If the self.grades, this is a list, then…
+* Returned that there is no list of grades.
+* Otherwise, return the sum of the grades.
+* Divided by the length of the grates.
+* Clarity and style.
+* There should be descriptive names. Methods and variables say what they do.
+* When I started programming, Back in 1979,
+* We could have descriptive names up to 6 characters each.
+* And that was it, just 6 characters.
+* So a lot of times.
+* variables have the name of X, and then XX, and then XXXX, and all the way up to 6 variable names, but…
+* Nowadays with modern compilers.
+* Methods and variables can exactly say what they do to make your code click… clear.
+* Consistent formatting and indentation.
+* Logical flow. The code reads from top to bottom like a well-organized paragraph.
+* Minimal testing. Avoid deep indentation or tangled logic.
+* And then avoid cleverness.
+* Prioritize clarity over showing off.
+* A lot of times in the past, I've seen programmers put in very clever code
+* And it takes a while to figure out what they're doing when there's a… when there's a bug in it.
+* So try to make your code as clear as possible, rather than making it clever.
+* Alright, so this is…
+* Our student class again, it reads from the top to bottom like a story, so we have a… we can initialize a student, add a grade, get the average, and get the summary.
+* So this is a way of organizing your class.
+* Robustness, Validates inputs, it doesn't assume that the inputs are correct.
+* handles edge cases.
+* Works even when data is missing.
+* In other words, your program shouldn't crash just because there's some missing data.
+* It fails safely, It raises clear errors and returns fallback values instead of crashing.
+* And avoids silent bugs, doesn't ignore problems, or produce misleading results.
+* So again, here's our student class.
+* And to add the robustness, again, we check our… the validation of our inputs.
+* Raise exceptions when there is no… when there is an error.
+* This is… the robustness is part of the completeness.
+* And then scalability.
+* Easy to add new methods or subclasses.
+* Minimal duplication, reuses logic instead of copying it.
+* Clean interfaces. Other code can interact without knowing the internal details.
+* And future proofing, which is the scalability part, anticipate likely changes.
+* Like, new sensor types, formats, or behaviors. Or maybe even as simple as changing a list to a dictionary.
+* Alright, so here are student classes again.
+* for our records.
+* We have it initially set to a dictionary, but you could easily replace this dictionary with a list.
+* Alright, so here we're resetting the… Records category to a list.
+* And then here's some class links.
+* W3 Schools, RealPython, and Geeks for Geeks.
+* This goes into more detail than… What we'll be going into.
+* All right, now let's look at the notebook and the Python code for this demonstration.
+* Alright, here's the… Notebook.
+* It starts out with a… what we call a markdown.
+* And then we have some sample code.
+* So we're going to start out with a simple case.
+* A simple Caesar cipher script.
+* And… You run the script by clicking on these… this little arrow over here.
+* It'll… it'll put the output down here at the bottom.
+* Then here's example number 2.
+* It has a class version, so we're converting the script
+* Into a class, but we're not using encapsulation.
+* So then the markdown shows how the functions move into classes, in this case.
+* And then, if you want to run this section of the code, you just click on this little arrow right here, and the output will appear down here.
+* Then, example number 3, we encapsulate the class.
+* Here's a description of how it gets encapsulated.
+* And then… Here's the code.
+* Which you can inspect and run by clicking this little arrow right there.
+* Then we have a modular version.
+* Here's what… how we added modularity to the…
+* To our script, or to our, classes.
+* And now this is the code with modular additions.
+* Then we have a robust version.
+* In the markdown, we can see where
+* What was added to the code?
+* And then you can run the code.
+* Then we have a scalable version.
+* Here's the markdown for the scalable.
+* And then here is the code that you can inspect.
+* And then, here's a complete version with everything all rolled into it. It has complete, modular, robust, scalable, and encapsulated.
+* So we started out with a script, and ended up with a complete class, which has all of these features.
+* Demonstrated in the example code.
+* And then you can run it.
+* Right here. Now, the problem with… with notebooks is…
+* You can only run the code, you can't…
+* Step through it or debug it.
+* So I have a… a,
+* Python version of the… of the code as well.
+* So this is… the Python code.
+* With the drop-downs pasted into the… into the code.
+* Or, not the drop-downs, the markdowns.
+* Paste it into the code.
+* So you can run this example and debug it.
+* The notebooks can only run the code.
+* the Python files can actually debug the code and run it line by line if you know how to use your debugger.
+* I'm using PyCharm.
+* when I display any code in this course. And the notebook, of course. The notebook is also displayed in PyCharm.
+* Alright, so… to understand How to make an assignment.
+* the assignment structure… That we looked at right here.
+* is based on… the Python notebook that we were just looking at.
+* Okay, so the assignment structure is going to be making references to this notebook.
+* And then walk through the notebook and the assignment structure.
+* To see how to put assignment together.
+* And we'll be going over the assignment.
+* We're going over our first assignment next.
+* Lecture.
+* The next lecture will be on… web scraping.
+* Alright, so that's all I have for this evening.
+* So, if you don't have any questions…
+* I will see you next time.
+* If you have questions, we are now in the open lab part of the lecture.
+* And you can either raise your hand, or ask your question out loud, and I'll be happy to answer it.
+* * 
+Louis Yang43:06
+Hi, I have a question.
+* * 
+Grant Larkin43:09
+Yes, go ahead.
+* * 
+Louis Yang43:14
+One second,
+* Hello?
+* * 
+Grant Larkin43:20
+Hello?
+* * 
+Louis Yang43:21
+Okay.
+* One sec.
