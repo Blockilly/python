@@ -1,0 +1,79 @@
+SQLite documentation revision -- scope check
+
+Changed: 46 comment blocks in the four application modules; the same comments in
+the notebook; nine notebook markdown cells; README.md and SOURCE_MAP.md wording.
+Refreshed: actual notebook execution metadata/outputs, test record and GUI screenshot.
+Unchanged: executable Python tokens (including docstrings, literals and identifiers),
+class architecture, notebook cell order, all classroom-source locations, original tests
+and the five CSV files. No personal learning experiences were added.
+
+PASS: table_data.py: identical AST and noncomment Python tokens; comments only changed.
+PASS: query_builder.py: identical AST and noncomment Python tokens; comments only changed.
+PASS: command_executor.py: identical AST and noncomment Python tokens; comments only changed.
+PASS: sqlite_gui.py: identical AST and noncomment Python tokens; comments only changed.
+PASS: All 6 notebook code cells: identical ASTs and noncomment tokens to the previous submission.
+PASS: Each notebook class is AST-identical to its revised .py module class.
+PASS: test_sqlite.py is byte-identical to the original test suite.
+PASS: CO2.csv: byte-identical to the supplied data; SHA256 528d34a80e77f216c2cd8527436cc5548a44953b2136495c5d49657b5e835030
+PASS: Dwarfs.csv: byte-identical to the supplied data; SHA256 1697b0667eab8829363fc74a04e4211e20cf7c4631bd8e6455cd55b0cc1d1323
+PASS: Elements.csv: byte-identical to the supplied data; SHA256 2c301d569c084510e5b48c7e3714755adecd9d01c887c08ef06ca99c807e7f85
+PASS: Presidents.csv: byte-identical to the supplied data; SHA256 9757828b9d0d8d26e106f83671f8cd14f9a3dfc5fc4a967ee090a06ac4b65be5
+PASS: Temperature.csv: byte-identical to the supplied data; SHA256 528a6733c7cf2bd6af62fe0e0a7cef62f2443f6b33fc59fe5e6d613d677947b3
+PASS: All 10 classroom-source entries in SOURCE_MAP.md retain the same references.
+PASS: All cited cell locations resolve to the stated examples in the supplied course notebooks.
+
+PASS: CO2: 731 rows, 7 columns; schema and every row match
+PASS: Dwarfs: 13 rows, 3 columns; schema and every row match
+PASS: Elements: 118 rows, 3 columns; schema and every row match
+PASS: Presidents: 44 rows, 9 columns; schema and every row match
+PASS: Temperature: 169 rows, 4 columns; schema and every row match
+[PASS] CO2: 731 source rows restored; create, insert, select, update, delete, drop, restore.
+[PASS] Dwarfs: 13 source rows restored; create, insert, select, update, delete, drop, restore.
+[PASS] Elements: 118 source rows restored; create, insert, select, update, delete, drop, restore.
+[PASS] Presidents: 44 source rows restored; create, insert, select, update, delete, drop, restore.
+[PASS] Temperature: 169 source rows restored; create, insert, select, update, delete, drop, restore.
+PASS: fresh-kernel notebook, all-table GUI demo and exact launch cell completed.
+PASS: actual Tkinter window captured to gui_preview.png.
+
+test_all_five_real_files_and_exact_header_names (test_sqlite.DataTests.test_all_five_real_files_and_exact_header_names) ... ok
+test_bad_input_and_duplicate_headers (test_sqlite.DataTests.test_bad_input_and_duplicate_headers) ... ok
+test_dwarf_names_remain_text_and_periods_are_real (test_sqlite.DataTests.test_dwarf_names_remain_text_and_periods_are_real) ... ok
+test_empty_null_and_later_decimal (test_sqlite.DataTests.test_empty_null_and_later_decimal) ... ok
+test_encapsulation_iteration_and_equality (test_sqlite.DataTests.test_encapsulation_iteration_and_equality) ... ok
+test_expected_types_for_all_real_files (test_sqlite.DataTests.test_expected_types_for_all_real_files) ... ok
+test_header_only_table (test_sqlite.DataTests.test_header_only_table) ... ok
+test_input_conversion_rejects_lossy_or_invalid_values (test_sqlite.DataTests.test_input_conversion_rejects_lossy_or_invalid_values) ... ok
+test_quoted_newline_in_csv_and_preamble (test_sqlite.DataTests.test_quoted_newline_in_csv_and_preamble) ... ok
+test_rowid_name_collision (test_sqlite.DataTests.test_rowid_name_collision) ... ok
+test_single_column_days_header_is_not_a_comment (test_sqlite.DataTests.test_single_column_days_header_is_not_a_comment) ... ok
+test_source_values_are_not_silently_corrected (test_sqlite.DataTests.test_source_values_are_not_silently_corrected) ... ok
+test_typed_dicts_blob_null_and_real (test_sqlite.DataTests.test_typed_dicts_blob_null_and_real) ... ok
+test_both_dispatch_dictionaries (test_sqlite.DatabaseTests.test_both_dispatch_dictionaries) ... ok
+test_complete_crud_and_drop_for_every_real_file (test_sqlite.DatabaseTests.test_complete_crud_and_drop_for_every_real_file) ... ok
+test_failed_select_clears_stale_results (test_sqlite.DatabaseTests.test_failed_select_clears_stale_results) ... ok
+test_failed_update_and_delete_leave_existing_data (test_sqlite.DatabaseTests.test_failed_update_and_delete_leave_existing_data) ... ok
+test_file_database_persists_and_close_is_safe (test_sqlite.DatabaseTests.test_file_database_persists_and_close_is_safe) ... ok
+test_hidden_id_collision_round_trip (test_sqlite.DatabaseTests.test_hidden_id_collision_round_trip) ... ok
+test_insert_batch_failure_reverts_earlier_rows (test_sqlite.DatabaseTests.test_insert_batch_failure_reverts_earlier_rows) ... ok
+test_last_results_accessors_and_iteration (test_sqlite.DatabaseTests.test_last_results_accessors_and_iteration) ... ok
+test_missing_conditions_and_unsupported_operations (test_sqlite.DatabaseTests.test_missing_conditions_and_unsupported_operations) ... ok
+test_null_where_clause_and_multi_field_update (test_sqlite.DatabaseTests.test_null_where_clause_and_multi_field_update) ... ok
+test_quotes_special_names_and_sql_looking_values (test_sqlite.DatabaseTests.test_quotes_special_names_and_sql_looking_values) ... ok
+test_reordered_dictionary_keys_keep_values_aligned (test_sqlite.DatabaseTests.test_reordered_dictionary_keys_keep_values_aligned) ... ok
+test_rollback_is_called_for_each_modifying_operation (test_sqlite.DatabaseTests.test_rollback_is_called_for_each_modifying_operation) ... ok
+test_sql_string_is_built_without_database_side_effects (test_sqlite.DatabaseTests.test_sql_string_is_built_without_database_side_effects) ... ok
+test_bad_order_repeat_insert_and_invalid_edit_report_errors (test_sqlite.GUITests.test_bad_order_repeat_insert_and_invalid_edit_report_errors) ... ok
+test_cancel_delete_and_drop_preserve_data (test_sqlite.GUITests.test_cancel_delete_and_drop_preserve_data) ... ok
+test_demo_all_button_finishes_with_original_rows (test_sqlite.GUITests.test_demo_all_button_finishes_with_original_rows) ... ok
+test_empty_table_demo_and_null_update (test_sqlite.GUITests.test_empty_table_demo_and_null_update) ... ok
+test_new_csv_with_unknown_columns_uses_same_gui (test_sqlite.GUITests.test_new_csv_with_unknown_columns_uses_same_gui) ... ok
+test_six_real_buttons_for_each_csv (test_sqlite.GUITests.test_six_real_buttons_for_each_csv) ... ok
+test_sql_is_visible_exactly_before_executor_receives_it (test_sqlite.GUITests.test_sql_is_visible_exactly_before_executor_receives_it) ... ok
+test_validation_detects_actual_wrong_data (test_sqlite.GUITests.test_validation_detects_actual_wrong_data) ... ok
+
+----------------------------------------------------------------------
+Ran 35 tests in 0.928s
+
+OK
+
+PASS: extracted script main block ran from /tmp; its actual window-close callback completed.
