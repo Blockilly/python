@@ -101,7 +101,8 @@ class Segment:
 #   mutated). Each one has a @property that hands back a copy, same as
 #   Rotor.characters in ClassDesign Example 3
 # - add_students() built Student objects from the raw data. Database has
-#   already built the Segments, so here the loop only sorts them
+#   already built the Segments, so here the loop only separates them into
+#   the two lists
 # - removed find(), class_average(), __contains__, __getitem__, __add__ etc.
 #   because nothing here searches, averages or merges
 class Classifier:
