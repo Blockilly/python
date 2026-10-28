@@ -3,13 +3,14 @@
 # Change log is in the comments above each part, in the format from the
 # Example Assignment notebook (adapted from / kept / changed / removed).
 # Where the pieces came from:
-#   Dunders.ipynb Student, GradingSystem      -> Segment, Classifier
-#   my Streaming decode() (2-bit pairs)       -> Segment.split_codons()
-#   Parsing.ipynb 3a re.compile               -> Segment.MUTATION_RE
-#   DynamicSQL.ipynb select_all()             -> Database.load_segments()
-#   my SQLite CommandExecutor                 -> Database
-#   Tkinter.pdf Basic Example, BinaryPipes    -> MainWindow
-#   Tkinter.ipynb Text Box tab, my gui.py     -> SegmentListWindow
+#   Dunders.ipynb Student, GradingSystem        -> Segment, Classifier
+#   Streaming Evaluation Decoder.feed()         -> Segment.split_codons()
+#   Parsing.ipynb 3a, Regex.ipynb               -> Segment.MUTATION_RE
+#   DynamicSQL.ipynb select_all()               -> Database.load_segments()
+#   my SQLite CommandExecutor                   -> Database
+#   Tkinter.pdf Basic Example, TkinterShowcase  -> MainWindow
+#   Tkinter.ipynb Text Box tab, my gui.py       -> SegmentListWindow
+#   Example Assignment, ClassDesign Example 3   -> private attributes, @property
 # Not from the notebooks: subclassing tk.Tk, using Toplevel, Text tags.
 # I didn't use BeautifulSoup, all the data comes from the .db file.
 
@@ -21,35 +22,44 @@ from tkinter import scrolledtext, messagebox
 
 
 # Adapted from the Student class in Dunders.ipynb:
-# - a Student has a name and a list of scores, a Segment has an id and a
-#   list of codons. so __len__, __iter__, __str__, __repr__ and the get_
-#   methods work the same way, just on codons instead of scores
-# - removed _validate_name() and _validate_scores(). The instructions say
-#   the segments in the database are already complete, so there's nothing
-#   to check (and I checked, all 100 start with ATG and end with a stop codon)
+# - kept __len__, __iter__, __str__ and __repr__. A Student has a list of
+#   scores and a Segment has a list of codons, so they work the same way
+# - changed _name/_scores and get_name() into private __ attributes and a
+#   @property, the way the Example Assignment and ClassDesign Example 3 do it
+# - removed _validate_name()/_validate_scores(), the print() lines that show
+#   which dunder ran, and __eq__, __lt__, __hash__, __getitem__ etc. because
+#   segments never get compared, sorted or indexed. The instructions say the
+#   segments are already complete (I checked, all 100 start with ATG and end
+#   with a stop codon), so there's nothing to validate
 class Segment:
 
-    # Parsing 3a compiles the pattern once and uses it for every row,
-    # here it's used for every codon.
-    # [XYZ] = one X, Y or Z. I use search() not fullmatch() because one of
-    # those letters anywhere in the 3 makes the codon mutated (ZXA, CGX, AZC)
+    # Parsing 3a compiles a pattern once and reuses it for every row, here
+    # it's every codon. [XYZ] is a character class like the [0-9] in the
+    # phone number example in Regex.ipynb, it matches one X, Y or Z.
+    # zip_check() uses re.match(), I use search() because the letter can be
+    # anywhere in the codon (ZXA, CGX, AZC)
     MUTATION_RE = re.compile(r"[XYZ]")
 
-    def __init__(self, seg_id, sequence):
-        self._id = seg_id
-        self._sequence = sequence
-        self._codons = self.split_codons()
+    def __init__(self, segment_id, sequence):
+        self.__id = segment_id
+        self.__sequence = sequence
+        self.__codons = self.split_codons()
 
-    # Adapted from decode() in my Streaming exercise:
-    # - decode() added bits to pair until it had 2, here letters go into
-    #   codon until it has 3
-    # - removed the Morse lookup, a finished codon just goes in the list
-    # - starts at the first letter, so ATG is codon 0 and the rest are read
-    #   right after it like the instructions say
+    @property
+    def segment_id(self):
+        return self.__id
+
+    # Adapted from Decoder.feed() in Streaming Evaluation.ipynb (my decode()
+    # in the Streaming exercise does the same thing):
+    # - kept adding one item at a time to a chunk until the chunk is full
+    # - changed the chunk size from 2 bits to 3 letters
+    # - removed the Morse lookup, a full codon just goes in the list
+    # It starts at the first letter, so ATG is codon 0 and everything after
+    # it is read in threes like the instructions say
     def split_codons(self):
         codons = []
         codon = ""
-        for letter in self._sequence:
+        for letter in self.__sequence:
             codon += letter
             if len(codon) < 3:
                 continue
@@ -61,108 +71,104 @@ class Segment:
         return self.MUTATION_RE.search(codon) is not None
 
     def get_mutated_codons(self):
-        return [codon for codon in self._codons if self.is_mutated_codon(codon)]
+        return [codon for codon in self.__codons if self.is_mutated_codon(codon)]
 
     def get_normal_codons(self):
-        return [codon for codon in self._codons if not self.is_mutated_codon(codon)]
+        return [codon for codon in self.__codons if not self.is_mutated_codon(codon)]
 
-    # same as get_name()/get_scores() in Student, the list is a copy
-    def get_id(self):
-        return self._id
-
-    def get_sequence(self):
-        return self._sequence
-
-    def get_codons(self):
-        return self._codons.copy()
-
-    # len(segment) is the number of codons, like len(student) is the
-    # number of scores. SegmentListWindow uses it for "3 of 11 codons mutated"
+    # len(segment) is the number of codons, like len(student) is the number
+    # of scores. SegmentListWindow uses it for "3 of 11 codons mutated"
     def __len__(self):
-        return len(self._codons)
+        return len(self.__codons)
 
     # lets SegmentListWindow do "for codon in segment"
     def __iter__(self):
-        return iter(self._codons)
+        return iter(self.__codons)
 
-    # " ".join() like stream_bytestream() in BinaryPipes, codons instead of
-    # hex bytes. This is the "grouped in threes" display
+    # codons with a space between them, this is the "grouped in threes" display
     def __str__(self):
-        return " ".join(self._codons)
+        return " ".join(self.__codons)
 
     def __repr__(self):
-        return f"Segment(id={self._id}, codons={len(self._codons)})"
+        return f"Segment(id={self.__id}, codons={len(self.__codons)})"
 
 
 # Adapted from the GradingSystem class in Dunders.ipynb:
-# - GradingSystem keeps one list of Students, this keeps two lists
-# - add_students() looped over the data and made Student objects. Database
-#   already makes the Segments so the loop here only sorts them
-# - kept __len__ and __str__ (MainWindow uses both for its label). Dropped
-#   find, __contains__, __getitem__, __add__... nothing here searches or adds
+# - kept __len__ and __str__, MainWindow puts both in its label
+# - changed one list of Students into two private lists, valid and mutated,
+#   each with a @property that returns a copy like Rotor.characters in
+#   ClassDesign Example 3
+# - add_students() made Student objects from the data. Database already
+#   makes the Segments, so the loop here only sorts them
+# - removed find(), class_average(), __contains__, __getitem__, __add__ etc.,
+#   nothing here searches, averages or merges
 class Classifier:
 
     def __init__(self, segments):
-        self._valid = []
-        self._mutated = []
+        self.__valid = []
+        self.__mutated = []
         for segment in segments:
             # an empty list means no mutated codons
             if segment.get_mutated_codons():
-                self._mutated.append(segment)
+                self.__mutated.append(segment)
             else:
-                self._valid.append(segment)
+                self.__valid.append(segment)
 
-    def get_valid(self):
-        return self._valid.copy()
+    @property
+    def valid(self):
+        return list(self.__valid)
 
-    def get_mutated(self):
-        return self._mutated.copy()
+    @property
+    def mutated(self):
+        return list(self.__mutated)
 
     def __len__(self):
-        return len(self._valid) + len(self._mutated)
+        return len(self.__valid) + len(self.__mutated)
 
     def __str__(self):
-        return f"{len(self._valid)} valid, {len(self._mutated)} mutated"
+        return f"{len(self.__valid)} valid, {len(self.__mutated)} mutated"
 
 
 # Adapted from CommandExecutor in my SQLite exercise:
-# - kept the idea of one class owning the sqlite3 connection
+# - kept one class for all the database work, with the file name passed to
+#   __init__ like CommandExecutor(db_name)
 # - removed both dispatch dictionaries and INSERT/UPDATE/DELETE/DROP, the
 #   midterm only reads
-# - rows become Segment objects instead of dictionaries
+# - changed it to connect inside load_segments() and close right after,
+#   instead of staying open from __init__, because there's only one query
 # - the try/except moved up to MainWindow so the error can go in a messagebox
 class Database:
 
     def __init__(self, filename, table="dna_segments"):
-        self._filename = filename
-        self._table = table
+        self.__filename = filename
+        self.__table = table
 
     # Adapted from select_all() in DynamicSQL.ipynb:
-    # - same f"SELECT * FROM {table}", the table name comes from __init__
-    # - each row is (id, segment) so row[0] and row[1] go into Segment()
-    # - added conn.close() since this is the only query
+    # - kept cur.execute(f"SELECT * FROM {table}") and cur.fetchall()
+    # - changed: the table name comes from __init__, and each (id, segment)
+    #   row becomes a Segment instead of returning the tuples
     def load_segments(self):
         # sqlite3.connect() makes a new empty .db if the file isn't there,
         # then the SELECT fails with "no such table". Checking first gives
         # a clearer message and doesn't leave an empty file behind
-        if not os.path.exists(self._filename):
-            raise FileNotFoundError(f"Can't find {self._filename}")
+        if not os.path.exists(self.__filename):
+            raise FileNotFoundError(f"Can't find {self.__filename}")
 
-        conn = sqlite3.connect(self._filename)
+        conn = sqlite3.connect(self.__filename)
         cur = conn.cursor()
-        cur.execute(f"SELECT * FROM {self._table}")
+        cur.execute(f"SELECT * FROM {self.__table}")
         segments = [Segment(row[0], row[1]) for row in cur.fetchall()]
         conn.close()
         return segments
 
 
-# Adapted from the Basic Example slide in Tkinter.pdf (tk.Tk(), title,
-# geometry, a Label, a Button with command=, mainloop):
-# - the entry point has to be MainWindow().mainloop(), so MainWindow has to
-#   be the Tk window itself. In Tkinter.ipynb TkinterShowcase is a Frame
-#   that gets root passed in, which doesn't fit that entry point.
+# Adapted from the Basic Example slide in Tkinter.pdf and TkinterShowcase
+# in Tkinter.ipynb:
+# - kept title(), geometry(), a Label and Buttons with command=
+# - changed root = tk.Tk() into a class. TkinterShowcase is a Frame that
+#   gets the root window passed in, but the entry point has to be
+#   MainWindow().mainloop(), so MainWindow has to be the Tk window itself.
 #   Subclassing tk.Tk isn't in the notebooks, I looked it up
-# - root.title()/root.geometry() became self.title()/self.geometry()
 # - on_button_click() became open_valid() and open_mutated()
 class MainWindow(tk.Tk):
 
@@ -192,18 +198,21 @@ class MainWindow(tk.Tk):
                   command=self.open_mutated).pack(side="left", padx=10)
 
     def open_valid(self):
-        SegmentListWindow(self, "Valid Segments", self.classifier.get_valid())
+        SegmentListWindow(self, "Valid Segments", self.classifier.valid)
 
     def open_mutated(self):
-        SegmentListWindow(self, "Mutated Segments", self.classifier.get_mutated())
+        SegmentListWindow(self, "Mutated Segments", self.classifier.mutated)
 
 
 # Toplevel is on the Basic Widgets slide in Tkinter.pdf ("Creates a new,
 # independent window") but there's no example, so how to use it I looked up.
-# The text box is the ScrolledText from the Text Box tab in Tkinter.ipynb,
-# set up the same way as in gui.py from my Tkinter exercise (Courier font,
-# disabled at the end because it's only for reading).
-# One class for both windows, only the title and the list change.
+# Adapted from build_textbox_tab() in Tkinter.ipynb and gui.py from my
+# Tkinter exercise:
+# - kept the ScrolledText from the Text Box tab, plus the Courier font and
+#   state="disabled" from gui.py since the window is only for reading
+# - changed wrap="word" to wrap="none" so each segment stays on one line
+# - the segments come in through the constructor like the table did in
+#   gui.py, so the same class works for both windows
 class SegmentListWindow(tk.Toplevel):
 
     def __init__(self, master, title, segments):
@@ -229,7 +238,7 @@ class SegmentListWindow(tk.Toplevel):
             return
 
         for segment in segments:
-            self.text_box.insert(tk.END, f"#{segment.get_id():<4}")
+            self.text_box.insert(tk.END, f"#{segment.segment_id:<4}")
             mutated = segment.get_mutated_codons()
 
             if not mutated:
