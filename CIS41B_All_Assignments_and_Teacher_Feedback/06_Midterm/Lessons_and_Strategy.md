@@ -36,13 +36,20 @@
 
 | Midterm 类 | 改编自（全部已核对原文） | 主要改动 |
 |---|---|---|
-| `Segment` | Dunders.ipynb `Student` 类（name + scores → id + codons，`__len__`/`__iter__`/`__str__`/`__repr__`/get 方法） | 删掉 `_validate_*`（题目说不用验证） |
-| `Segment.split_codons()` | 自己 Streaming 作业的 `decode()`：`pair += bit; if len(pair) < 2: continue` | 2 位一组改成 3 个字母一组，去掉 Morse 查表 |
-| `Segment.MUTATION_RE` | Parsing.ipynb 3a：`re.compile` 一次、每行都用 | 模式只写 `[XYZ]`，并按 Web Scraping 作业要求说明它只匹配什么 |
-| `Segment.__str__` | BinaryPipes `stream_bytestream()`：`" ".join(...)` | 字节换成 codon |
-| `Classifier` | Dunders.ipynb `GradingSystem`（保存一组对象，`__len__`/`__str__`） | 一个列表拆成 valid/mutated 两个列表 |
+| `Segment` | Dunders.ipynb 的 `Student` 类（name + scores → id + codons，保留 `__len__`/`__iter__`/`__str__`/`__repr__`） | 删掉 `_validate_*`、print 跟踪和用不到的 dunder；`get_name()` 改成私有 `__` 属性 + `@property`（Example Assignment / ClassDesign Example 3） |
+| `Segment.split_codons()` | Streaming Evaluation.ipynb 里老师给的 `Decoder.feed()`（自己 Streaming 的 `decode()` 是同样写法） | 2 位一组改成 3 个字母一组，去掉 Morse 查表 |
+| `Segment.MUTATION_RE` | Parsing.ipynb 3a 的 `re.compile`；Regex.ipynb 电话号码例子的 `[0-9]` 字符类和 `zip_check()` 的 `re.match()` | 模式只写 `[XYZ]`；说明为什么用 `search()` 而不是 `match()` |
+| `Classifier` | Dunders.ipynb 的 `GradingSystem`（保存一组对象，`__len__`/`__str__`） | 一个列表拆成两个私有列表，用 `@property` 返回副本（ClassDesign 的 `Rotor.characters`） |
 | `Database` | DynamicSQL `select_all()` + 自己 SQLite 的 `CommandExecutor` | 只保留读取；行变成 `Segment` 对象 |
 | `MainWindow` | Tkinter.pdf Basic Example（`tk.Tk()`、title、geometry、Label、Button command）+ BinaryPipes 的 `control_frame` | 因为入口必须是 `MainWindow().mainloop()`，改成继承 `tk.Tk`（查的） |
 | `SegmentListWindow` | Tkinter.ipynb Text Box tab + 自己 Tkinter 作业 `gui.py`（Courier 字体、只读） | `Toplevel`（Tkinter.pdf 只列了名字）和 tag 高亮（查的），颜色用 DNA100table.html 里 `.mut` 的橙色 |
 
 格式：文件开头放一份简短的改动日志（老师在 Assignment Structure 页面里允许用注释代替单独的 change log），每个改编处用 Example Assignment Step 8 的 "Adapted from … / kept / changed / removed" 写法，但每处长短不一，并且只写在真正改编过的地方。
+
+## 五、第二轮修改（根据模拟评审 + 老师自己的 notebook）
+
+- 删掉没用到的 `get_sequence()`、`get_codons()`，删掉牵强的 BinaryPipes `" ".join` 引用。
+- **保留** `Segment.__repr__`：Example Assignment Step 1 把 "a usable `__repr__`" 列为完整类的一部分，Streaming Evaluation 也要求 "a meaningful `__repr__`"。
+- 改成私有 `__` 属性 + `@property`：Streaming Evaluation 第 5 条扣分就是 "No Private State or Properties"，Example Assignment Step 1 也把它列为必须保留的结构。
+- 每个改编块都明确写出 kept / changed / removed（老师 Step 8 的写法），但只写在真正改编过的地方。
+- 13 条引用全部用脚本对照原文核实过。
