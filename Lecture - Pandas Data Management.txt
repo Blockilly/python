@@ -1,0 +1,112 @@
+Our topic this evening is Panda's data management.
+
+* We'll be going over a new exercise shortly.
+* which is due on November 8th.
+* And the final… is scheduled for December 3 through December 7.
+* So we do have a fair number of topics to go over before the finals, so we'll basically be having
+* One exercise per week until the final.
+* And the final will be like the midterm, which will be basically an assignment.
+* Alright, so let's… get started with Panda's Data Management.
+* And tonight, we'll be basically going over the assignment.
+* And showing you where the pandas pieces fit into the assignment.
+* So first, let's look at the assignment.
+* Alright, so this is a Panda's CSV SQLite viewer.
+* Which is very similar to… the assignment that you just did with SQLite.
+* Alright, so in the previous SQLite assignment, you loaded a CSV file using Python, Converted the data into dictionaries.
+* generated SQL and used SQL commands to build and work with database tables.
+* This assignment introduces pandas.
+* Pandas provides a higher-level tools for loading and working with structured data.
+* Instead of converting CSV rows into dictionaries, And manually building the table.
+* you will be using a Panda's data frame.
+* So, the new pipeline is CSV file, goes to Panda's data frame, goes to SQLite Table.
+* Then we get an SQLite query.
+* with a select…
+* And then we convert that query into a data frame, and then convert the data frame query into a
+* TK Enter Display.
+* So this is basically a redo of the previous assignment using Pandas.
+* So there's…
+* several parts to it. There's load the CSV file with Pandas, and we'll be going over how to do that in a few minutes.
+* Convert the data frame to SQLite.
+* query the… the… SQLite database?
+* load SQL results into a data frame.
+* then the TKEnter GUI, and display the data frame in the TKinter GUI.
+* And then, of course, add validation and robustness to your routines.
+* And you should be able to handle any of the CSV files that we used in the previous assignment, and make sure you use object-oriented design.
+* Alright, so this is a high-level overview of the…
+* The assignment, which is due on the 8th, this next Sunday.
+* Alright, so now let's go over the components that you need to convert the previous assignment into using Pandas.
+* Alright, so this picture has a… is fairly small in terms of the typeface. So basically, we go from a CSV file.
+* to a Pandas data frame.
+* to an SQLite database.
+* Then an SQLite query.
+* get our results from the query, and display the query in the TKEnter GUI.
+* So, what changes with pandas? The previous SQLite work stays useful.
+* But Pandas handles more of the movement of structured data.
+* So before, we went from CSV modules, dictionaries, generated SQL to SQLite.
+* Now we go from CSV to DataFrame to SQLite.
+* SQL is still used to retrieve the data that we need.
+* The data frame becomes the bridge between the CSV, SQLite, and the GUI.
+* Alright, so here's how to read a CSV file into a data frame.
+* So you need to import pandas.
+* Then you use Pandas to read a CSV file. This is a function in Pandas.
+* And this is an example of a CSV file.
+* where you know the name of the CSV file. In this case, dogs.csv.
+* Then you just print out the data frame.
+* And it'll be roughly the same format as the CSV file for the printout.
+* Then you're going to need to get the rows and the columns of data.
+* So, here's how to get all of the columns.
+* So, from the data frame, you get the columns and put them into a list.
+* And then you can print all of the list of columns.
+* And then you can go through each one of the rows and print the rows.
+* Then you create an SQLite connection.
+* So, import SQ8, and… Connect it to the name of your database?
+* Nothing in there changes.
+* From the previous assignment.
+* And then, write the data frame to SQLite.
+* So there's a function in Pandas called 2SQL, which creates and populates the table from the data frame. So that's the SQLite table.
+* So, with the DF, the data frame to SQL function, you pass it the name, of the SQL.
+* Tabled.
+* The connection, the current connection, And if it exists, and set the index
+* to false, which keeps the data frame index from becoming a database column.
+* So, Pandas handles the creation and insertion.
+* But SQLite is still queried with SQL.
+* So here we create an SQL query. So select everything from the dog's table.
+* And then print the results of the… print the results of the SQL.
+* So the query can retrieve all the rows, or only the subset needed by the program.
+* So you're used to using an SQL select already?
+* And then, with pandas.
+* you read the SQL query, so you send it the SQL and the connection, and it will send back the results.
+* So now you have a list of results from reading the SQL query.
+* And then…
+* Display the data frame that you get back from the query, and this is a function which shows you how to do that.
+* And then… Test the GUI display.
+* So the GUI does not need to know the query columns ahead of time.
+* The columns come from the data frame.
+* So here, we're using TK entered, get the title, Get the tree view.
+* And then display the data frame, which was listed in the previous Oh.
+* slide.
+* So the… we've covered the complete pipeline now, so we go from CSV file, data frame, to SQLite, to SQL query, to Results, DataFrame, and then display it in the TK Inter GUI.
+* So, in review, Read the CSV file, examine the data frame columns and data types.
+* Work with the data frame rows.
+* write a data frame to SQLite.
+* Execute an SQL query.
+* Receive the query results.
+* As another data frame, dynamically display the data frame in a TK inter… Tree view.
+* Alright, so… You can get all of the parts and the pieces that you need.
+* To… from the notebook, the… the pandas… Python notebook.
+* Has all of the pieces that you need.
+* So here we're creating some sample data, a CSV file.
+* So… write this… this crew… writes the CSV file. This reads the CSV file.
+* This loads it into a data frame.
+* And you can now get the column names, and you can read the rows from the data frame.
+* then create the SQLite database.
+* convert the data frame to SQLite, so use the S… 2SQL function.
+* Then… Query the data frame.
+* And then the query returns the data.
+* in the results… And then… You can display your results.
+* in TK Enter.
+* Alright, so this is basically redoing the previous SQLite exit.
+* exercise, and replacing a lot of the pieces with pandas, and you can get all the pandas pieces you need from this.
+* Python notebook that you'll need for the assignment.
+* Alright, so that's all I have for this evening.
+* If you have questions, let me know.

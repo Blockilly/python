@@ -1,0 +1,270 @@
+Grant Larkin
+Our topics today are Numpy, data frames, series.
+* And I just want to mention that our final will be on December 3rd through December 12th… 7th.
+* Alright, let's start with NumPy, which is Numerical Python.
+* Okay, Python's built-in containers were never designed for numerical work.
+* A list has… has been an array of pointers or two boxed objects. Each element carries a type and a tag.
+* And a reference count.
+* And every arithmetic operation dispatches through the interpreter.
+* So, Numpy replaces that one-type contiguous memory block and loops written in C.
+* The result is a nicer syntax for the same work.
+* it is a different execution model. This is why SciPi, Pandas, Skit, learn, and PyTorch.
+* all sit on top of ND array rather than a Python list.
+* So, NUMPI is short for Numerical Python.
+* And is a fundamental library for scientific computing.
+* It provides support for large, multi-dimensional arrays and matrices.
+* And a collection of mathematical functions to operate on these arrays.
+* Numpies is an essential data analysis, machine learning, and numerical Compu- computations.
+* Let me read that again.
+* Numpy is essential, for… Data analysis, machine learning, and numerical computations.
+* Okay, so the purpose of Numpy… Basically, is efficient array computations.
+* So, numpy arrays… ND arrays are more efficient than Python lists.
+* Multidimensional arrays.
+* Numpy supports multi-dimensional arrays, making it easy to support matrices and higher-level dimensional data. It contains a whole bunch of mathematical functions.
+* Interoperability, Numpy integrates well with other scientific libraries, and it's memory efficient.
+* Alright, so, in terms of efficiency.
+* Numpy arrays are more memory-efficient and faster than Python lists because they use a fixed, contiguous block of memory.
+* Contiguous box are better for… doing…
+* List computations, rather than having memory scattered all over memory.
+* Or memory blocks scattered all over memory.
+* This allows for faster access and computation.
+* So… Numpy uses something called vectorized code.
+* Alright, so if we were to make a list… With the range of
+* 10 million. Notice that the… there's underscores here instead of commas. This is something that Python does instead of type commas.
+* We have a list in this range.
+* And this would create about 400 megabytes of boxed objects.
+* If you use Numpy, And a range of 10 million items.
+* This takes about 80 megabytes.
+* of integer 64.
+* Buffers.
+* So, if you use the numpy sum… I mean, if you use regular Python sum data, this takes approximately
+* 350 milliseconds.
+* and array sum.
+* Where array is the numpy value.
+* It takes about 8 milliseconds.
+* Alright, so vectorization is the key for NumPy.
+* Here's a vectorized, numpy array.
+* We set up our array with a list of 1 to 5.
+* And then we square each one of the data.
+* by 2. So instead of going through each element one at a time.
+* We treat the complete five pieces of data as the word data, and just square each one of the values.
+* And this is the way that it would standardly look. In
+* Python. So you make a list.
+* Make an empty list for squares.
+* And then for X in data, Squares append… X times X.
+* So this is computationally faster for vectorizations than for standard Python loops.
+* Numpy also supplies mathematical functions.
+* Like trigonometric, statistical, and algebraic functions.
+* And they can be completely applied to arrays through vectorization.
+* This makes it easier to perform complex mathematical operations.
+* So, indexing is not a convenience feature, it's how Numpy avoids copying.
+* Because an array is one flat buffer plus a stride per axis.
+* A slice returns a view over the same memory, so big O of 1 cost, which means constant cost, and no allocation.
+* The same operation on nested Python lists requires rebuilding a new list of objects.
+* And columns cannot be addressed at all.
+* So here we make… a numpy array.
+* So here's the first array right here.
+* the second array… And the third array.
+* So, don't be… of… M… Index 0, row 1.
+* Prince 11.
+* print… M, row 2… Prints the entire row of row 2.
+* And… print… Asterisk one.
+* Is the entire column 1.
+* So, M2 prints 20, 21, 22, and comma 1…
+* Is the entire column, column 1, so…
+* This is column 0, 10, 11,
+* 21 and 31 would be column 1.
+* multi-dimensional rays.
+* This creates a… 3x4 matrix, so you set zeros.
+* And initialize it to 0 with 3 rows and 4 columns.
+* Numpy ones.
+* Creates a 2x2x2 array, all initialized to 1.
+* and random…
+* Creates a 3x4 matrix.
+* With random numbers in them.
+* So, in memory, this is what they look like.
+* This is what a one-dimensional array looks like.
+* A two-dimensional array, and a three-dimensional array.
+* Alright, so to create a one-dimensional array…
+* A list of one, a two-dimensional array, here's the first list, here's the second list.
+* 3x3 array.
+* Third, a first, second, and third dimension.
+* Numpy has a various number of properties, so making an array.
+* NumPy array 1, numpy array 2.
+* You can use the plus operation.
+* You can calculate the mean, And you can calculate the sum.
+* Alright, so, don't be heads.
+* Properties built right into it.
+* And it can do trigonometry and geometry. Here we're converting from degrees to radians.
+* So we set up a value of degrees and call the numpyRadians function.
+* And you can do some trigonometric sine values, or cosine values as well, using numpy.
+* So here are the specialized NUMPI modules.
+* There's exceptions, there's the Fast Furiate transform, linear algebra, polynomial, random, strings… Testing, and typing.
+* And SciPy is a subset of NumPy.
+* SciPy adds stats, optimization, interpolation, and…
+* Spatial analysis on top of the same numpy framework.
+* So Numpy stays at the core, everything else has a specialized layer for SciPy.
+* So, in summary, Numpy is essential for numerical and scientific computing in Python.
+* It provides efficient, fast, and memory-saving array handling, enabling complex mathematical operations, data manipulation, and seamless integration with other scientific libraries.
+* It's the foundation for data science and machine learning.
+* Workflows due to its versatility and performance.
+* Alright, so let's take a look at our numpy.
+* Notebook.
+* Alright, so here's our numpy notebook, which… Goes over the example.
+* describing what the example does, so we're basically setting up a student object
+* And here's our student object.
+* And then we're… Setting the scores, updating the scores…
+* Getting various properties of the student.
+* And printing a summary of the students.
+* Then we set up a grading system.
+* We add students to the grading system, We assign letter grades.
+* We set the color for the grades.
+* Compute the average.
+* So this uses the numpy mean.
+* This displays all of the data.
+* Returns a copy of the… of the… a student… Finds a student.
+* And then we run… the dashboard that… That the example shows.
+* So here's the student data.
+* Each student has a first and last name, and then 10 scores.
+* And then we run our numpy dashboard to calculate the means, the radians.
+* The standard deviations, the variations, the hardest Scores.
+* score… And the easiest score.
+* So you can run this from the notebook, or you can run it from the standalone Python
+* Numpy students example.
+* And that's right here, and I'll just run it real quick so you can see what… what happens.
+* Give it a second to load, okay.
+* Alright, so this prints the students' grades, and… The letter values are calculated.
+* This is from the NUMPI dashboard. The mean, the medians, standard deviations, the variances. These are all coming from NUMPI.
+* The hardest quiz, the easiest quiz, the grade distributions.
+* So there's no Fs, there's 3Ds… Seventh.
+* C's… 9 B's and 6 A's.
+* Here's the z-scores for the students.
+* Here's the… trend, slope, And we'll be talking more about this slope next week.
+* The covariance matrix… and the correlation matrix. These are all coming from Numpy.
+* Alright, so you can read the notebook that describes what's happening with each one of these functions.
+* Now let's look at… data frames… and series.
+* Alright, so Panda supplies something called series and data frames.
+* Series are essentially one-dimensional lists… And data frames are a collection of one or more lists.
+* So here we have a series of apples, and another series of oranges.
+* If you add series…
+* Apples to series oranges, you get a data frame which has apples and oranges in it.
+* So basically, DataFrames is just a collection of series.
+* Alright, so each column in a data frame is a series.
+* As illustrated here, column 1 is Series 1, column 2 is Series 2.
+* all the way up to column K, which is… would be the last column. Put them all together.
+* And that becomes a data frame.
+* And then… There is an independent index which is calculated for each column.
+* So column 1 and column 2 have the same index for the column.
+* All right, so a series is a one-dimensional array-like object containing a sequence of values and associated ray of labeled
+* Data called an index.
+* Think of a series as a column in an Excel spreadsheet.
+* Each value has a unique label.
+* Which acts like the row name.
+* A series can be created from a list, dictionary, or even another series.
+* So, a series has index data.
+* Each element has a unique label or index.
+* Versatility, it can handle different types of data.
+* Data alignment. It aligns data.
+* By labels automatically during operations.
+* And it has methods and functions just like Numpy.
+* And it has time series data.
+* Which gives you some time-based functionality.
+* Here's a series example.
+* You import pandas, make a series.
+* And instead of an index that goes from 0 to 4,
+* we can override the 0 through 4 with A, B, C, and D.
+* So we can access the data by the label.
+* So, access… at label B.
+* That would be 20.
+* And mathematical operations.
+* If we do the mean value of this series, it's… 25, so… You have the mean function.
+* So a data frame is a two-dimensional, multi-size, multi-mutable
+* Or size mutable, and potentially heterogeneous tabular data structure with labeled axes.
+* Rows and columns.
+* So, a data frame is essentially an Excel spreadsheet, if you've ever used Excel.
+* And data frames can be created from lists, dictionaries, or other data frames.
+* So a data frame organizes data in a tabular format, similar to Excel, or an SQL table.
+* Data manipulation, it provides powerful tools to clean, filter, aggregate, and transform data.
+* It has built-in methods for statistical operations and for in-depth data analysis.
+* And it can be easily used in other sources, like CSV files, databases, and Excel spreadsheets.
+* Here's a data frame example.
+* Here's our dictionary.
+* So we have a key of dwarf.
+* And then a dictionary of lists.
+* Then a key of astronomical units, and then a dictionary of astronomical units.
+* And then years… Key, and then a dictionary.
+* Of years' values.
+* Alright, so we turned this dictionary…
+* by using Panda's data frame, so you pass at the dictionary to convert to a data frame.
+* And then we print the data frame, which would print out this This as a… data frame.
+* This would be the first column, second column, third column.
+* And then we can use the… Index location.
+* to find out any specific… Element.
+* So, index location 1, 0.
+* Or index location 11.
+* Or index location 1, 2.
+* So, 1… 0… would be Pluto.
+* 1-1 would be 1.39.
+* And 1, 2 would be… 247.69, so that would be the data for Pluto.
+* So, this is what the data frame looks like when you print it out.
+* If you cl… map this into a HTML table.
+* These are the table headers.
+* The ones in blue here.
+* The table rows, the ones in yellow, And then the table… detail.
+* In green.
+* So the table row is the row numbers.
+* The table headers are the column headers, and then the TD is the actual data that's in the table.
+* So when you use the read CSV file.
+* you read this dwarf CSV file, which is the planet table that we were just looking at.
+* And… CSV files typically use commas.
+* So the default is a comma, but you can have that delimiter be anything you want.
+* Like a period or a space.
+* And then you print the CSV file.
+* This is what the CSV file looks like.
+* Over here on the left, and then on the right, this is what the data frame
+* looks like for the CSV file.
+* And you can also convert a data frame to Excel.
+* So this is what the data frame looked like on the previous slide.
+* And if you use the 2XL function.
+* This is what it would look like in Excel.
+* Almost the same.
+* Alright, so let's look at some examples.
+* For series and data frames.
+* So here's the data frame notebook.
+* It creates a data frame dashboard similar to the one that we were looking at.
+* The dashboard in NumPy is written to the console.
+* for the… Panda's data frame dashboard.
+* It writes it to, TK Enter.
+* Dashboard.
+* And then, for the series, it does the same thing. It creates a Panda Series dashboard.
+* And it's a TK Enter version. So the numpy is one written in console.
+* And then the data frame and the series are written in… with TKEnter GUI.
+* So here's what the data frame
+* version looks like, so the data frame is a…
+* The Python file is a copy of the DataFrame notebook.
+* So let's run that one.
+* To show you what it looks like.
+* Oops.
+* Current file and run it.
+* Okay, so here's the… data frame.
+* So you can… you can do various things with the data frame functions, like…
+* The quiz means, the quiz standard deviations, the highest average, the lowest average.
+* the show full Python frame.
+* So let's… Do one of them.
+* The quiz means?
+* And then deviations. So you can press each one of these buttons and see…
+* How this is done with data frames.
+* And then for the stand… the series, Here's the series notebook.
+* And we need to stop the… this one.
+* Here's the series notebook.
+* It describes what's going on in the example.
+* And then we can run the series example independently of the notebook.
+* So it has some ways to do the calculations, too. Instead of using data frames, it's using a series.
+* So here's the quiz means.
+* Standard deviations, highest average, Lowest average.
+* And show all of the students.
+* Alright, so you can click on each one of those buttons and see how… the standard deviations were…
+* Alright, so this is all I have for tonight on…
+* Monday next week, we will be talking about Math PlotLib.
+* And then, talking about the next assignment, which is… Dealing with…
+* data frame, series, NumPy, and Matplot
