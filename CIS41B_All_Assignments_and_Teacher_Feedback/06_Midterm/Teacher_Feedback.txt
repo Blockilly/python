@@ -1,0 +1,26 @@
+Modular: 5/5
+Clear separation between the database, DNA processing, classification, and GUI. No changes needed.
+
+Complete: 5/5
+All major requirements are present and connected.
+
+Scalability: 5/5
+Well organized and easy to extend. Responsibilities are kept in the appropriate classes.
+
+Robustness: 5/5
+Good database error handling and clear handling of missing files.
+
+Effective Coding: 5/5
+Code is clean and makes good use of classes, properties, comprehensions, regex, and Tkinter.
+
+Appropriate Dunders: 5/5
+Good use of __len__, __iter__, __str__, and __repr__ for meaningful class behavior.
+
+Notebook Usage: 9/10
+Strong use of the notebook material, although some of the notebook connections are broader than necessary.
+
+Comments Explaining Changes: 7/10
+The notebook adaptations are clearly documented, but the code is over-commented. Many comments explain basic code behavior rather than important changes or design decisions. Comments should be more selective and focused.
+
+Total: 46/50
+- Grant Larkin
