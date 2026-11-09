@@ -57,7 +57,7 @@ class CSVData:
         return count
 
     # otherwise names like "Home State" or "Distance(AU)" need quotes in
-    # every query
+    # every query typed into the SQL box
     def clean_name(self, name):
         return re.sub(r"\W+", "_", name.strip()).strip("_")
 
@@ -127,6 +127,9 @@ class Database:
 #   to_sql() covers the first two and this program only reads
 # - changed: the value is written into the SQL instead of a ?, so the query
 #   in the SQL box is complete and can be edited and run as it is
+# - changed: table and column names are in double quotes. A name starting
+#   with a digit (2026_Data.csv, or a column called 1990) is a syntax error
+#   unquoted, or worse, WHERE 1990 = 5 just compares two numbers
 class QueryBuilder:
 
     OPERATORS = ("=", ">", "<", ">=", "<=")
@@ -135,18 +138,19 @@ class QueryBuilder:
         self.__table_name = table_name
 
     def select_all(self):
-        return f"SELECT * FROM {self.__table_name}"
+        return f'SELECT * FROM "{self.__table_name}"'
 
     def select_where(self, column, operator, value):
-        return f"{self.select_all()} WHERE {column} {operator} {self.sql_value(value)}"
+        return f'{self.select_all()} WHERE "{column}" {operator} {self.sql_value(value)}'
 
-    # numbers go in as they are (Year >= 2000), text gets quotes ('Ohio')
+    # numbers go in as they are (Year >= 2000), text gets quotes ('Ohio'),
+    # and a ' inside the text has to be doubled or O'Brien breaks the SQL
     def sql_value(self, value):
         try:
             float(value)
             return value
         except ValueError:
-            return f"'{value}'"
+            return "'" + value.replace("'", "''") + "'"
 
 
 # Adapted from display_dataframe() in Pandas.ipynb:
@@ -326,11 +330,13 @@ class PandasSQLViewer(ttk.Frame):
 
         self.query_builder = builder
         self.show_sql(builder.select_all())
-        # reading the whole table back and comparing it to the DataFrame
-        # checks the rows, the columns and the values at once
-        if stored.equals(df):
+        # the assignment asks for the same columns and rows. equals() was too
+        # strict for that: SQLite has no bool type, so a True/False column
+        # comes back as 1/0 and the table showed up as different
+        if list(stored.columns) == list(df.columns) and len(stored) == len(self.csv_data):
             self.show_info(f"Table {table_name} written to {self.database.filename}: "
-                           f"{len(self.csv_data)} rows, same as the DataFrame")
+                           f"{len(stored)} rows and {len(stored.columns)} columns, "
+                           f"same as the DataFrame")
         else:
             self.show_info(f"Table {table_name} doesn't match the DataFrame: "
                            f"DataFrame {df.shape}, SQLite table {stored.shape}")

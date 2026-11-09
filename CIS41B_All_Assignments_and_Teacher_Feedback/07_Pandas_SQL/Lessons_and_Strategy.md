@@ -49,3 +49,13 @@
 | `QueryBuilder` | 自己 SQLite 的 `QueryBuilder` | 生成 SELECT 和 WHERE，不写死列名 |
 | `ResultsTable` | Pandas.ipynb `display_dataframe()` | Treeview 显示 DataFrame |
 | `PandasSQLViewer` | 自己 SQLite 的 `SQLiteGUI` | GUI 驱动，不含 pandas/SQL 实现 |
+
+## 六、第二轮：外部审查（ChatGPT）的 5 条意见，实测后的处理
+
+| 意见 | 实测 | 处理 |
+|---|---|---|
+| 1. `O'Brien` 生成坏 SQL / 注入 | 属实，会报语法错误（被捕获，不崩溃）；5 个 CSV 里没有单引号。注入不成立：SQL 框本来就能随便编辑 | 单引号加倍转义（1 行） |
+| 2. SELECT 开头不等于只读 | 理论问题：没有自定义函数，sqlite3 也拒绝一次执行多条语句。`set_authorizer` 超出课程，反而像 AI | 不改 |
+| 3. `equals()` 会误报 | 属实：True/False 读回变 1/0，全空列读回类型也不同。**它建议的 `assert_frame_equal(check_dtype=False)` 在 pandas 3.1 上同样失败** | 改为比较列名和行数，正好是题目原话 "same columns and rows" |
+| 4. 数字开头的名字 | 属实而且更严重：表名报错；列名 `WHERE 1990 = 5` 不报错但结果错 | 生成的 SQL 给表名、列名加双引号 |
+| 5. 中间有注释行的 CSV | 5 个文件没有；真遇到会被 `load_file` 捕获并提示，不崩溃 | 不改 |
