@@ -1,0 +1,15 @@
+Modularity: 4/5. CSVData, Database, QueryBuilder, ResultsTable, and PandasSQLViewer have generally clear responsibilities. The design is somewhat more elaborate than necessary, but it is based on the student's previous SQLite structure and remains reasonably organized.
+
+Robustness: 4/5. The program handles CSV errors, database errors, application state, and query errors reasonably well. Some additional cleaning and verification code is beyond what the assignment requires.
+
+Scalability: 4/5. The program works dynamically with different CSV files, columns, and row counts. Cleaning column names changes the original DataFrame schema, however, when quoting the existing names would have preserved the source data.
+
+Correctness: 5/5. The required pipeline is present and uses the expected pandas operations correctly.
+
+Clarity and Style: 3/5. The overall organization is understandable, but the query-building controls, column-name conversion, database verification, display verification, and additional GUI state management make the solution more complicated than necessary for the assignment.
+
+Notebook Usage: 8/10. The submission identifies specific pandas notebook techniques and also clearly explains which portions were adapted from the previous SQLite assignment. The required pandas techniques remain recognizable in the solution.
+
+Comments Explaining Changes: 8/10. Most comments do a good job of identifying what was kept, changed, or removed and why. There are still more comments and implementation details than necessary, but they are more closely tied to actual adaptations than in some of the previous submissions.
+
+Total: 36/45*20=16

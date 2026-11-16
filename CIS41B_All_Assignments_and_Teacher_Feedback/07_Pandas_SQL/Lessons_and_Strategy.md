@@ -1,0 +1,85 @@
+# Pandas SQL 作业：经验总结与策略
+
+本文件不属于提交内容。
+
+## 一、历次成绩和老师的评语
+
+| 作业 | 结果 | 关键评语 |
+|---|---|---|
+| Web Scraping（真学生） | 正面 | 简单、可读、用 notebook 注释格式 |
+| Tkinter | 7/10 | 注释只复述代码，没解释为什么改 |
+| Streaming 初交 | 15/20 | 没有和 notebook 的对应关系 |
+| Streaming 重交 | 被判 85% AI | 编造引用、教程口吻、过度验证、架构超出范围 |
+| SQLite | 22.8/30 | Dunders 3/5、Notebook 6/10、Comments 5/10、Effective Coding 4/5 |
+| **Midterm** | **46/50，没提 AI** | Dunders 5/5、Notebook 9/10（有些联系太宽泛）、Comments 7/10（**注释太多，解释了基础代码**） |
+
+## 二、Midterm 证明有效、这次继续用的
+
+1. 每个类都对应一段**真实的、结构上真的照着改**的课堂代码，引用逐条对照原文核实。
+2. 改编处用 kept / changed / removed（老师 Example Assignment 的格式）。
+3. 私有 `__` 属性 + `@property`；dunder 要在程序里真的被调用。
+4. 不验证题目说不用验证的东西；没有测试文件、README、docstring、类型注解。
+5. 实际数据有坑就写真实的原因（这次的坑都已经用 pandas 2.3 和 3.1 实测过，见第四节）。
+
+## 三、这次要改进的（来自 Midterm 的 4 分扣分）
+
+1. **注释减量**：Midterm 是 97 行注释 / 123 行代码（0.79）。这次目标约 0.3。题目最后一句也是 "Comment your code where the purpose or reasoning may not be obvious"。
+   - 只写：改编记录（每个类一段）+ 不明显的原因（数据的坑、为什么这样设计）。
+   - 不写：这行代码在做什么。
+2. **引用只留直接的**：只引用 Pandas.ipynb（read_csv、to_sql、read_sql_query、display_dataframe）和自己 SQLite 作业的 4 个类（老师课上说这次就是 "a redo of the previous assignment using Pandas"），外加一处 BinaryPipes `choose_file()` 的 `filedialog`。不再引用颜色、字符类这种宽泛的联系。
+
+## 四、实测发现的数据问题（都写进代码注释，因为是"不明显的原因"）
+
+| 问题 | 实测结果 | 处理 |
+|---|---|---|
+| Temperature.csv 开头 3 行 `#` | 直接 `pd.read_csv()` 报 `ParserError` | 先数出开头的 `#` 行，用 `skiprows` 跳过 |
+| 不能用 `comment="#"` | 会把 CO2.csv 的 `#days` 列吃掉 | 同上 |
+| Presidents.csv 值后面有空格（"Federalist "） | 不去空格时 `WHERE Party = 'Federalist'` 返回 0 行 | 对文字列 `.str.strip()` |
+| 列名有空格、括号（"Home State"、"Distance(AU)"） | SQL 里每次都要加引号 | 沿用 SQLite 作业的 `clean_name()` |
+| 老师示例 `WHERE State = 'Ohio'` | Presidents.csv 没有 State 列，是 `Home State` | 清理后 `Home_State = 'Ohio'` 返回 7 位总统 |
+| `read_sql_query("DROP TABLE t")` | 先删掉了表，然后才报错 | Viewer 只允许 SELECT |
+| SQLite 往返 | 5 个文件写入再读回都和原 DataFrame `equals()` | 用它验证"表里的数据正确" |
+
+## 五、设计（5 个类，main 只有 3 行）
+
+| 类 | 改编自 | 职责 |
+|---|---|---|
+| `CSVData` | 自己 SQLite 的 `TableData` + Pandas.ipynb `read_csv()` | 读 CSV、清理、提供列名/行数/类型 |
+| `Database` | 自己 SQLite 的 `CommandExecutor` + Pandas.ipynb `to_sql()`/`read_sql_query()` | 写表、执行 SELECT |
+| `QueryBuilder` | 自己 SQLite 的 `QueryBuilder` | 生成 SELECT 和 WHERE，不写死列名 |
+| `ResultsTable` | Pandas.ipynb `display_dataframe()` | Treeview 显示 DataFrame |
+| `PandasSQLViewer` | 自己 SQLite 的 `SQLiteGUI` | GUI 驱动，不含 pandas/SQL 实现 |
+
+## 六、第二轮：外部审查（ChatGPT）的 5 条意见，实测后的处理
+
+| 意见 | 实测 | 处理 |
+|---|---|---|
+| 1. `O'Brien` 生成坏 SQL / 注入 | 属实，会报语法错误（被捕获，不崩溃）；5 个 CSV 里没有单引号。注入不成立：SQL 框本来就能随便编辑 | 单引号加倍转义（1 行） |
+| 2. SELECT 开头不等于只读 | 理论问题：没有自定义函数，sqlite3 也拒绝一次执行多条语句。`set_authorizer` 超出课程，反而像 AI | 不改 |
+| 3. `equals()` 会误报 | 属实：True/False 读回变 1/0，全空列读回类型也不同。**它建议的 `assert_frame_equal(check_dtype=False)` 在 pandas 3.1 上同样失败** | 改为比较列名和行数，正好是题目原话 "same columns and rows" |
+| 4. 数字开头的名字 | 属实而且更严重：表名报错；列名 `WHERE 1990 = 5` 不报错但结果错 | 生成的 SQL 给表名、列名加双引号 |
+| 5. 中间有注释行的 CSV | 5 个文件没有；真遇到会被 `load_file` 捕获并提示，不崩溃 | 不改 |
+
+## 七、最终成绩：36/45 → 16/20（80%），评语没有提 AI
+
+提交版本：`PandasSQLViewer.py`（commit 9d4731e），老师原文见 `Teacher_Feedback.txt`。
+
+| 评分项 | 分数 | 扣分原因（老师原话要点） |
+|---|---|---|
+| Modularity | 4/5 | 设计比需要的复杂，沿用了 SQLite 的结构 |
+| Robustness | 4/5 | 额外的数据清理和验证代码超出了作业要求 |
+| Scalability | 4/5 | 清理列名改变了原始 schema，**给原名加引号就能保留原数据** |
+| Correctness | 5/5 | — |
+| **Clarity and Style** | **3/5** | WHERE 生成控件、列名转换、数据库验证、显示验证、多余的 GUI 状态，让程序比作业需要的复杂 |
+| Notebook Usage | 8/10 | pandas 技巧能认出来，但很多部分来自旧的 SQLite 作业 |
+| Comments | 8/10 | 比以前好（Midterm 7/10），但注释和实现细节仍然偏多 |
+
+### 这次学到的（下次照做）
+
+1. **题目越开放，越要做最小设计。** Midterm 规定了 5 个类名，所以拿了高分；这次题目说 "The goal is not a particular number of classes"，我们却把 SQLite 的 4 个类整套搬过来，再加了一个。下次只覆盖题目列出的职责，3–4 个类就够。
+2. **只做题目列出的 GUI 元素。** 题目只要求 Load CSV、Create SQLite Table、Run Query、SQL 显示框、结果显示。WHERE 生成控件（列、运算符、值 + 按钮）是多出来的，扣分最多。条件查询只需在可编辑的 SQL 框里放一个例子。
+3. **保留原始数据，不做"改善"。** 列名清理是 SQLite 作业留下的习惯，这次被扣分。正确做法是只给原列名加引号。我们在第二轮审查里同时做了清理和加引号，结果两头都占：代码多了，schema 也被改了。
+4. **"验证"要做，但要轻。** 题目第 7 节确实要求确认写入和显示，但老师认为我们的数据库验证和显示验证都是多余的复杂度。下次用一两行完成（比如只比较行数），不要为它单独写方法和状态。
+5. **外部代码审查的建议要过滤。** ChatGPT 的审查都在推"更健壮、处理更多边界情况"，代码越加越多。这个老师扣复杂度的分数比加健壮性的分数多。以后只接受题目明确要求的那部分。
+6. **notebook 优先用本模块的新 notebook。** 改编来源要以 Pandas.ipynb 为主，旧作业只作辅助；这次主要结构来自 SQLite 作业，Notebook Usage 从 9 降到 8。
+7. **继续有效的：** 真实引用 + kept/changed/removed、实测数据问题后写进注释、注释量控制在约 0.25。评语再次没有提 AI，图灵测试这一层仍然通过。

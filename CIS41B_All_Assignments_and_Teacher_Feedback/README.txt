@@ -6,7 +6,8 @@ Folders:
 - 03_Streaming: original and revised assistant-generated submissions
 - 04_SQLite: initial, revised, and trimmed assistant-generated submissions
 - 05_Teacher_Feedback: verbatim teacher comments pasted in conversation, plus course-wide announcement
-- 06_Midterm: DNA segment classifier midterm (Midterm.py, dna_segments.db) and teacher feedback (46/50)
+- 06_Midterm: DNA segment classifier midterm (Midterm.py, dna_segments.db), teacher feedback (46/50), and lessons/strategy notes
+- 07_Pandas_SQL: Pandas CSV -> SQLite viewer exercise (assignment PDF, submitted PandasSQLViewer.py with the 5 CSVs), teacher feedback (36/45 -> 16/20), and lessons/strategy notes
 
 NOTE: Not a submission package. Some archives duplicate files intentionally to preserve version history.
 SQLite teacher grading feedback was not supplied in this conversation.
