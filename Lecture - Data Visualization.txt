@@ -1,0 +1,174 @@
+* Good evening, our topic is… Data visualization using Matplotlib.
+* There is no lecture on the 11th, which is Wednesday. It's a holiday Veterans Day.
+* There will be office hour tomorrow and on Thursday, though.
+* Alright, data visualization is next.
+* All right, so Matplotlib is the major library for displaying data, and is used in AI quite a bit.
+* Almost exclusively, no doubt.
+* So Matplotlib is a powerful and versatile plotting library for the Python programming language.
+* It is widely used by data scientists, researchers, and analysts to create a variety of static, animated, and interactive visualizations.
+* Matplotlib serves as the foundation for many plotting libraries, such as Seabourn, Panda's Plotting.
+* Due to its robustness and flexibility.
+* So, when I started programming, which was… In 1979,
+* The PC had not been invented yet.
+* And my internship at NASA Ames Research Center
+* We had to plot wind tunnel results.
+* And so we used a plotter that looked a lot like this. It has an X and a Y axis.
+* And then there's a PIN connected right over here.
+* And it moves up and down, back and forth, to draw the plots.
+* But Matplotlib now replaces all of this ancient technology, ancient, yes.
+* All right.
+* So Matplotlib has many types of graphs that it can draw.
+* It's God.
+* Line plots, scatter plots, bar charts, histograms, and pie charts.
+* statistical plots, 3D plots… customizable plots.
+* Interactive plots.
+* And integration with other libraries.
+* So you can use it in… with Numpy, Pandas, sci-Pi.
+* Making it easy to plot data directly from those data structures.
+* So here's some… Some examples of some of the plots that it can do.
+* Here's the anatomy of a plot.
+* You got the overall figure.
+* the axes, so that's the X and the Y axes.
+* There's the plot elements, including the lines.
+* And markers, and bars, and legends.
+* It's got labels and titles, so here's the labels and…
+* There is a title down here, or a label down here at the bottom, and ticks and grids.
+* So there's two interfaces, the ply plot.
+* This is for shortcuts like plot.
+* To track the current figure, and is ideal for quick exploration.
+* It's object-oriented.
+* So, we have a plot object, which, in this case, makes some subplots.
+* You can practice, you can create subplots and then draw them using
+* AX models such as AXplot and AXSetTitle.
+* And… There's a… this word got cut off right here.
+* It makes explicit axes and multi-panel figures reusable plotting functions easier to maintain.
+* So here is a simple line plot.
+* You first need to import Matplotlib.
+* And then here's the x-axis, a list.
+* Y axis a list.
+* And then call the mat plot using the X and the Y axis.
+* And a marker.
+* For the intersections of the lines.
+* And then add a label for the x-axis, a label for the y-axis, the title, And then…
+* After you've set everything up, you show… the results.
+* And this is an example of some subplots.
+* So, set up the… X-axis, and we'll… and it's using NumPy.
+* Set up the line space.
+* Set up the x-axis.
+* for the plot, The axis for the scatter plot.
+* The axis for the bar chart, the axis for the histogram.
+* And each one of those plots, scatter, bar, and list has some parameters.
+* For initialization purposes.
+* And then these are the results of those… of those… subplots.
+* So, there's different types of plots, so choosing the right type of plot.
+* To show a trend over time, you use a line plot.
+* To relate two variables, a scatter plot, Compare categories, a bar chart, Show a distribution, a histogram.
+* Spot, spread, and outliers, a box, plot.
+* Display values on a grid, heat map, And show, Share of a whole.
+* a pie chart.
+* We'll be using… A line plot and a scatter plot in the assignment.
+* There's advanced features.
+* subplots… Customization legends, annotations, Color maps.
+* and 3D plotting, and this is an example of
+* One of the more advanced graphs.
+* There's customization, so you can color and set styles.
+* You can set fonts and texts.
+* You can set the default parameters the access control…
+* And the layout of your graph.
+* So this is just one example of a customized graph.
+* And you can save your… you can save your plots.
+* By writing them to disk, you can write them in PNG, JPG, And vector formats.
+* And you can… you can save it to rendering engines, like…
+* Qt Ag and TK Ag for Windows. Jupyter has inline and widget backends.
+* And… you can use matplotlib in Jupyter.
+* And best practices.
+* Label everything.
+* Choose color carefully.
+* Reduce clutter.
+* Make it reproducible.
+* So keep the plotting code in functions or scripts so figures can be rendered when data changes.
+* That's the important part.
+* MATLAB is open source.
+* And you can go to the MATLAB
+* the MATLAB website, here's a link to the MATLAB website.
+* And Matplotlib has a gallery From which you can pick, map, plots from.
+* I'm not sure how many, but it's over 100 different types of plots.
+* And then, this is a little bit of history behind it. It was developed by
+* John D. Hunter in 2002.
+* And then here's some other graphing libraries in Python. Matplotlib.
+* there's Plotly, Bowtech, and Seabourn.
+* And here's links to all of them in case you want to go there.
+* Here is a link to the Matplotlib.
+* See, did I save it?
+* Here it is.
+* Alright, so here's from the Matplotlib website.
+* Here's all of the examples.
+* And you can see I've just started, if you can see the bar over here on the side.
+* So there's a lot of… Samples to go through.
+* And there's also tutorials.
+* There's a user's guide.
+* plot types…
+* references… And a set of releases.
+* Alright, so… In the notebook for this lecture.
+* I'll be making references to this… gallery here.
+* Alright, so let's… Take a look at the notebook for this section.
+* There's no code for this section.
+* Because I'll be making references.
+* to,
+* I'll be making references to various features of the gallery.
+* in… the notebook.
+* Alright, so, open MATLAB Proper… Examples Gallery. There's a link to it.
+* It contains many different types of plots, line plots, etc, etc.
+* Example 1, find the line plot example from the Matplotlib Gallery.
+* And then… After you copy the code, let me show you how to copy it.
+* Alright, so this is in the example gallery.
+* Let's just pick a really simple plot.
+* Alright, here's a fairly simple one. Well, that's not real simple.
+* Alright, here's one.
+* Alright?
+* So here's what the plot looks like. It has 3 plots on it.
+* And all you do is… Click this copy button.
+* And then paste it into your compiler and run it.
+* But you have to make sure that Matplotlib is installed first.
+* Alright, so the notebook… Is going to be making references
+* To some of the examples in the
+* In the plot for you to look at and make changes to.
+* To see what… to see what the example does, and how to make appropriate changes.
+* So, example 2 is find the scatter plot.
+* Finding the scatter plot with the legend.
+* combining… More than one plot.
+* And then…
+* You can do some exploring of the library.
+* about Plot Lib Library.
+* Alright, so now let's go over the assignment.
+* And the assignment is due next Sunday.
+* Alright, so here we are.
+* Module 7… And Here's the exercise.
+* So we'll be using… Pandas, numpy, and Matplotlib. We covered those last week.
+* And we covered Matplotlib today.
+* So, an overview is this assignment combines Pandas, Numpy, Matplotlib to analyze the CO2 CSV file and calculate a linear regression.
+* And here's why we pick… Why, why I picked the CO2… File.
+* So you can get a little understanding of what the graph is doing.
+* So part one is load the data with pandas.
+* Part 2 is calculate the linear regression with NUMPI.
+* Part 3 is calculate the regression values.
+* Part 4 is visualize the regression with Matplotlib.
+* Note that a data frame does have a plot. Don't use the pandas dataframe plot. Use the map plotlib plot.
+* class design.
+* Maintain your modular class-based designs that you've been programming all the way along.
+* Course techniques and additional code.
+* The purpose of this assignment is to demonstrate your understanding of Pandas, Numpy, and Matplotlib.
+* And class design using techniques presented in the course notebooks.
+* Additional libraries, helper classes, abstractions, validation systems, extra features are not required, and do not automatically earn extra credit.
+* And if you put them in.
+* Make sure you document the reason why.
+* You put them in.
+* I found this in the last assignment, a lot of students
+* Put a lot of extra features in.
+* Didn't explain them, and didn't explain why the extra additions were added.
+* And that didn't really help me understand what you understood and what you didn't understand.
+* Alright, and then here's the required results.
+* Alright, so that's all I have for tonight.
+* I'll be online tomorrow during office hours.
+* There is no class on Wednesday, it's Veterans Day, and I'll be online on Thursday for office hours.
+* Alright, see you then.
