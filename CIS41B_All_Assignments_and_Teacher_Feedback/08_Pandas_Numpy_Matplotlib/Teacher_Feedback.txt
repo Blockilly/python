@@ -1,0 +1,28 @@
+Nov 18 at 7:07am
+Pandas: 4/5
+
+The pandas work is correct, including handling the missing values, but there is more validation and structure than necessary.
+
+NumPy and regression: 4/5
+
+The regression calculation is correct. The additional private methods, properties, and validation make it more elaborate than needed.
+
+Matplotlib: 5/5
+
+The visualization is complete and correct.
+
+Program structure: 3/5
+
+The three classes are appropriate, but the extra properties, helper methods, constants, and exception handling add unnecessary complexity.
+
+Notebook usage: 5/10
+
+There are many notebook references, but some of the program structure goes beyond the patterns demonstrated in class. Citing the notebooks doesn't necessarily show how the material was adapted.
+
+Comments and explanation: 5/10
+
+Some comments are useful, particularly those concerning -99.99, but there are too many. Much of the documentation explains or justifies the added structure rather than the main concepts.
+
+Score: 26/40 × 30 = 19.5
+
+The program works correctly, but it contains considerably more structure and documentation than the assignment requires. A simpler implementation based more directly on the notebook examples would make the student's understanding easier to evaluate.
