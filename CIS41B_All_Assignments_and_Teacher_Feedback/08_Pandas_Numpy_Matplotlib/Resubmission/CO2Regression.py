@@ -5,10 +5,9 @@ import matplotlib.pyplot as plt
 
 class CO2Data:
     def __init__(self, filename):
+        # Pandas.ipynb, "Reading a CSV File": read CO2.csv instead of dogs.csv.
         self.df = pd.read_csv(filename)
-        # -99.99 in the average column means that month wasn't measured.
-        # Keeping only the rows where average isn't -99.99 drops those 5 months,
-        # otherwise they pull the regression line down.
+        # -99.99 means no CO2 measurement, so exclude it from the regression.
         self.df = self.df[self.df["average"] != -99.99]
 
     def get_x(self):
@@ -20,6 +19,7 @@ class CO2Data:
 
 class LinearRegression:
     def __init__(self, x, y):
+        # Use the formulas from assignment section 2 with whole NumPy arrays.
         x_mean = np.mean(x)
         y_mean = np.mean(y)
         numerator = np.sum((x - x_mean) * (y - y_mean))
@@ -31,6 +31,8 @@ class LinearRegression:
 
 class CO2Plot:
     def show(self, x, y, predicted):
+        # Data Visualization.ipynb, "Scatter Plot vs. Line Plot":
+        # plot measured values as points and calculated predictions as a line.
         fig, ax = plt.subplots()
         ax.scatter(x, y, s=8, label="Observed CO2")
         ax.plot(x, predicted, color="red", label="Regression line")

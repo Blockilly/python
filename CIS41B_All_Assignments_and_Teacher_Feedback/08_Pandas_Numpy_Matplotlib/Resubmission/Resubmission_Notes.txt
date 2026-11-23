@@ -15,5 +15,6 @@ What I changed:
   the notebook examples, with no properties, constants or extra checks.
 - The only data handling left is removing the 5 months marked -99.99, since those
   are the missing values.
-- Comments are cut down to that one place.
+- Comments are cut down to the -99.99 rows and a short note on which notebook
+  section each part came from.
 The slope, intercept, predicted values and the plot are the same as before.
