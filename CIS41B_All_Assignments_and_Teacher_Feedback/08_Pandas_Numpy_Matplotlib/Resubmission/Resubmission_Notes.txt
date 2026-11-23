@@ -1,0 +1,19 @@
+Resubmission notes
+
+What missed the mark:
+My first version added things the assignment didn't ask for: private attributes,
+properties, class constants, a validation check, and a try/except in main. I also
+wrote long comments citing the notebooks, which mostly explained that extra
+structure instead of the regression itself.
+
+Why:
+I kept the class style from the midterm instead of following the simpler style of
+the Dataframes.py and Series.py examples for this module.
+
+What I changed:
+- CO2Data, LinearRegression and CO2Plot now use plain attributes and methods like
+  the notebook examples, with no properties, constants or extra checks.
+- The only data handling left is removing the 5 months marked -99.99, since those
+  are the missing values.
+- Comments are cut down to that one place.
+The slope, intercept, predicted values and the plot are the same as before.
