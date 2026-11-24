@@ -1,0 +1,181 @@
+Good evening.
+* Our topics today are threading, On the 18th, our topic is multiprocessing.
+* And our final is coming up pretty quick.
+* on December 3rd through December 7th.
+* So we have 3 files to look at.
+* threading PDF.
+* threading notebook.
+* And… the code that accompanies the notebook, threading gooey.py.
+* Alright, so let's get started with… Threading.
+* Alright, so threading allows different parts of a program To work together simultaneously.
+* We will be using threading in the next assignment.
+* Which I'll be presenting today.
+* A thread is one path of execution inside of the program.
+* Multiple threads can be part of the same process and share the same resources.
+* The main reasons threads… to use threads isn't necessarily speed.
+* With Threads, a program continues working Well, something else is…
+* waiting, and keeps the GUI sequence responsive.
+* So… If you have TKEnter running, for example.
+* You can run some processes Simultaneously with TKEnter.
+* And if they weren't on threads, then TKEnter would just freeze while the other processes were running.
+* But if they're running on separate threads.
+* then the TK enter interface will be responsive.
+* So, think of the main thread as taking care of TKEnter.
+* Time-consuming work can be moved to worker threads.
+* And queues gives the threads a safe way to pass information.
+* So the main thread has the GUI events, The worker threads…
+* Handle the processes that are running basically in the background.
+* And the Q's is… the queue is used as a…
+* Place to hold the data that is common to all of the threads.
+* So, 3 methods to remember are start, Run and join.
+* The important idea is starting a worker shouldn't
+* prevent the worker thread from continuing to handle the GUI.
+* So the worker thread should not freeze the GUI.
+* The start begins the worker thread.
+* The run represents the thread's activity, and the join waits for the thread to finish.
+* So, in our assignment, Or threading assignment.
+* This is the basic design we'll be reusing.
+* One thread… one thread produces the item.
+* Another continues them, and the queue sits between the producer and the consumer.
+* So in the sample, Code that we'll be looking at.
+* our producer… Produces a cookie.
+* Puts it in a cookie jar.
+* And… The consumer eats the cookie.
+* And then signals the producer to produce another cookie.
+* So a cube gives the threads a safe place to exchange the work or the data.
+* The producer puts… And the consumer gets.
+* So the producer puts an item into the queue.
+* And the GET removes the next item from the queue.
+* We don't have to just put one value into the queue.
+* Here, we're putting the sequence number and the item together, so everything in the consumer needs to travel together.
+* So the sequence value travels with the work item.
+* This lets the consumer verify order without relying on another shared variable.
+* So the consumer knows which sequence number it expects next. If something arrives out of order, the program can reject it.
+* Based on the ordering rule, rather than assuming something went wrong with the queue.
+* So, if we have a cookie, cookie sequence 1, cookie sequence 2, and then sequence 4 arrives before sequence 3,
+* Then this would re… this cookie would be rejected.
+* And then we get sequence 3, and then sequence 4.
+* So, rejecting an item does not mean that the queue failed. It means the consumer applied the program's
+* ordering rule.
+* Eventually, the consumer needs to know
+* There is nothing left to process.
+* A sentinel is a special cue that says, we're done.
+* So, work, produce a cookie, work, produce a cookie. We reach a sentinel, and this means that there's no more cookies, and the consumer stops.
+* Without having to wait for another cookie.
+* So the consumer does not need to know in advance how many items The producer will create.
+* And then there's the concept of worker threads. The worker thread does the background work.
+* But it doesn't update the widgets directly. It sends information back to TKEnter.
+* handles the GUI update from the main thread.
+* So the worker does the background work.
+* The worker puts log messages into the GUI queue, TKEnter uses after to check the queue.
+* Only the main thread updates the widgets.
+* Alright, so part of the threading process includes a lock.
+* A lock is useful when several threads share something that shouldn't be changed at the same time.
+* For producer-consumer, The queue handles… the synchronization
+* Between the producer producing the cookie.
+* And the consumer eating the cookie.
+* The consumer, for example, shouldn't be eating a cookie if there's nothing there to eat.
+* Then there's a condition variable.
+* A condition variable lets a thread wait until something specific changes.
+* Instead of repeatedly checking, The thread can wait until another thread signals it to move on.
+* So, with a condition variable, It will wait for a signal before it does any additional work.
+* Then there's the concept of a semaphore.
+* A semaphore is a little bit different.
+* It controls how many threads are allowed to use some resource at the same time.
+* Almost like having a limited number of permits.
+* So if 3 permits are available, 3 threads may enter. Other… others have to wait until a permit is released.
+* Excuse me.
+* A thread pool manages a group of worker threads
+* So instead of having us create
+* every thread ourselves. It's useful to know about What we're waiting…
+* What we're going to build our client and server threads directly, so let me…
+* Let's read that again. It's useful to know about
+* But we're going to have to build our client and server threads directly.
+* So for this assignment, you're explicitly building the client and server threads.
+* So a thread pool is an additional technique rather than a core design.
+* So this is just additional information about creating threads.
+* Won't be part of the assignment.
+* Alright, so putting it all together…
+* Here's how the pieces fit together for the assignment. TK Enter stays on the main thread, the client…
+* Produces, the queue, carries out the work, and the server consumes it and checks the sequence.
+* So, TKenters on the main thread.
+* Client is the producer thread.
+* Q is the… The data, or the cookie handoff.
+* The server is the consumer thread.
+* And there's a sequence… ordering rule.
+* Alright, so let's look at a quick example so you can see how to put the pieces together for the assignment.
+* Alright, so here's our notebook. It's the threading notebook.
+* So it gives you, an overview…
+* of our Simpson cookie jar metaphor.
+* the, if you've seen The Simpsons before, then you know there's a Marge, Marge produces the cookie.
+* Puts it in a cookie jar, and then Homer consumes the cookie.
+* So I'm trying to use that metaphor.
+* for this assignment.
+* And we'll be using threading and concurrency.
+* So here's an overview of the techniques that we just covered.
+* talks about… Condition variables, locks, semaphores, thread pools.
+* a Sync I.O.
+* We didn't talk about a Sync I.O, but it's here.
+* In this… in these notes, anyway.
+* So, there's a… the base class that you'll be designing.
+* And this is basically… Holding the information that's common to both the consumer and the producer.
+* Then there's our basic Q, our cookie jar.
+* For simple threading.
+* Then there's… Illustrations of the lock technique.
+* Notification and signaling using the condition variable.
+* Resource counters using the semaphore.
+* and managing worker teams, or the thread pool. We won't be using that necessarily.
+* And then, we didn't talk about this, but it's an additional threading technique, a sync I.O.
+* And then a composite GUI, which puts all of the pieces together into one application. So you can run it from the notebook, or you can run it from the Python code. So this is threading
+* driver… I think it should be threading GUI, but… Let's…
+* Yeah, let's open the correct file.
+* And here we go, let's see…
+* Ready…
+* And it should be threading GUI.
+* Alright, let's… Run it.
+* Alright, so here's the TK… here's a TK inter… interface to show you.
+* the basic techniques.
+* So you can select… A basic cue technique.
+* So the producer's has his output in this window, the consumer has the output in this window, and we start.
+* And you can see the cookies and the consumers being… used.
+* Alright, then there's… Lux…
+* And it shows the same techniques using locks.
+* condition variable, semaphore, thread pool, and a sync I.O.
+* Okay, and now… Let's take a look at the assignment.
+* Alright, so… This is the threaded… Producer-consumer model.
+* And this is a very common technique that's taught in beginning programming.
+* When you're learning how to do threading.
+* Build a class-based producer-consumer application using Python threads.
+* the client produces SQL queries, And the server consumes and executes them.
+* The two communicate through a shared, thread-safe queue.
+* The client will use… pandas to load the CO2 CSV file from
+* The last assignment you were working on into a data frame.
+* Data from the data frame will be used to create
+* the SQL queries processed by the server.
+* The TKinter GUI runs the main thread, and is used to start the Client and the server.
+* Thread queries and display the activity.
+* You may have been introduced to sockets and network communication before. This assignment does not use sockets or network communication.
+* Everything is done with threads.
+* So the pipeline goes… CO2 CSV, send it to a data frame.
+* Start the client and the producer.
+* Pass the data to the… shared queue.
+* Get the server and consumer.
+* and axis.
+* the SQLite database.
+* Alright, so here's the program structure.
+* Here's the producer client.
+* Here's the server consumer.
+* Here's the TK entered definition.
+* And here's how to set up thread safety.
+* And then… How to set up sequence testing.
+* And of course… Always use the class designs as outlined here for your classes.
+* Alright, a lot of you have been…
+* Adding a lot of additional code to the assignment.
+* And then documenting the additional code by describing what each line does. And that's not the purpose of adding additional code.
+* additional code…
+* shouldn't be necessary, because I want you to learn how to use the core techniques, not document adding additional code because you didn't understand the core techniques, so this is a…
+* A note about adding additional code.
+* And here's some restrictions, and then a summary.
+* So this is due next Monday.
+* That's all I have for tonight.
+* I will talk to you on Wednesday.

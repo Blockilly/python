@@ -1,0 +1,106 @@
+* Good evening.
+* Our topics today is… Multiprocessing.
+* And I have an outline for the remainder of the course.
+* We'll be covering sockets on Monday.
+* Next Wednesday is the day before Thanksgiving.
+* So we won't be having any class that night.
+* On the 25th.
+* And then the following Monday after Thanksgiving is the 30th, And I'll be going over
+* Talking about the final and a course review.
+* And finally, the final will be on December 2nd through the 7th.
+* Alright, so we're covering multi-processing this evening.
+* I don't have an assignment for multiprocessing, but it may appear on the fine.
+* Alright, so this is our introduction to multiprocessing.
+* The main idea is that processes run independently.
+* with separate memory.
+* And can do the same CPU work in parallel.
+* This is different.
+* than threading.
+* threadings… Do not share memory.
+* Alright, so multiprocessing is useful for CPU-bound work.
+* That can be split into independent pieces.
+* The trade-off is that processes are heavier than threads.
+* So, in terms of threads versus processes, This is the big distinction.
+* Threads share memory inside of one process.
+* While separate processes normally have their own memory.
+* Alright, so if you look at a life cycle of a thread versus a process in terms of code.
+* You can see that the thread and the process have the same construction method.
+* And then, there's a start function.
+* And a join function.
+* So Threads and processes were intentionally set up to look the same, even though they are different architectures.
+* So each process gets its own memory space.
+* Changing a normal variable in one process
+* Does not automatically change that variable in another process.
+* So each process has its own memory, and if they're sharing the same function.
+* In Process 1, a function may change something, but…
+* It won't necessarily change in process 2, 3, or 4.
+* Because the memory is separate, We need explicit ways to process and communicate.
+* Cues and pipes are the typical way of doing it.
+* While synchronization tools Coordinated… coordinate the activities.
+* So we've got cues, pipes, and signals.
+* So, a queue is a convenient handoff point.
+* One process can put work or results into the queue.
+* And another process can retrieve them safely.
+* So a queue can be shared amongst different processes.
+* So, changing a queue in one process.
+* Can affect, the queue for another process.
+* That's that this is different than local variables inside of a function.
+* A pipe is more direct than a queue.
+* It connects two endpoints.
+* So it works well when two processes simply need to send messages back and forth.
+* Then there's locks and events, which are similar to threads.
+* Locks and events coordinate processes rather than move the main data.
+* A lock protects access.
+* While an event signals that something is ready.
+* So, there was locks and threads, and then there was the… condition…
+* A variable in threading, so that's similar to an event.
+* So, a queue can feed several
+* worker processes. Each worker takes a… Available queue, item.
+* Which then makes a natural pattern for dividing independent tasks.
+* Alright, so the Q is common to our… Consumers, in this case.
+* Then there's a process pool.
+* A pool manager is a group of workers.
+* We give it inputs, the workers process them, and the goal is to collect the results.
+* So, when do you… when do you use multiprocessing?
+* Multiprocessing makes the most sense when a program spends real time doing calculations.
+* If it mostly waits for files or networks, the benefits
+* For multiprocessing are smaller, and threads would be more useful at that point.
+* So, parallel work does have overhead.
+* Processes take resources to start.
+* Communication costs time, And debugging becomes more complicated If we add moving parts.
+* Alright, so it's very difficult to debug… Multiprocessing programs.
+* So, the main idea is… everything… works together.
+* There's independent processes, separate memory, explicit communication, and pools for managing groups of workers.
+* So, threads share memory.
+* processes make… Separation explicit.
+* So each CPU… Has its own memory.
+* Alright, so let's look at an example.
+* It's the wrong one. Okay.
+* Alright, so first we have our multi-processing notebook.
+* And this multiprocessing notebook is set up with the producer-consumer demonstrations that we used with the threading, so you can see the similarities and the differences.
+* So it talks about the queue, A lock event, a pipe.
+* And some consumers.
+* So it talks about running the demonstrations.
+* How to build the multiprocessing demonstrations.
+* Why are the worker functions outside of the class?
+* Updating the GUI… When a simulation finishes, Followed by…
+* The… the producer and consumer code.
+* And you can see it's quite lengthy.
+* And then… In our demonstration, there's… for multiprocessing demonstrations.
+* So you can run this from the notebook, or you can run it from the Python file.
+* Python file is right here.
+* And if you run it…
+* You get a queue, a lock, vent, A pipe with acknowledgement.
+* and a… 5 consumers.
+* So you can run each of them, so let's clear the output.
+* And start the simulation.
+* Alright, so that's for the bounded queue demonstration.
+* Then, a lock event demonstration.
+* a pipe.
+* with acknowledgement.
+* And… 5 consumers.
+* So you can look at each one of these four examples.
+* And see how to set up and use a multi-process technique.
+* Alright, so that's all I have for this evening.
+* Monday, we will be going over sockets.
+* I'll see you then.
