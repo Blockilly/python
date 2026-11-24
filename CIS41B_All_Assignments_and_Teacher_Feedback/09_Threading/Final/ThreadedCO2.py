@@ -2,7 +2,6 @@
 # Adapted from ThreadingDriver.py: split BasicQueueTechnique into
 # Client (pandas/SQL generation) and Server (ordering/SQL execution). Keep
 # TechniqueBase's common data in WorkerBase and CompositeGUI's log_queue/after.
-# QueryBuilder/CommandExecutor retain the separation from the SQLite exercise.
 # Course sources: ThreadingDriver.py, Pandas.ipynb, DynamicSQL.ipynb, SQL.ipynb,
 # and QueryBuilder/CommandExecutor from my SQLite exercise.
 
@@ -105,7 +104,8 @@ class Client(WorkerBase):
                 for name, dtype in self.frame.dtypes.items()
             }
             builder = QueryBuilder(column_types)
-            self.log_queue.put(("client", f"Loaded {len(self.frame)} rows from {self.csv_path.name}."))
+            self.log_queue.put(
+                ("client", f"Loaded {len(self.frame)} rows from {self.csv_path.name}."))
             self.log_queue.put(("client_status", "Ready -- press Send Queries"))
             if self.requests.get() is None:
                 status = "Cancelled before sending"
@@ -122,9 +122,10 @@ class Client(WorkerBase):
                 if index == len(self.frame) - 1:
                     self.send(builder.insert(values), out_of_order=True)
                 self.send(builder.insert(values))
-            self.log_queue.put(("client", f"Expected database row count: {len(self.frame)} (no duplicate)."))
+            self.log_queue.put(
+                ("client", f"Expected database row count: {len(self.frame)} (no duplicate)."))
             self.send(builder.count())
-        except (OSError, KeyError, ValueError) as error:
+        except (OSError, ValueError) as error:
             status = "Error -- see Client activity"
             self.log_queue.put(("client", f"ERROR: {error}"))
         finally:
@@ -158,7 +159,8 @@ class Server(WorkerBase):
                 # Keep BasicQueueTechnique's equality check before execution.
                 # A rejected number does not advance expected or reach SQLite.
                 if number != self.expected:
-                    self.log_queue.put(("server", f"REJECTED #{number}; expected #{self.expected}. NOT EXECUTED: {sql}"))
+                    message = f"REJECTED #{number}; expected #{self.expected}. NOT EXECUTED: {sql}"
+                    self.log_queue.put(("server", message))
                     continue
                 result = executor.execute(sql, parameters)
                 self.log_queue.put(("server", f"ACCEPTED #{number}: {sql}\n    Result: {result}"))
@@ -189,8 +191,10 @@ class Application:
         controls = ttk.Frame(root, padding=10)
         controls.grid(row=0, column=0, columnspan=2, sticky="ew")
         self.server_button = ttk.Button(controls, text="1. Start Server", command=self.start_server)
-        self.client_button = ttk.Button(controls, text="2. Start Client", command=self.start_client, state="disabled")
-        self.send_button = ttk.Button(controls, text="3. Send Queries", command=self.send_queries, state="disabled")
+        self.client_button = ttk.Button(controls, text="2. Start Client",
+                                        command=self.start_client, state="disabled")
+        self.send_button = ttk.Button(controls, text="3. Send Queries",
+                                      command=self.send_queries, state="disabled")
         for button in (self.server_button, self.client_button, self.send_button):
             button.pack(side="left", padx=(0, 10))
 
