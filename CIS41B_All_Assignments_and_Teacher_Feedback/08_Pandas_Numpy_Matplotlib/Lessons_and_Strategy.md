@@ -95,3 +95,20 @@
 2. **不加题目没写的验证和异常处理。** 题目说 "handle missing data"，就只处理缺失数据那一处。
 3. **注释只写一两处真正的关键点**（这次就是 -99.99），不写 kept/changed/removed 引用块，不写文件头的来源清单。
 4. **课程允许每个作业重交一次**（10 天内，需说明哪里没达标、为什么、并给出改正的代码）。
+
+## 十、重交后的老师评语（没有给分数，原文见 `Resubmission/Teacher_Feedback_Resubmission.txt`）
+
+提交版本：`Resubmission/CO2Regression.py`（commit 3fa3c5d），重交说明 `Resubmission/Resubmission_Notes.txt`。
+
+- **肯定**：去掉多余复杂度后流程清楚多了；简短直接的写法适合这个作业。
+- **不足**：解释太少了。题目要求指出做过的重要改动，并说明为什么需要这些改动。pandas 和 Matplotlib 部分的引用有用，但 **NumPy 回归部分和整体类设计** 几乎没有说明课程示例是怎么改成适合这个问题的。
+- **老师原话**："The goal is not to add more code, but to provide enough meaningful commentary to demonstrate that you understand the notebook framework you are adapting."
+
+### 教训：代码和注释要分开调
+
+- **代码**：保持重交版的朴素程度（普通属性和方法、不加多余的检查），老师已经认可。
+- **注释**：不能像原版那样为额外结构辩护，也不能像重交版那样几乎不写。应该写在**真正的改编点**上，说明"notebook 里原来是什么 → 我改成了什么 → 为什么这个问题需要这样改"。
+- 这次缺的具体位置：
+  - **回归部分**：Numpy.ipynb 的 `class_trend()` 用 `np.polyfit` 和 `np.arange` 作为 x；这里题目禁止 `polyfit`，所以改用题目给的公式，x 是实际日期（decimal year），斜率才是"每年 ppm"。
+  - **类设计**：Dataframes.py 和 Series.py 是"一个类管数据、一个类管 GUI"；这里按题目要求拆成 pandas / NumPy / Matplotlib 三个类，回归类只接收 NumPy 数组。
+- 历次注释量对比：Midterm 太多（7/10）→ Pandas SQL 偏多（8/10）→ CO2 原版太多且在辩护结构（5/10）→ 重交版太少。合适的量是：每个改编点 1–3 行，写 why。
